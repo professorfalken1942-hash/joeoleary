@@ -11,22 +11,25 @@ const experience = [
     role: "UX Professional, Sr. Manager",
     company: "Equitable",
     period: "Jan 2019 – Present",
-    duration: "7+ yrs",
+    duration: "7 yrs 3 mos",
     location: "Syracuse, NY",
+    desc: "Led UX/UI design and front-end development for client and agent-facing digital products. Specializing in WCAG accessibility, design systems, and cross-functional UX leadership.",
   },
   {
     role: "Senior UX/UI Designer",
     company: "AXA US",
     period: "Jan 2014 – Jan 2019",
-    duration: "5 yrs",
+    duration: "5 yrs 1 mo",
     location: "Syracuse, NY",
+    desc: "Designed and developed user-centered experiences for marketing sites and enterprise digital products.",
   },
   {
     role: "Senior Web Designer / Consultant",
     company: "Diversant, LLC",
     period: "Sep 2013 – Dec 2013",
     duration: "4 mos",
-    location: "",
+    location: "Greater Syracuse–Auburn Area",
+    desc: "",
   },
 ];
 
@@ -140,6 +143,7 @@ export default function AboutPage() {
               {item.location && <span style={{ fontSize: "0.75rem", color: "var(--border)", margin: "0 0.5rem" }}>·</span>}
               {item.location && <span style={{ fontSize: "0.75rem", color: "var(--mid)" }}>{item.location}</span>}
               <p style={{ fontSize: "0.72rem", color: "var(--mid)", marginTop: "0.25rem" }}>{item.period}</p>
+              {item.desc && <p style={{ fontSize: "0.82rem", color: "var(--mid)", fontWeight: 300, lineHeight: 1.7, marginTop: "0.75rem" }}>{item.desc}</p>}
             </div>
           ))}
         </div>
