@@ -13,8 +13,8 @@ export default function Footer() {
     }}>
       <span>© {year} Joseph O'Leary</span>
       <div style={{ display: "flex", gap: "1.5rem" }}>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--mid)", textDecoration: "none" }}>LinkedIn</a>
-        <a href="mailto:joe@joeoleary.me" style={{ color: "var(--mid)", textDecoration: "none" }}>Email</a>
+        <a href="https://linkedin.com/in/joeoleary" target="_blank" rel="noopener noreferrer" style={{ color: "var(--mid)", textDecoration: "none" }}>LinkedIn</a>
+        <a href="/contact" style={{ color: "var(--mid)", textDecoration: "none" }}>Contact</a>
       </div>
     </footer>
   );

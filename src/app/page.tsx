@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-// Placeholder work items — will be filled with real case studies
 const work = [
   { id: "01", title: "Case Study One", category: "UX Design", year: "2025" },
   { id: "02", title: "Case Study Two", category: "Product Design", year: "2024" },
@@ -28,7 +27,7 @@ export default function Home() {
             textTransform: "uppercase",
             marginBottom: "1.5rem",
           }}>
-            UX & Design
+            UX Designer & Engineer — Syracuse, NY
           </p>
           <h1 style={{
             fontFamily: "var(--font-sans)",
@@ -50,7 +49,7 @@ export default function Home() {
             maxWidth: "560px",
             marginBottom: "3rem",
           }}>
-            UX and design professional. I design products and experiences that are clear, useful, and considered.
+            Creating engaging, accessible digital experiences. 10+ years of senior UX/UI — currently at Equitable, open to Principal UX roles.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link href="/work" style={{
@@ -64,7 +63,7 @@ export default function Home() {
             }}>
               View Work
             </Link>
-            <Link href="/about" style={{
+            <Link href="/contact" style={{
               fontFamily: "var(--font-sans)",
               fontSize: "0.8rem",
               fontWeight: 400,
@@ -73,7 +72,7 @@ export default function Home() {
               padding: "0.75rem 1.5rem",
               textDecoration: "none",
             }}>
-              About
+              Get in Touch
             </Link>
           </div>
         </div>
@@ -81,7 +80,7 @@ export default function Home() {
 
       {/* Work index */}
       <section style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
-        {work.map((item, i) => (
+        {work.map((item) => (
           <Link key={item.id} href={`/work/${item.id}`} style={{
             display: "grid",
             gridTemplateColumns: "3rem 1fr auto",
@@ -92,12 +91,7 @@ export default function Home() {
             color: "inherit",
             alignItems: "center",
           }}>
-            <span style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.75rem",
-              color: "var(--mid)",
-              fontWeight: 400,
-            }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
               {item.id}
             </span>
             <div>
@@ -110,27 +104,18 @@ export default function Home() {
               }}>
                 {item.title}
               </h2>
-              <p style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "0.8rem",
-                color: "var(--mid)",
-                fontWeight: 300,
-              }}>
+              <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem", color: "var(--mid)", fontWeight: 300 }}>
                 {item.category}
               </p>
             </div>
-            <span style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.75rem",
-              color: "var(--mid)",
-            }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
               {item.year}
             </span>
           </Link>
         ))}
       </section>
 
-      {/* Swiss grid accent strip */}
+      {/* Stats strip */}
       <section style={{
         marginTop: "6rem",
         borderTop: "1px solid var(--border)",
@@ -138,9 +123,9 @@ export default function Home() {
         gridTemplateColumns: "repeat(3, 1fr)",
       }}>
         {[
-          { label: "Discipline", value: "UX & Product Design" },
-          { label: "Location", value: "— —" },
-          { label: "Status", value: "Available" },
+          { label: "Experience", value: "10+ Years" },
+          { label: "Location", value: "Syracuse, NY" },
+          { label: "Status", value: "Open to Work" },
         ].map((item, i) => (
           <div key={item.label} style={{
             padding: "2rem",

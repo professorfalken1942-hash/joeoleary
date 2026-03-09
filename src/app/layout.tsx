@@ -4,12 +4,12 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Joseph O'Leary — UX & Design",
-  description: "Joseph O'Leary is a UX and design professional.",
+  title: "Joseph O'Leary — UX Designer & Engineer",
+  description: "10+ years senior UX/UI designer and engineer. WCAG 2.1 AA accessibility specialist. Currently at Equitable, open to Principal UX roles.",
   metadataBase: new URL("https://joeoleary.me"),
   openGraph: {
-    title: "Joseph O'Leary — UX & Design",
-    description: "Joseph O'Leary is a UX and design professional.",
+    title: "Joseph O'Leary — UX Designer & Engineer",
+    description: "10+ years senior UX/UI designer and engineer. WCAG 2.1 AA accessibility specialist. Open to Principal UX roles.",
     url: "https://joeoleary.me",
     siteName: "Joseph O'Leary",
     type: "website",
