@@ -7,7 +7,14 @@ export const metadata: Metadata = {
 };
 
 const projects = [
-  { id: "01", title: "Case Study One", category: "UX Design", year: "2025", desc: "Placeholder — details coming soon." },
+  { 
+    id: "01", 
+    title: "Pastel — Beauty Brand Portfolio", 
+    category: "Web Design", 
+    year: "2026", 
+    desc: "Clean, Scandinavian-inspired portfolio for a makeup artist. Integrated booking system with HoneyBook, pink accent color, and micro-interactions.",
+    link: "https://pastelmakeupandstyle.com"
+  },
   { id: "02", title: "Case Study Two", category: "Product Design", year: "2024", desc: "Placeholder — details coming soon." },
   { id: "03", title: "Case Study Three", category: "Design Systems", year: "2024", desc: "Placeholder — details coming soon." },
 ];
@@ -86,16 +93,29 @@ export default function WorkPage() {
             </div>
             <div style={{ textAlign: "right" }}>
               <p style={{ fontSize: "0.75rem", color: "var(--mid)", marginBottom: "1rem" }}>{project.year}</p>
-              <Link href={`/work/${project.id}`} style={{
-                fontSize: "0.75rem",
-                fontWeight: 500,
-                color: "var(--black)",
-                textDecoration: "none",
-                borderBottom: "1px solid var(--black)",
-                paddingBottom: "1px",
-              }}>
-                View →
-              </Link>
+              {(project as any).link ? (
+                <a href={(project as any).link} target="_blank" rel="noopener noreferrer" style={{
+                  fontSize: "0.75rem",
+                  fontWeight: 500,
+                  color: "var(--black)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid var(--black)",
+                  paddingBottom: "1px",
+                }}>
+                  View →
+                </a>
+              ) : (
+                <Link href={`/work/${project.id}`} style={{
+                  fontSize: "0.75rem",
+                  fontWeight: 500,
+                  color: "var(--black)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid var(--black)",
+                  paddingBottom: "1px",
+                }}>
+                  View →
+                </Link>
+              )}
             </div>
           </div>
         ))}

@@ -13,7 +13,7 @@ const experience = [
     period: "Jan 2019 – Present",
     duration: "7 yrs 3 mos",
     location: "Syracuse, NY",
-    desc: "Led UX/UI design and front-end development for client and agent-facing digital products. Specializing in WCAG accessibility, design systems, and cross-functional UX leadership.",
+    desc: "Led UX/UI design and front-end development for client, agent and broker applications, improving accessibility and performance to meet WCAG 2.1 AA standards. Optimized page performance, enhancing client satisfaction. Advanced eDelivery initiatives to promote digital adoption and reduce paper reliance. Mentored junior designers and collaborated cross-functionally with development, product, and business teams. Corporate representative for DisabilityIN.",
   },
   {
     role: "Senior UX/UI Designer",
@@ -38,7 +38,7 @@ const skills = [
   "Design Systems", "WCAG 2.1 AA", "Accessibility",
   "UX Strategy", "Prototyping", "User Research",
   "Wireframing", "Interaction Design", "Mentoring",
-  "Figma", "React",
+  "Figma", "React", "Git", "DisabilityIN",
 ];
 
 export default function AboutPage() {
