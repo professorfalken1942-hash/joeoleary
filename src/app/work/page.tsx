@@ -13,10 +13,24 @@ const projects = [
     category: "Web Design", 
     year: "2026", 
     desc: "Clean, Scandinavian-inspired portfolio for a makeup artist. Integrated booking system with HoneyBook, pink accent color, and micro-interactions.",
-    link: "https://pastelmakeupandstyle.com"
+    link: "https://pastelstyle.art"
   },
-  { id: "02", title: "Case Study Two", category: "Product Design", year: "2024", desc: "Placeholder — details coming soon." },
-  { id: "03", title: "Case Study Three", category: "Design Systems", year: "2024", desc: "Placeholder — details coming soon." },
+  { 
+    id: "02", 
+    title: "O'Apostrophe — Digital Studio Brand", 
+    category: "Design Systems & Web", 
+    year: "2026", 
+    desc: "Editorial brand site for a boutique web development studio. 8pt grid system, 48px touch targets, WCAG-compliant components, and Sanity CMS integration.",
+    link: "https://oapostrophe.com"
+  },
+  { 
+    id: "03", 
+    title: "Adkman — Heritage Apparel Brand", 
+    category: "Brand Design & Editorial", 
+    year: "2026", 
+    desc: "Vintage Adirondacks heritage brand Phase 1: Editorial site with forest green aesthetic, canvas-to-forest gradient hero, and Sanity-powered journal.", 
+    link: "https://adkman.com"
+  },
 ];
 
 export default function WorkPage() {
