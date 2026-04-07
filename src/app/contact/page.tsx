@@ -1,11 +1,67 @@
+'use client';
+
+import { useState, FormEvent, ChangeEvent } from 'react';
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Contact — Joseph O'Leary",
-  description: "Get in touch with Joseph O'Leary.",
+// Metadata must be server-exported, so we'll keep it separate if needed
+// For now, this is a client component
+
+type FormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
 };
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState<FormData>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setStatusMessage('Message sent! Thank you for reaching out.');
+        setFormData({ firstName: '', lastName: '', email: '', message: '' });
+        // Clear success message after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setStatusMessage(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setStatus('error');
+      setStatusMessage('An error occurred. Please try again.');
+      console.error('Form submission error:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <section style={{
@@ -42,38 +98,88 @@ export default function ContactPage() {
       }} className="col-2">
         {/* Form */}
         <div style={{ padding: "4rem 2rem", borderRight: "1px solid var(--border)" }}>
-          <form style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
               <div>
                 <label style={labelStyle}>First Name</label>
-                <input type="text" style={inputStyle} required />
+                <input 
+                  type="text" 
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  style={inputStyle} 
+                  required 
+                  disabled={loading}
+                />
               </div>
               <div>
                 <label style={labelStyle}>Last Name</label>
-                <input type="text" style={inputStyle} required />
+                <input 
+                  type="text" 
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  style={inputStyle} 
+                  required 
+                  disabled={loading}
+                />
               </div>
             </div>
             <div>
               <label style={labelStyle}>Email</label>
-              <input type="email" style={inputStyle} required />
+              <input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                style={inputStyle} 
+                required 
+                disabled={loading}
+              />
             </div>
             <div>
               <label style={labelStyle}>Message</label>
-              <textarea style={{ ...inputStyle, minHeight: "120px", resize: "vertical" }} required />
+              <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                style={{ ...inputStyle, minHeight: "120px", resize: "vertical" }} 
+                required 
+                disabled={loading}
+              />
             </div>
-            <button type="submit" style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.8rem",
-              fontWeight: 500,
-              color: "var(--white)",
-              backgroundColor: "var(--black)",
-              border: "none",
-              padding: "0.75rem 1.5rem",
-              cursor: "pointer",
-              alignSelf: "flex-start",
-            }}>
-              Send Message
+            <button 
+              type="submit" 
+              disabled={loading}
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "0.8rem",
+                fontWeight: 500,
+                color: "var(--white)",
+                backgroundColor: loading ? "var(--mid)" : "var(--black)",
+                border: "none",
+                padding: "0.75rem 1.5rem",
+                cursor: loading ? "not-allowed" : "pointer",
+                alignSelf: "flex-start",
+                opacity: loading ? 0.7 : 1,
+              }}
+            >
+              {loading ? 'Sending...' : 'Send Message'}
             </button>
+            
+            {/* Status message */}
+            {status !== 'idle' && (
+              <div style={{
+                padding: "1rem",
+                borderRadius: "4px",
+                backgroundColor: status === 'success' ? "#f0fdf4" : "#fef2f2",
+                border: `1px solid ${status === 'success' ? '#86efac' : '#fecaca'}`,
+                color: status === 'success' ? "#166534" : "#991b1b",
+                fontSize: "0.9rem",
+              }}>
+                {statusMessage}
+              </div>
+            )}
           </form>
         </div>
 
