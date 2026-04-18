@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const links = [
   { href: "/work", label: "Work" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -44,7 +45,7 @@ export default function Nav() {
           color: "var(--black)",
           textDecoration: "none",
         }}>
-          Joseph O'Leary
+          <strong>Joe</strong> O'Leary
         </Link>
 
         <nav className="nav-desktop">

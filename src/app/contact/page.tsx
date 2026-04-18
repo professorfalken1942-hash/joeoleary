@@ -187,7 +187,7 @@ export default function ContactPage() {
         <div style={{ padding: "4rem 2rem", display: "flex", flexDirection: "column", gap: "2.5rem" }}>
           {[
             { label: "Email", value: "joe@joeoleary.me" },
-            { label: "LinkedIn", value: "linkedin.com/in/joeoleary" },
+            { label: "LinkedIn", value: "linkedin.com/in/joseph-o-leary-976a945", href: "https://www.linkedin.com/in/joseph-o-leary-976a945/" },
             { label: "Based", value: "— —" },
           ].map((item) => (
             <div key={item.label} style={{ borderBottom: "1px solid var(--border)", paddingBottom: "1.5rem" }}>

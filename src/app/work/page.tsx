@@ -9,27 +9,25 @@ export const metadata: Metadata = {
 const projects = [
   { 
     id: "01", 
+    title: "Equitable — Account Summary Redesign", 
+    category: "UX/UI Design", 
+    year: "2026", 
+    desc: "Redesigned a complex financial dashboard for Equitable Financial. Improved visual hierarchy, added structured account details, and modernized the interface with card-based layouts and refined typography.",
+  },
+  { 
+    id: "02", 
     title: "Pastel — Beauty Brand Portfolio", 
     category: "Web Design", 
     year: "2026", 
     desc: "Clean, Scandinavian-inspired portfolio for a makeup artist. Integrated booking system with HoneyBook, pink accent color, and micro-interactions.",
-    link: "https://pastelstyle.art"
-  },
-  { 
-    id: "02", 
-    title: "O'Apostrophe — Digital Studio Brand", 
-    category: "Design Systems & Web", 
-    year: "2026", 
-    desc: "Editorial brand site for a boutique web development studio. 8pt grid system, 48px touch targets, WCAG-compliant components, and Sanity CMS integration.",
-    link: "https://oapostrophe.com"
+    link: "https://pastel-navy.vercel.app"
   },
   { 
     id: "03", 
-    title: "Adkman — Heritage Apparel Brand", 
-    category: "Brand Design & Editorial", 
+    title: "Equitable — Account Summary Redesign", 
+    category: "UX/UI Design", 
     year: "2026", 
-    desc: "Vintage Adirondacks heritage brand Phase 1: Editorial site with forest green aesthetic, canvas-to-forest gradient hero, and Sanity-powered journal.", 
-    link: "https://adkman.com"
+    desc: "Redesigned a complex financial dashboard for Equitable Financial. Improved visual hierarchy, added structured account details, and modernized the interface with card-based layouts and refined typography.",
   },
 ];
 

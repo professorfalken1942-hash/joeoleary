@@ -38,7 +38,7 @@ export default function Home() {
             color: "var(--black)",
             marginBottom: "2rem",
           }}>
-            Joseph O'Leary
+            <strong>Joe</strong> O'Leary
           </h1>
           <p style={{
             fontFamily: "var(--font-sans)",
