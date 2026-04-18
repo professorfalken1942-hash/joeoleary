@@ -68,7 +68,7 @@ export default function PasswordProtect({ children }: { children: React.ReactNod
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Joseph O'Leary
+            <strong>Joe</strong> O'Leary
           </motion.h1>
 
           {/* Subtitle */}
