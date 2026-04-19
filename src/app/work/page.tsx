@@ -29,6 +29,14 @@ const projects = [
     year: "2026", 
     desc: "Redesigned a complex financial dashboard for Equitable Financial. Improved visual hierarchy, added structured account details, and modernized the interface with card-based layouts and refined typography.",
   },
+  {
+    id: "04",
+    title: "Map My Swing — Golf Swing Analyzer",
+    category: "Product Design & Engineering",
+    year: "2026",
+    desc: "Designed and built a full-stack golf swing analysis app from zero to live. Real-time MediaPipe pose detection, frame-by-frame playback, progress tracking, and AI-ready feedback engine.",
+    link: "https://map-my-swing.vercel.app",
+  },
 ];
 
 export default function WorkPage() {
