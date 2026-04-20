@@ -23,22 +23,7 @@ const posts = [
     category: "Accessibility",
     readTime: "8 min read",
   },
-  {
-    slug: "design-systems-scale",
-    title: "Building Design Systems That Scale",
-    excerpt: "How to architect design systems that grow with your product without becoming brittle or over-engineered.",
-    date: "April 5, 2026",
-    category: "Design Systems",
-    readTime: "12 min read",
-  },
-  {
-    slug: "ux-financial-products",
-    title: "UX Principles for Financial Products",
-    excerpt: "Trust, clarity, and transparency are non-negotiable in fintech UX. Here's how to design for them.",
-    date: "March 28, 2026",
-    category: "UX Strategy",
-    readTime: "10 min read",
-  },
+
 ];
 
 export default function BlogPage() {
