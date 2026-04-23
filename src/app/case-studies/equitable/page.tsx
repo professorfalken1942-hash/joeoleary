@@ -100,6 +100,27 @@ export default function EquitableCaseStudy() {
         </div>
       </section>
 
+      {/* Visual Showcase */}
+      <section className="py-16 px-8 max-w-4xl mx-auto">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+          <h2 className="text-2xl font-serif font-light mb-12">Design in Action</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="overflow-hidden rounded-lg border border-gray-200">
+              <img src="/case-studies/equitable/after-1.jpg" alt="Account summary redesign - main view" className="w-full h-auto" />
+            </div>
+            <div className="overflow-hidden rounded-lg border border-gray-200">
+              <img src="/case-studies/equitable/after-2.jpg" alt="Account details with financial professional" className="w-full h-auto" />
+            </div>
+            <div className="overflow-hidden rounded-lg border border-gray-200">
+              <img src="/case-studies/equitable/after-3.jpg" alt="Account value hierarchy" className="w-full h-auto" />
+            </div>
+            <div className="overflow-hidden rounded-lg border border-gray-200">
+              <img src="/case-studies/equitable/after-4.jpg" alt="Card-based layout with spacing" className="w-full h-auto" />
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Impact Section */}
       <section className="py-16 px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
