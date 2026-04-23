@@ -70,8 +70,26 @@ export default function WorkPage() {
       </section>
 
       <section>
+        <style>{`
+          @media (max-width: 768px) {
+            .work-item {
+              display: flex !important;
+              flex-direction: column !important;
+              grid-template-columns: unset !important;
+            }
+            .work-item span {
+              order: 1;
+            }
+            .work-item > div:first-of-type {
+              order: 2;
+            }
+            .work-item > div:last-of-type {
+              order: 3;
+            }
+          }
+        `}</style>
         {projects.map((project, i) => (
-          <div key={project.id} style={{
+          <div key={project.id} className="work-item" style={{
             display: "grid",
             gridTemplateColumns: "3rem 1fr 12rem",
             gap: "2rem",
