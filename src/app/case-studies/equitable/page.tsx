@@ -103,19 +103,40 @@ export default function EquitableCaseStudy() {
       {/* Visual Showcase */}
       <section className="py-16 px-8 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-          <h2 className="text-2xl font-serif font-light mb-12">Design in Action</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="overflow-hidden rounded-lg border border-gray-200">
-              <img src="/case-studies/equitable/after-1.jpg" alt="Account summary redesign - main view" className="w-full h-auto" />
+          <h2 className="text-2xl font-serif font-light mb-12">Before & After</h2>
+          
+          {/* Before */}
+          <div className="mb-16">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-600 mb-6">Before: Cluttered & Unclear</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                <img src="/case-studies/equitable/before-1.jpg" alt="Original account summary - cluttered layout" className="w-full h-auto" />
+              </div>
+              <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                <img src="/case-studies/equitable/before-2.jpg" alt="Original account details - poor hierarchy" className="w-full h-auto" />
+              </div>
+              <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                <img src="/case-studies/equitable/before-3.png" alt="Original design mockup" className="w-full h-auto" />
+              </div>
             </div>
-            <div className="overflow-hidden rounded-lg border border-gray-200">
-              <img src="/case-studies/equitable/after-2.jpg" alt="Account details with financial professional" className="w-full h-auto" />
-            </div>
-            <div className="overflow-hidden rounded-lg border border-gray-200">
-              <img src="/case-studies/equitable/after-3.jpg" alt="Account value hierarchy" className="w-full h-auto" />
-            </div>
-            <div className="overflow-hidden rounded-lg border border-gray-200">
-              <img src="/case-studies/equitable/after-4.jpg" alt="Card-based layout with spacing" className="w-full h-auto" />
+          </div>
+
+          {/* After */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-600 mb-6">After: Clear & Confident</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                <img src="/case-studies/equitable/after-1.jpg" alt="Redesigned account summary - clean view" className="w-full h-auto" />
+              </div>
+              <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                <img src="/case-studies/equitable/after-2.jpg" alt="Redesigned account details with financial professional" className="w-full h-auto" />
+              </div>
+              <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                <img src="/case-studies/equitable/after-3.jpg" alt="Redesigned account value hierarchy" className="w-full h-auto" />
+              </div>
+              <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                <img src="/case-studies/equitable/after-4.jpg" alt="Redesigned card-based layout with proper spacing" className="w-full h-auto" />
+              </div>
             </div>
           </div>
         </motion.div>
