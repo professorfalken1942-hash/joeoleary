@@ -23,7 +23,7 @@ export default function MapMySwingCaseStudy() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <p className="text-sm text-gray-500 mb-4">Case Study</p>
           <h1 className="text-5xl font-serif font-light mb-6 leading-tight">
-            Map My Swing<br />
+            Swing Coach<br />
             <em className="font-normal">Golf swing analysis from zero to production</em>
           </h1>
           <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-200">
@@ -46,12 +46,12 @@ export default function MapMySwingCaseStudy() {
       {/* Live link banner */}
       <section className="px-8 max-w-4xl mx-auto mb-16">
         <a
-          href="https://map-my-swing.vercel.app"
+          href="https://swing-coach.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           className="block border border-black px-6 py-4 text-sm font-medium hover:bg-black hover:text-white transition"
         >
-          View live site → map-my-swing.vercel.app
+          View live site → swing-coach.vercel.app
         </a>
       </section>
 
@@ -60,7 +60,7 @@ export default function MapMySwingCaseStudy() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
           <h2 className="text-xs text-gray-500 uppercase tracking-wide mb-8">Overview</h2>
           <p className="text-2xl font-serif font-light leading-relaxed mb-8">
-            Golfers with access to professional swing analysis improve faster. Tools like TrackMan cost $15,000–$25,000. One-shot AI feedback has no memory. I built Map My Swing to bridge the gap — browser-native computer vision, persistent history, and zero installation.
+            Golfers with access to professional swing analysis improve faster. Tools like TrackMan cost $15,000–$25,000. One-shot AI feedback has no memory. I built Swing Coach to bridge the gap — browser-native computer vision, persistent history, and zero installation.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
             The project went from concept to production in under a week. Everything runs client-side using MediaPipe's PoseLandmarker — no backend, no data storage costs, no app store dependency. The result is a tool that works on any modern phone or laptop, remembers every session, and shows progress over time.
@@ -143,7 +143,7 @@ export default function MapMySwingCaseStudy() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
           <h2 className="text-xs text-gray-500 uppercase tracking-wide mb-8">Outcome</h2>
           <p className="text-2xl font-serif font-light leading-relaxed mb-8">
-            A fully functional golf swing analyzer live at map-my-swing.vercel.app. Where a one-shot AI gives you an opinion, Map My Swing remembers every swing and shows your progression.
+            A fully functional golf swing analyzer live at swing-coach.vercel.app. Where a one-shot AI gives you an opinion, Map My Swing remembers every swing and shows your progression.
           </p>
           <p className="text-base text-gray-600 leading-relaxed mb-12">
             The spec-first approach paid off. Seven documentation files meant every component had a clear contract before it was built. When something needed changing, it changed in one place. No drift, no inconsistency, no debugging design decisions mid-build.

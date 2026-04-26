@@ -57,13 +57,13 @@ const caseStudies: Record<string, any> = {
     outcome: "The redesigned account summary delivers a cleaner, more transparent user experience. Updated typography creates clear information hierarchy and improved readability. Rounded cards and generous whitespace create a spacious, approachable interface that reduces visual clutter. Users now have confidence in their account overview, with critical information immediately accessible and properly prioritized.",
   },
   "04": {
-    title: "Map My Swing — Golf Swing Analyzer",
+    title: "Swing Coach — Golf Swing Analyzer",
     category: "Product Design & Engineering",
     year: "2026",
     role: "Product Designer + Full-Stack Engineer",
-    link: "https://map-my-swing.vercel.app",
+    link: "https://swing-coach.vercel.app",
     challenge: "Golfers have limited access to affordable swing analysis. Professional tools like TrackMan cost $15,000–$25,000. Free alternatives like asking Gemini to analyze a video offer one-shot feedback with no memory of past sessions. The opportunity: a mobile-first web app that records or uploads swing video, analyzes it with real pose detection, and tracks improvement over time — with nothing to install.",
-    solution: "Built Map My Swing from zero to production in under a week. The core insight was that browser APIs (getUserMedia, MediaPipe) have matured enough to do real computer vision client-side — no backend required for MVP. Designed a focused 3-screen flow: record or upload, see pose overlay + metrics, review history. Every design decision referenced a build system specification (UX_RULES.md, DESIGN.md, FEEDBACK_ENGINE.md) to maintain consistency across the entire product.",
+    solution: "Built Swing Coach from zero to production in under a week. The core insight was that browser APIs (getUserMedia, MediaPipe) have matured enough to do real computer vision client-side — no backend required for MVP. Designed a focused 3-screen flow: record or upload, see pose overlay + metrics, review history. Every design decision referenced a build system specification (UX_RULES.md, DESIGN.md, FEEDBACK_ENGINE.md) to maintain consistency across the entire product.",
     details: [
       "Real-time MediaPipe PoseLandmarker — gold skeleton overlay on playback video, 33 body landmarks at 60fps",
       "Hip rotation and shoulder rotation calculated live from landmark coordinates",
@@ -75,7 +75,7 @@ const caseStudies: Record<string, any> = {
       "Consistent design system — green gradient header, gold accents, dark theme throughout",
       "Next.js 16 + React 19 + TypeScript, deployed on Vercel",
     ],
-    outcome: "A fully functional golf swing analyzer live at map-my-swing.vercel.app. Where Gemini gives you a one-shot opinion, Map My Swing remembers every swing and shows your progression. The real differentiator is persistence — golfers can track hip rotation improving from 28° to 44° over two weeks of practice. Built spec-first with a complete build system (7 documentation files), which allowed rapid iteration without losing design coherence.",
+    outcome: "A fully functional golf swing analyzer live at swing-coach.vercel.app. Where Gemini gives you a one-shot opinion, Swing Coach remembers every swing and shows your progression. The real differentiator is persistence — golfers can track hip rotation improving from 28° to 44° over two weeks of practice. Built spec-first with a complete build system (7 documentation files), which allowed rapid iteration without losing design coherence.",
   },
 };
 

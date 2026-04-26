@@ -31,11 +31,11 @@ const projects = [
   },
   {
     id: "04",
-    title: "Map My Swing — Golf Swing Analyzer",
+    title: "Swing Coach — Golf Swing Analyzer",
     category: "Product Design & Engineering",
     year: "2026",
     desc: "Designed and built a full-stack golf swing analysis app from zero to live. Real-time MediaPipe pose detection, frame-by-frame playback, progress tracking, and AI-ready feedback engine.",
-    link: "https://map-my-swing.vercel.app",
+    link: "https://swing-coach.vercel.app",
   },
 ];
 
