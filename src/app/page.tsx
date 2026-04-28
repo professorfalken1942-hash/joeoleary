@@ -49,7 +49,7 @@ export default function Home() {
             maxWidth: "560px",
             marginBottom: "3rem",
           }}>
-            Creating engaging, accessible digital experiences. 10+ years of senior UX/UI — currently at Equitable, open to Principal UX roles.
+            Creating engaging, accessible digital experiences. 10+ years of senior UX/UI design and strategy.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link href="/work" style={{
