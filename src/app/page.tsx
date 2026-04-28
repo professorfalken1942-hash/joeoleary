@@ -123,9 +123,9 @@ export default function Home() {
         gridTemplateColumns: "repeat(3, 1fr)",
       }}>
         {[
-          { label: "Experience", value: "10+ Years" },
-          { label: "Location", value: "Syracuse, NY" },
-          { label: "Status", value: "Open to Work" },
+          { label: "Approach", value: "Design Strategist & Builder" },
+          { label: "Focus", value: "Strategy + Execution" },
+          { label: "Role", value: "Design Leadership & Product" },
         ].map((item, i) => (
           <div key={item.label} style={{
             padding: "2rem",
