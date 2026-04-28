@@ -27,7 +27,7 @@ export default function Home() {
             textTransform: "uppercase",
             marginBottom: "1.5rem",
           }}>
-            UX Designer & Engineer — Syracuse, NY
+            UX Designer & Engineer
           </p>
           <h1 style={{
             fontFamily: "var(--font-sans)",
