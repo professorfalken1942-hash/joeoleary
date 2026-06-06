@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const work = [
-  { id: "01", title: "Case Study One", category: "UX Design", year: "2025" },
-  { id: "02", title: "Case Study Two", category: "Product Design", year: "2024" },
-  { id: "03", title: "Case Study Three", category: "Design Systems", year: "2024" },
+  { id: "01", title: "Enough", category: "Retirement Calculator", year: "2026", href: "/case-studies/enough" },
+  { id: "02", title: "Pastel", category: "Wedding Makeup Studio", year: "2025–2026", href: "/case-studies/pastel" },
+  { id: "03", title: "Map My Swing", category: "Golf Analytics", year: "2026", href: "/case-studies/map-my-swing" },
 ];
 
 export default function Home() {
@@ -78,9 +78,135 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Work index */}
-      <section style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
-        {work.map((item) => (
+      {/* Projects Section */}
+      <section style={{
+        paddingLeft: "2rem",
+        paddingRight: "2rem",
+        paddingTop: "6rem",
+        paddingBottom: "6rem",
+        borderTop: "1px solid var(--border)",
+        borderBottom: "1px solid var(--border)",
+      }}>
+        <div style={{ maxWidth: "900px" }}>
+          <p style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: "0.75rem",
+            fontWeight: 400,
+            color: "var(--mid)",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            marginBottom: "1.5rem",
+          }}>
+            Featured Projects
+          </p>
+          <h2 style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+            fontWeight: 300,
+            lineHeight: 1.2,
+            letterSpacing: "-0.01em",
+            marginBottom: "3rem",
+          }}>
+            Tools I've Built
+          </h2>
+
+          {/* Enough Project */}
+          <div style={{
+            marginBottom: "4rem",
+            paddingBottom: "4rem",
+            borderBottom: "1px solid var(--border)",
+          }}>
+            <div style={{ marginBottom: "2rem" }}>
+              <a href="https://whatsyourenough.info" target="_blank" rel="noopener noreferrer" style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "1.3rem",
+                fontWeight: 400,
+                letterSpacing: "-0.01em",
+                color: "var(--black)",
+                textDecoration: "none",
+                marginRight: "1rem",
+              }}>
+                Enough →
+              </a>
+              <span style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "0.9rem",
+                color: "var(--mid)",
+              }}>
+                Retirement Calculator
+              </span>
+            </div>
+            <p style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "1rem",
+              fontWeight: 300,
+              lineHeight: 1.8,
+              color: "var(--black)",
+              maxWidth: "700px",
+              marginBottom: "1.5rem",
+            }}>
+              Stop guessing about retirement. Enough is a focused calculator that answers the fundamental question: 
+              <strong> How much do I actually need?</strong> Input your savings, expenses, and investment returns. Get your number. 
+              Know when you can retire.
+            </p>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+              gap: "2rem",
+              marginTop: "2rem",
+            }}>
+              {[
+                { label: "Purpose", value: "Financial clarity without complexity" },
+                { label: "Tech", value: "Next.js, React, TypeScript, Tailwind" },
+                { label: "Key Feature", value: "Real-time 4% rule calculations" },
+                { label: "Privacy", value: "Client-side only, no tracking" },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "0.7rem",
+                    color: "var(--mid)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    marginBottom: "0.5rem",
+                  }}>
+                    {item.label}
+                  </p>
+                  <p style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "0.95rem",
+                    fontWeight: 300,
+                  }}>
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Work Index */}
+      <section style={{
+        paddingLeft: "2rem",
+        paddingRight: "2rem",
+        paddingTop: "6rem",
+        paddingBottom: "6rem",
+      }}>
+        <div style={{ maxWidth: "900px", marginBottom: "3rem" }}>
+          <p style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: "0.75rem",
+            fontWeight: 400,
+            color: "var(--mid)",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            marginBottom: "1.5rem",
+          }}>
+            Client Work
+          </p>
+        </div>
+        {work.filter(item => item.id !== "01").map((item) => (
           <Link key={item.id} href={`/work/${item.id}`} style={{
             display: "grid",
             gridTemplateColumns: "3rem 1fr auto",
