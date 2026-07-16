@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 const work = [
-  { id: "01", title: "Enough", category: "Retirement Calculator", year: "2026", href: "/case-studies/enough" },
-  { id: "02", title: "Pastel", category: "Wedding Makeup Studio", year: "2025–2026", href: "/case-studies/pastel" },
-  { id: "03", title: "Map My Swing", category: "Golf Analytics", year: "2026", href: "/case-studies/map-my-swing" },
+  { id: "01", title: "Equitable", category: "UX/UI Design", year: "2026" },
+  { id: "02", title: "Pastel", category: "Web Design & UX", year: "2026", link: "https://www.pastelmakeupandstyle.com" },
+  { id: "03", title: "Enough", category: "Product Design & Engineering", year: "2026", link: "https://whatsyourenough.info" },
+  { id: "04", title: "MsngrPost", category: "Product Design & Engineering", year: "2026", link: "https://messenger-post.vercel.app" },
 ];
 
 export default function Home() {
@@ -52,7 +53,7 @@ export default function Home() {
             Creating engaging, accessible digital experiences. 10+ years of senior UX/UI design and strategy.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/work" style={{
+            <Link href="/projects" style={{
               fontFamily: "var(--font-sans)",
               fontSize: "0.8rem",
               fontWeight: 500,
@@ -61,7 +62,7 @@ export default function Home() {
               padding: "0.75rem 1.5rem",
               textDecoration: "none",
             }}>
-              View Work
+              View Projects
             </Link>
             <Link href="/contact" style={{
               fontFamily: "var(--font-sans)",
@@ -97,7 +98,7 @@ export default function Home() {
             textTransform: "uppercase",
             marginBottom: "1.5rem",
           }}>
-            Featured Projects
+            Featured Work
           </p>
           <h2 style={{
             fontFamily: "var(--font-sans)",
@@ -107,59 +108,65 @@ export default function Home() {
             letterSpacing: "-0.01em",
             marginBottom: "3rem",
           }}>
-            Tools I've Built
+            Recent Projects
           </h2>
 
-          {/* Enough Project */}
+          {/* Enough Project Card */}
           <div style={{
-            marginBottom: "4rem",
-            paddingBottom: "4rem",
+            marginBottom: "3rem",
+            paddingBottom: "3rem",
             borderBottom: "1px solid var(--border)",
           }}>
-            <div style={{ marginBottom: "2rem" }}>
-              <a href="https://whatsyourenough.info" target="_blank" rel="noopener noreferrer" style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "1.3rem",
-                fontWeight: 400,
-                letterSpacing: "-0.01em",
-                color: "var(--black)",
-                textDecoration: "none",
-                marginRight: "1rem",
-              }}>
-                Enough →
-              </a>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
+              <div>
+                <a href="https://whatsyourenough.info" target="_blank" rel="noopener noreferrer" style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "1.25rem",
+                  fontWeight: 400,
+                  letterSpacing: "-0.01em",
+                  color: "var(--black)",
+                  textDecoration: "none",
+                }}>
+                  Enough
+                </a>
+                <p style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "0.85rem",
+                  color: "var(--mid)",
+                  marginTop: "0.25rem",
+                }}>
+                  Retirement Calculator
+                </p>
+              </div>
               <span style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: "0.9rem",
+                fontSize: "0.75rem",
                 color: "var(--mid)",
               }}>
-                Retirement Calculator
+                2026
               </span>
             </div>
             <p style={{
               fontFamily: "var(--font-sans)",
-              fontSize: "1rem",
+              fontSize: "0.95rem",
               fontWeight: 300,
-              lineHeight: 1.8,
+              lineHeight: 1.7,
               color: "var(--black)",
               maxWidth: "700px",
-              marginBottom: "1.5rem",
+              marginBottom: "2rem",
             }}>
-              Stop guessing about retirement. Enough is a focused calculator that answers the fundamental question: 
-              <strong> How much do I actually need?</strong> Input your savings, expenses, and investment returns. Get your number. 
-              Know when you can retire.
+              A focused retirement planning tool that answers one question: <strong>How much do I need?</strong> Users input current savings, annual expenses, and expected returns. The calculator projects retirement date using the 4% rule in real-time. Privacy-first design (client-side only, no data collection).
             </p>
             <div style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "2rem",
-              marginTop: "2rem",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "1.5rem",
             }}>
               {[
-                { label: "Purpose", value: "Financial clarity without complexity" },
-                { label: "Tech", value: "Next.js, React, TypeScript, Tailwind" },
-                { label: "Key Feature", value: "Real-time 4% rule calculations" },
-                { label: "Privacy", value: "Client-side only, no tracking" },
+                { label: "Challenge", value: "Simplify complex financial calculations for non-experts" },
+                { label: "Solution", value: "Interactive calculator with instant feedback and projections" },
+                { label: "Tech", value: "Next.js, React, TypeScript, Tailwind CSS" },
+                { label: "Outcome", value: "Live at whatsyourenough.info with zero tracking" },
               ].map((item) => (
                 <div key={item.label}>
                   <p style={{
@@ -169,13 +176,97 @@ export default function Home() {
                     textTransform: "uppercase",
                     letterSpacing: "0.08em",
                     marginBottom: "0.5rem",
+                    fontWeight: 500,
                   }}>
                     {item.label}
                   </p>
                   <p style={{
                     fontFamily: "var(--font-sans)",
-                    fontSize: "0.95rem",
+                    fontSize: "0.9rem",
                     fontWeight: 300,
+                    lineHeight: 1.6,
+                  }}>
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pastel Project Card */}
+          <div style={{
+            marginBottom: "3rem",
+            paddingBottom: "3rem",
+            borderBottom: "1px solid var(--border)",
+          }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
+              <div>
+                <a href="https://www.pastelmakeupandstyle.com" target="_blank" rel="noopener noreferrer" style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "1.25rem",
+                  fontWeight: 400,
+                  letterSpacing: "-0.01em",
+                  color: "var(--black)",
+                  textDecoration: "none",
+                }}>
+                  Pastel
+                </a>
+                <p style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "0.85rem",
+                  color: "var(--mid)",
+                  marginTop: "0.25rem",
+                }}>
+                  Wedding Makeup Artist Portfolio
+                </p>
+              </div>
+              <span style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "0.75rem",
+                color: "var(--mid)",
+              }}>
+                2025–2026
+              </span>
+            </div>
+            <p style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "0.95rem",
+              fontWeight: 300,
+              lineHeight: 1.7,
+              color: "var(--black)",
+              maxWidth: "700px",
+              marginBottom: "2rem",
+            }}>
+              A luxury wedding makeup artist's full-stack digital presence. Designed and built the brand site, gallery showcase, integrated HoneyBook booking widget, and set up transactional email (SendGrid). Optimized for bride discovery and instant booking conversions. Custom domain with SEO schema markup.
+            </p>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "1.5rem",
+            }}>
+              {[
+                { label: "Challenge", value: "Build trust and drive bookings for boutique service" },
+                { label: "Solution", value: "Portfolio-first design with integrated booking system" },
+                { label: "Tech", value: "Next.js, React, TypeScript, Tailwind, Vercel" },
+                { label: "Outcome", value: "Live at www.pastelmakeupandstyle.com with booking integration" },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "0.7rem",
+                    color: "var(--mid)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    marginBottom: "0.5rem",
+                    fontWeight: 500,
+                  }}>
+                    {item.label}
+                  </p>
+                  <p style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "0.9rem",
+                    fontWeight: 300,
+                    lineHeight: 1.6,
                   }}>
                     {item.value}
                   </p>
@@ -186,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Work Index */}
+      {/* Projects Index */}
       <section style={{
         paddingLeft: "2rem",
         paddingRight: "2rem",
@@ -203,42 +294,60 @@ export default function Home() {
             textTransform: "uppercase",
             marginBottom: "1.5rem",
           }}>
-            Client Work
+            More Projects
           </p>
         </div>
-        {work.filter(item => item.id !== "01").map((item) => (
-          <Link key={item.id} href={`/work/${item.id}`} style={{
-            display: "grid",
-            gridTemplateColumns: "3rem 1fr auto",
-            gap: "2rem",
-            padding: "2rem 0",
-            borderBottom: "1px solid var(--border)",
-            textDecoration: "none",
-            color: "inherit",
-            alignItems: "center",
-          }}>
-            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
-              {item.id}
-            </span>
-            <div>
-              <h2 style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "1.1rem",
-                fontWeight: 400,
-                letterSpacing: "-0.01em",
-                marginBottom: "0.25rem",
-              }}>
-                {item.title}
-              </h2>
-              <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem", color: "var(--mid)", fontWeight: 300 }}>
-                {item.category}
-              </p>
+        {work.map((item) => {
+          const itemComponent = (
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "3rem 1fr auto",
+              gap: "2rem",
+              padding: "2rem 0",
+              borderBottom: "1px solid var(--border)",
+              textDecoration: "none",
+              color: "inherit",
+              alignItems: "center",
+            }}>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
+                {item.id}
+              </span>
+              <div>
+                <h2 style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "1.1rem",
+                  fontWeight: 400,
+                  letterSpacing: "-0.01em",
+                  marginBottom: "0.25rem",
+                }}>
+                  {item.title}
+                </h2>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem", color: "var(--mid)", fontWeight: 300 }}>
+                  {item.category}
+                </p>
+              </div>
+              <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
+                {item.year}
+              </span>
             </div>
-            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
-              {item.year}
-            </span>
-          </Link>
-        ))}
+          );
+
+          if ('link' in item && item.link) {
+            return (
+              <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}>
+                {itemComponent}
+              </a>
+            );
+          }
+          return (
+            <div key={item.id}>
+              {itemComponent}
+            </div>
+          );
+        })}
       </section>
 
       {/* Stats strip */}

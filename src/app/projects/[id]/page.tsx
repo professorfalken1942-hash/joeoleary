@@ -24,7 +24,7 @@ const caseStudies: Record<string, any> = {
     category: "Web Design & UX",
     year: "2026",
     role: "UX Designer + Front-End Engineer",
-    link: "https://pastel-navy.vercel.app",
+    link: "https://www.pastelmakeupandstyle.com",
     challenge: "The Pastel Beauty brand, a renowned luxury wedding makeup artist, approached us with a need to establish an online presence that would showcase their exquisite services and reflect their distinctive Scandinavian aesthetic. The portfolio site was intended to be a digital haven for brides-to-be seeking high-quality, personalized wedding makeup solutions. To further enhance the user experience, the site needed to integrate seamlessly with HoneyBook, a popular booking platform for creative professionals.",
     solution: "To tackle this challenge, we employed a mobile-first design approach, ensuring that Pastel Beauty's captivating portfolio would be accessible and enjoyable on various devices. We leveraged Next.js, a robust React framework, to build the site, ensuring optimal performance and scalability. To maintain a consistent and refined visual language across the platform, we incorporated Tailwind CSS, a utility-first CSS framework. To emphasize Pastel Beauty's unique identity, we selected a bright pink color (rgb(255, 174, 215)) as an accent hue throughout the site, complementing the Scandinavian aesthetic. This choice of color also served to immediately distinguish Pastel Beauty from competitors and create a memorable brand impression.",
     details: [

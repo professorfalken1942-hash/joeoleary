@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import axios from 'axios';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,56 +25,39 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!process.env.BREVO_API_KEY) {
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is missing');
       return NextResponse.json(
         { error: 'Email service not configured' },
         { status: 503 }
       );
     }
 
-    // Send email via Brevo
-    await axios.post(
-      'https://api.brevo.com/v3/smtp/email',
-      {
-        sender: {
-          name: 'Joe O\'Leary',
-          email: process.env.BREVO_FROM_EMAIL || 'noreply@joeoleary.me',
-        },
-        to: [
-          {
-            email: 'jtolearydesign@gmail.com',
-            name: 'Joe O\'Leary',
-          },
-        ],
-        replyTo: {
-          email: email,
-          name: `${firstName} ${lastName}`,
-        },
-        subject: `New message from ${firstName} ${lastName} via joeoleary.me`,
-        htmlContent: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; color: #2c2c2c;">
-            <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem;">New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-            <p><strong>Message:</strong></p>
-            <blockquote style="border-left: 3px solid #ccc; padding-left: 1rem; color: #555; margin: 0.5rem 0;">
-              ${message.replace(/\n/g, '<br>')}
-            </blockquote>
-            <hr style="margin: 2rem 0; border: none; border-top: 1px solid #eee;">
-            <p style="font-size: 0.85rem; color: #999;">Sent from joeoleary.me contact form</p>
-          </div>
-        `,
-      },
-      {
-        headers: {
-          'api-key': process.env.BREVO_API_KEY,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    // Send email via Resend
+    const result = await resend.emails.send({
+      from: 'contact@joeoleary.me',
+      to: 'jtolearydesign@gmail.com',
+      replyTo: email,
+      subject: `New message from ${firstName} ${lastName} via joeoleary.me`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>From:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
+      `,
+    });
+
+    if (result.error) {
+      console.error('Resend error:', result.error);
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try again.' },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
-      { success: true, message: 'Message received. Thank you for reaching out!' },
+      { success: true, message: 'Your message has been sent successfully!' },
       { status: 200 }
     );
   } catch (error) {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About — Joseph O'Leary",
+  title: "About — Joe O'Leary",
   description: "10+ years senior UX/UI designer and engineer. WCAG 2.1 AA accessibility specialist. Currently at Equitable, open to Principal UX roles.",
 };
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
           letterSpacing: "-0.02em",
           lineHeight: 1.05,
         }}>
-          Joseph O'Leary
+          Joe O'Leary
         </h1>
       </section>
 

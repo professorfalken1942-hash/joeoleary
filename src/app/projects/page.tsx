@@ -20,22 +20,23 @@ const projects = [
     category: "Web Design", 
     year: "2026", 
     desc: "Clean, Scandinavian-inspired portfolio for a makeup artist. Integrated booking system with HoneyBook, pink accent color, and micro-interactions.",
-    link: "https://pastel-navy.vercel.app"
+    link: "https://www.pastelmakeupandstyle.com"
   },
   { 
     id: "03", 
-    title: "Equitable — Account Summary Redesign", 
-    category: "UX/UI Design", 
+    title: "Enough — Retirement Calculator", 
+    category: "Product Design & Engineering", 
     year: "2026", 
-    desc: "Redesigned a complex financial dashboard for Equitable Financial. Improved visual hierarchy, added structured account details, and modernized the interface with card-based layouts and refined typography.",
+    desc: "A focused retirement planning calculator that answers one critical question: How much do I need? Real-time projections using the 4% rule, privacy-first (client-side only), and zero data collection.",
+    link: "https://whatsyourenough.info"
   },
   {
     id: "04",
-    title: "Swing Coach — Golf Swing Analyzer",
+    title: "MsngrPost — Creator Publishing Platform",
     category: "Product Design & Engineering",
     year: "2026",
-    desc: "Designed and built a full-stack golf swing analysis app from zero to live. Real-time MediaPipe pose detection, frame-by-frame playback, progress tracking, and AI-ready feedback engine.",
-    link: "https://swing-coach.vercel.app",
+    desc: "A focused newsletter publishing desk for independent writers. Built with Convex backend, integrated booking system, and real-time content delivery. Keeps creators in control of their audience.",
+    link: "https://messenger-post.vercel.app",
   },
 ];
 
@@ -143,7 +144,7 @@ export default function WorkPage() {
                   View →
                 </a>
               ) : (
-                <Link href={`/work/${project.id}`} style={{
+                <Link href={`/projects/${project.id}`} style={{
                   fontSize: "0.75rem",
                   fontWeight: 500,
                   color: "var(--black)",
