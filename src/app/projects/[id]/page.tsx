@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const caseStudies: Record<string, any> = {
   "01": {
+    link: "https://equitable.com",
     title: "Equitable — Account Summary Redesign",
     category: "UX/UI Design",
     year: "2026",
