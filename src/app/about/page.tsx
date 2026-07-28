@@ -95,7 +95,7 @@ export default function AboutPage() {
             color: "var(--black)",
             marginBottom: "1.5rem",
           }}>
-            I'm a UX Designer and Engineer with 10+ years of senior experience creating engaging, accessible digital experiences. I specialize in WCAG 2.1 AA accessibility, design systems, and bridging the gap between design and front-end engineering.
+            I'm a designer and engineer with 10+ years of senior experience building scalable digital products. I work across design systems, UX strategy, and front-end engineering—bridging design and code to create thoughtful, accessible experiences that scale.
           </p>
           <p style={{
             fontFamily: "var(--font-sans)",
