@@ -8,6 +8,7 @@ const links = [
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+  { href: "https://studio-dashboard-jmgfc2qsk-professorfalken1942-9452s-projects.vercel.app", label: "Studio", external: true },
 ];
 
 export default function Nav() {
@@ -49,18 +50,31 @@ export default function Nav() {
         </Link>
 
         <nav className="nav-desktop">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.8rem",
-              fontWeight: 400,
-              color: "var(--mid)",
-              textDecoration: "none",
-              transition: "color 0.15s",
-            }}>
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link: any) => 
+            link.external ? (
+              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "0.8rem",
+                fontWeight: 400,
+                color: "var(--mid)",
+                textDecoration: "none",
+                transition: "color 0.15s",
+              }}>
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.href} href={link.href} style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "0.8rem",
+                fontWeight: 400,
+                color: "var(--mid)",
+                textDecoration: "none",
+                transition: "color 0.15s",
+              }}>
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Toggle menu">
@@ -84,20 +98,35 @@ export default function Nav() {
         visibility: open ? "visible" : "hidden",
         transition: "opacity 0.2s, visibility 0.2s",
       }}>
-        {links.map((link, i) => (
-          <Link key={link.href} href={link.href} onClick={() => setOpen(false)} style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "2.5rem",
-            fontWeight: 300,
-            color: "var(--black)",
-            textDecoration: "none",
-            padding: "1rem 0",
-            borderBottom: "1px solid var(--border)",
-          }}>
-            <span style={{ color: "var(--mid)", fontSize: "0.75rem", marginRight: "1rem" }}>0{i + 1}</span>
-            {link.label}
-          </Link>
-        ))}
+        {links.map((link: any, i) => 
+          link.external ? (
+            <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "2.5rem",
+              fontWeight: 300,
+              color: "var(--black)",
+              textDecoration: "none",
+              padding: "1rem 0",
+              borderBottom: "1px solid var(--border)",
+            }}>
+              <span style={{ color: "var(--mid)", fontSize: "0.75rem", marginRight: "1rem" }}>0{i + 1}</span>
+              {link.label}
+            </a>
+          ) : (
+            <Link key={link.href} href={link.href} onClick={() => setOpen(false)} style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "2.5rem",
+              fontWeight: 300,
+              color: "var(--black)",
+              textDecoration: "none",
+              padding: "1rem 0",
+              borderBottom: "1px solid var(--border)",
+            }}>
+              <span style={{ color: "var(--mid)", fontSize: "0.75rem", marginRight: "1rem" }}>0{i + 1}</span>
+              {link.label}
+            </Link>
+          )
+        )}
       </div>
     </>
   );
