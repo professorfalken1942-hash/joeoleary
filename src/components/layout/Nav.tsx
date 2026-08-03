@@ -8,7 +8,7 @@ const links = [
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "https://studio-dashboard-jmgfc2qsk-professorfalken1942-9452s-projects.vercel.app", label: "Studio", external: true },
+  { href: "https://studio.joeoleary.me", label: "Studio", external: true },
 ];
 
 export default function Nav() {
