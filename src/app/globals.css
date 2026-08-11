@@ -4,11 +4,13 @@
 
 :root {
   --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --black: #0a0a0a;
+  --black: #384b42;
   --white: #ffffff;
   --off-white: #f5f5f5;
-  --mid: #888888;
-  --accent: #22c55e; /* Green */
+  --mid: #9bb0a5;
+  --accent: #5ec298; /* Primary Teal */
+  --accent-secondary: #4cbaf7; /* Bright Blue */
+  --accent-tertiary: #0085be; /* Deep Blue */
   --border: #e0e0e0;
 }
 
