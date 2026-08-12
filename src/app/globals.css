@@ -83,6 +83,42 @@ select {
   scroll-margin-top: 80px;
 }
 
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(94, 194, 152, 0.34) 0%,
+      rgba(76, 186, 247, 0.22) 44%,
+      rgba(155, 176, 165, 0.28) 100%
+    ),
+    #ffffff;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-teal), var(--bright-blue), var(--deep-blue));
+}
+
+.home-hero strong {
+  color: var(--deep-blue);
+}
+
+.accent-link {
+  color: var(--accent-tertiary) !important;
+  border-color: var(--accent-tertiary) !important;
+}
+
+.accent-chip {
+  background: color-mix(in srgb, var(--primary-teal) 14%, white);
+  border-color: color-mix(in srgb, var(--primary-teal) 52%, white) !important;
+  color: var(--dark-slate) !important;
+}
+
 .case-study-shell {
   background: var(--white);
   color: var(--dark-slate);

@@ -4,26 +4,19 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section style={{
+      <section className="home-hero" style={{
         paddingTop: "calc(56px + 6rem)",
         paddingBottom: "6rem",
         paddingLeft: "2rem",
         paddingRight: "2rem",
         borderBottom: "1px solid var(--border)",
-        background: `
-          linear-gradient(135deg,
-            color-mix(in srgb, var(--primary-teal) 18%, white) 0%,
-            color-mix(in srgb, var(--bright-blue) 10%, white) 42%,
-            color-mix(in srgb, var(--muted-gray-green) 12%, white) 100%
-          )
-        `,
       }}>
         <div style={{ maxWidth: "900px" }}>
           <p style={{
             fontFamily: "var(--font-sans)",
             fontSize: "0.75rem",
             fontWeight: 400,
-            color: "var(--mid)",
+            color: "var(--accent-tertiary)",
             letterSpacing: "0.08em",
             textTransform: "uppercase",
             marginBottom: "1.5rem",
@@ -119,12 +112,11 @@ export default function Home() {
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
               <div>
-                <a href="https://whatsyourenough.info" target="_blank" rel="noopener noreferrer" style={{
+                <a className="accent-link" href="https://whatsyourenough.info" target="_blank" rel="noopener noreferrer" style={{
                   fontFamily: "var(--font-sans)",
                   fontSize: "1.25rem",
                   fontWeight: 400,
                   letterSpacing: "-0.01em",
-                  color: "var(--black)",
                   textDecoration: "none",
                 }}>
                   Enough
@@ -169,14 +161,16 @@ export default function Home() {
                 { label: "Outcome", value: "Live at whatsyourenough.info with zero tracking" },
               ].map((item) => (
                 <div key={item.label}>
-                  <p style={{
+                  <p className="accent-chip" style={{
+                    display: "inline-block",
                     fontFamily: "var(--font-sans)",
                     fontSize: "0.7rem",
-                    color: "var(--mid)",
                     textTransform: "uppercase",
                     letterSpacing: "0.08em",
                     marginBottom: "0.5rem",
                     fontWeight: 500,
+                    border: "1px solid var(--border)",
+                    padding: "0.2rem 0.5rem",
                   }}>
                     {item.label}
                   </p>
@@ -201,12 +195,11 @@ export default function Home() {
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
               <div>
-                <a href="https://www.pastelmakeupandstyle.com" target="_blank" rel="noopener noreferrer" style={{
+                <a className="accent-link" href="https://www.pastelmakeupandstyle.com" target="_blank" rel="noopener noreferrer" style={{
                   fontFamily: "var(--font-sans)",
                   fontSize: "1.25rem",
                   fontWeight: 400,
                   letterSpacing: "-0.01em",
-                  color: "var(--black)",
                   textDecoration: "none",
                 }}>
                   Pastel
@@ -251,14 +244,16 @@ export default function Home() {
                 { label: "Outcome", value: "Live at www.pastelmakeupandstyle.com with booking integration" },
               ].map((item) => (
                 <div key={item.label}>
-                  <p style={{
+                  <p className="accent-chip" style={{
+                    display: "inline-block",
                     fontFamily: "var(--font-sans)",
                     fontSize: "0.7rem",
-                    color: "var(--mid)",
                     textTransform: "uppercase",
                     letterSpacing: "0.08em",
                     marginBottom: "0.5rem",
                     fontWeight: 500,
+                    border: "1px solid var(--border)",
+                    padding: "0.2rem 0.5rem",
                   }}>
                     {item.label}
                   </p>
