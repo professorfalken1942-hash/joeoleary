@@ -13,6 +13,7 @@ const projects = [
     category: "UX/UI Design", 
     year: "2026", 
     desc: "Redesigned a complex financial dashboard for Equitable Financial. Improved visual hierarchy, added structured account details, and modernized the interface with card-based layouts and refined typography.",
+    href: "/case-studies/equitable",
   },
   { 
     id: "02", 
@@ -20,7 +21,7 @@ const projects = [
     category: "Web Design", 
     year: "2026", 
     desc: "Clean, Scandinavian-inspired portfolio for a makeup artist. Integrated booking system with HoneyBook, pink accent color, and micro-interactions.",
-    link: "https://www.pastelmakeupandstyle.com"
+    href: "/case-studies/pastel",
   },
   { 
     id: "03", 
@@ -28,15 +29,15 @@ const projects = [
     category: "Product Design & Engineering", 
     year: "2026", 
     desc: "A focused retirement planning calculator that answers one critical question: How much do I need? Real-time projections using the 4% rule, privacy-first (client-side only), and zero data collection.",
-    link: "https://whatsyourenough.info"
+    href: "/case-studies/enough",
   },
   {
     id: "04",
-    title: "MsngrPost — Creator Publishing Platform",
+    title: "Swing Coach — Golf Swing Analyzer",
     category: "Product Design & Engineering",
     year: "2026",
-    desc: "A focused newsletter publishing desk for independent writers. Built with Convex backend, integrated booking system, and real-time content delivery. Keeps creators in control of their audience.",
-    link: "https://messenger-post.vercel.app",
+    desc: "A browser-native golf swing analysis product with MediaPipe pose detection, persistent session history, and mobile-first recording. Built spec-first from concept to production in under a week.",
+    href: "/case-studies/map-my-swing",
   },
 ];
 
@@ -89,7 +90,7 @@ export default function WorkPage() {
             }
           }
         `}</style>
-        {projects.map((project, i) => (
+        {projects.map((project) => (
           <div key={project.id} className="work-item" style={{
             display: "grid",
             gridTemplateColumns: "3rem 1fr 12rem",
@@ -132,29 +133,16 @@ export default function WorkPage() {
             </div>
             <div style={{ textAlign: "right" }}>
               <p style={{ fontSize: "0.75rem", color: "var(--mid)", marginBottom: "1rem" }}>{project.year}</p>
-              {(project as any).link ? (
-                <a href={(project as any).link} target="_blank" rel="noopener noreferrer" style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 500,
-                  color: "var(--black)",
-                  textDecoration: "none",
-                  borderBottom: "1px solid var(--black)",
-                  paddingBottom: "1px",
-                }}>
-                  View →
-                </a>
-              ) : (
-                <Link href={`/projects/${project.id}`} style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 500,
-                  color: "var(--black)",
-                  textDecoration: "none",
-                  borderBottom: "1px solid var(--black)",
-                  paddingBottom: "1px",
-                }}>
-                  View →
-                </Link>
-              )}
+              <Link href={project.href} style={{
+                fontSize: "0.75rem",
+                fontWeight: 500,
+                color: "var(--accent-tertiary)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--accent-tertiary)",
+                paddingBottom: "1px",
+              }}>
+                View Case Study →
+              </Link>
             </div>
           </div>
         ))}

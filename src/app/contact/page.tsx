@@ -1,10 +1,6 @@
 'use client';
 
 import { useState, FormEvent, ChangeEvent } from 'react';
-import type { Metadata } from "next";
-
-// Metadata must be server-exported, so we'll keep it separate if needed
-// For now, this is a client component
 
 type FormData = {
   firstName: string;
@@ -99,7 +95,7 @@ export default function ContactPage() {
         {/* Form */}
         <div style={{ padding: "4rem 2rem", borderRight: "1px solid var(--border)" }}>
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+            <div className="contact-name-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
               <div>
                 <label style={labelStyle}>First Name</label>
                 <input 
@@ -156,7 +152,7 @@ export default function ContactPage() {
                 fontSize: "0.8rem",
                 fontWeight: 500,
                 color: "var(--white)",
-                backgroundColor: loading ? "var(--mid)" : "var(--black)",
+                backgroundColor: loading ? "var(--mid)" : "var(--accent-tertiary)",
                 border: "none",
                 padding: "0.75rem 1.5rem",
                 cursor: loading ? "not-allowed" : "pointer",
@@ -188,7 +184,7 @@ export default function ContactPage() {
           {[
             { label: "Email", value: "joe@joeoleary.me" },
             { label: "LinkedIn", value: "linkedin.com/in/joseph-o-leary-976a945", href: "https://www.linkedin.com/in/joseph-o-leary-976a945/" },
-            { label: "Based", value: "— —" },
+            { label: "Based", value: "Syracuse, NY" },
           ].map((item) => (
             <div key={item.label} style={{ borderBottom: "1px solid var(--border)", paddingBottom: "1.5rem" }}>
               <p style={{

@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+
+const canonicalRoutes: Record<string, string> = {
+  "01": "/case-studies/equitable",
+  "02": "/case-studies/pastel",
+  "03": "/case-studies/enough",
+  "04": "/case-studies/map-my-swing",
+};
 
 const caseStudies: Record<string, any> = {
   "01": {
@@ -102,12 +110,16 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
   const { id } = await params;
   const study = caseStudies[id];
 
+  if (canonicalRoutes[id]) {
+    redirect(canonicalRoutes[id]);
+  }
+
   if (!study) {
     return (
       <section style={{ paddingTop: "calc(56px + 4rem)", paddingBottom: "4rem", paddingLeft: "2rem", paddingRight: "2rem" }}>
         <h1>Case Study Not Found</h1>
         <p>
-          <Link href="/work">← Back to Work</Link>
+          <Link href="/projects">← Back to Projects</Link>
         </p>
       </section>
     );
@@ -280,8 +292,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
             View Live Site →
           </a>
           <p style={{ fontSize: "0.75rem", color: "var(--mid)", lineHeight: 1.6 }}>
-            <Link href="/work" style={{ color: "var(--black)", textDecoration: "none", borderBottom: "1px solid var(--black)", paddingBottom: "1px" }}>
-              ← Back to Work
+            <Link href="/projects" style={{ color: "var(--black)", textDecoration: "none", borderBottom: "1px solid var(--black)", paddingBottom: "1px" }}>
+              ← Back to Projects
             </Link>
           </p>
         </div>

@@ -1,12 +1,5 @@
 import Link from "next/link";
 
-const work = [
-  { id: "01", title: "Equitable", category: "UX/UI Design", year: "2026" },
-  { id: "02", title: "Pastel", category: "Web Design & UX", year: "2026", link: "https://www.pastelmakeupandstyle.com" },
-  { id: "03", title: "Enough", category: "Product Design & Engineering", year: "2026", link: "https://whatsyourenough.info" },
-  { id: "04", title: "MsngrPost", category: "Product Design & Engineering", year: "2026", link: "https://messenger-post.vercel.app" },
-];
-
 export default function Home() {
   return (
     <>
@@ -17,6 +10,13 @@ export default function Home() {
         paddingLeft: "2rem",
         paddingRight: "2rem",
         borderBottom: "1px solid var(--border)",
+        background: `
+          linear-gradient(135deg,
+            color-mix(in srgb, var(--primary-teal) 18%, white) 0%,
+            color-mix(in srgb, var(--bright-blue) 10%, white) 42%,
+            color-mix(in srgb, var(--muted-gray-green) 12%, white) 100%
+          )
+        `,
       }}>
         <div style={{ maxWidth: "900px" }}>
           <p style={{
@@ -58,7 +58,7 @@ export default function Home() {
               fontSize: "0.8rem",
               fontWeight: 500,
               color: "var(--white)",
-              backgroundColor: "var(--black)",
+              backgroundColor: "var(--accent-tertiary)",
               padding: "0.75rem 1.5rem",
               textDecoration: "none",
             }}>
@@ -69,7 +69,7 @@ export default function Home() {
               fontSize: "0.8rem",
               fontWeight: 400,
               color: "var(--black)",
-              border: "1px solid var(--border)",
+              border: "1px solid var(--accent)",
               padding: "0.75rem 1.5rem",
               textDecoration: "none",
             }}>
@@ -80,7 +80,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section style={{
+      <section id="work" className="portfolio-section" style={{
         paddingLeft: "2rem",
         paddingRight: "2rem",
         paddingTop: "6rem",
@@ -277,81 +277,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Index */}
-      <section style={{
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        paddingTop: "6rem",
-        paddingBottom: "6rem",
-      }}>
-        <div style={{ maxWidth: "900px", marginBottom: "3rem" }}>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "0.75rem",
-            fontWeight: 400,
-            color: "var(--mid)",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            marginBottom: "1.5rem",
-          }}>
-            More Projects
-          </p>
-        </div>
-        {work.map((item) => {
-          const itemComponent = (
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "3rem 1fr auto",
-              gap: "2rem",
-              padding: "2rem 0",
-              borderBottom: "1px solid var(--border)",
-              textDecoration: "none",
-              color: "inherit",
-              alignItems: "center",
-            }}>
-              <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
-                {item.id}
-              </span>
-              <div>
-                <h2 style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "1.1rem",
-                  fontWeight: 400,
-                  letterSpacing: "-0.01em",
-                  marginBottom: "0.25rem",
-                }}>
-                  {item.title}
-                </h2>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem", color: "var(--mid)", fontWeight: 300 }}>
-                  {item.category}
-                </p>
-              </div>
-              <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--mid)" }}>
-                {item.year}
-              </span>
-            </div>
-          );
-
-          if ('link' in item && item.link) {
-            return (
-              <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" style={{
-                textDecoration: "none",
-                color: "inherit",
-              }}>
-                {itemComponent}
-              </a>
-            );
-          }
-          return (
-            <div key={item.id}>
-              {itemComponent}
-            </div>
-          );
-        })}
-      </section>
-
       {/* Stats strip */}
-      <section style={{
+      <section className="stats-strip" style={{
         marginTop: "6rem",
         borderTop: "1px solid var(--border)",
         display: "grid",
