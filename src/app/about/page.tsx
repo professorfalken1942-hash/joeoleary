@@ -149,6 +149,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Resume Download */}
+      <section style={{ padding: "4rem 2rem", borderBottom: "1px solid var(--border)" }}>
+        <p style={{
+          fontSize: "0.75rem",
+          color: "var(--mid)",
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          marginBottom: "1rem",
+        }}>
+          Resume
+        </p>
+        <p style={{ fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.7, color: "var(--mid)", marginBottom: "1.5rem" }}>
+          Download my full resume as PDF.
+        </p>
+        <a href="/resume.html" target="_blank" rel="noopener noreferrer" style={{
+          fontFamily: "var(--font-sans)",
+          fontSize: "0.8rem",
+          fontWeight: 500,
+          color: "var(--accent)",
+          textDecoration: "underline",
+          cursor: "pointer",
+        }}>
+          Download Resume (PDF) ↓
+        </a>
+      </section>
+
       {/* Skills */}
       <section style={{ padding: "4rem 2rem", borderBottom: "1px solid var(--border)" }}>
         <p style={{

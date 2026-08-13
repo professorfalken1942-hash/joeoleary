@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph O'Leary - Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #384b42;
+      background: #fff;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 { 
+      font-size: 32px; 
+      font-weight: 300;
+      margin-bottom: 4px;
+      color: #384b42;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #9bb0a5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .contact {
+      font-size: 12px;
+      color: #9bb0a5;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 16px;
+    }
+    .section {
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #384b42;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #5ec298;
+      padding-bottom: 8px;
+    }
+    .job {
+      margin-bottom: 16px;
+    }
+    .job-title {
+      font-weight: 500;
+      color: #384b42;
+    }
+    .job-meta {
+      font-size: 12px;
+      color: #9bb0a5;
+      margin-bottom: 4px;
+    }
+    .job-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #384b42;
+      margin-top: 4px;
+    }
+    .job-desc ul {
+      list-style: none;
+      margin-top: 4px;
+    }
+    .job-desc li {
+      font-size: 13px;
+      margin-left: 16px;
+      margin-bottom: 2px;
+    }
+    .job-desc li:before {
+      content: "•";
+      margin-right: 8px;
+      color: #5ec298;
+    }
+    .case-study {
+      margin-bottom: 12px;
+    }
+    .case-study-title {
+      font-weight: 500;
+      color: #384b42;
+    }
+    .case-study-desc {
+      font-size: 13px;
+      color: #666;
+      margin-top: 2px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .skill-category {
+      font-weight: 500;
+      color: #384b42;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+    .skill-list {
+      list-style: none;
+      font-size: 13px;
+      color: #666;
+    }
+    .skill-list li {
+      margin-bottom: 3px;
+    }
+    .summary {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #384b42;
+      margin-bottom: 12px;
+    }
+    @media print {
+      body { padding: 0; }
+      .contact { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Joseph O'Leary</h1>
+  <div class="subtitle">UX Design Strategist & Engineer</div>
+  <div class="contact">
+    Portland, OR | joseph@joeoleary.me | www.joeoleary.me | LinkedIn: /in/joseph-o-leary-976a945
+  </div>
+
+  <div class="section">
+    <h2>Summary</h2>
+    <p class="summary">
+      UX designer and full-stack engineer with 10+ years creating elegant, accessible digital experiences. Combines strategic design thinking with engineering rigor to solve complex user problems. Expertise in design systems, financial platforms, product strategy, and building products from conception through deployment.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    
+    <div class="job">
+      <div class="job-title">Senior UX Designer & Engineer</div>
+      <div class="job-meta">Self-Directed Practice | 2024 – Present</div>
+      <div class="job-desc">
+        <ul>
+          <li>Designed and engineered portfolio of products and client projects</li>
+          <li>Led full-cycle design for financial, healthcare, and creator economy platforms</li>
+          <li>Mentored designers and engineers on design systems and accessible component libraries</li>
+          <li>Published thought leadership on WCAG compliance, design systems, and remote collaboration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-title">UX/UI Designer</div>
+      <div class="job-meta">Equitable Financial Services | 2022 – 2024</div>
+      <div class="job-desc">
+        <ul>
+          <li>Redesigned core account summary dashboard for retail financial platform</li>
+          <li>Improved visual hierarchy and information architecture for complex data visualization</li>
+          <li>Conducted user research and usability testing with financial advisors and retail users</li>
+          <li>Prototyped and user-tested design patterns for repeated financial workflows</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Product Designer & Engineer</div>
+      <div class="job-meta">Various Startups | 2018 – 2022</div>
+      <div class="job-desc">
+        <ul>
+          <li>Designed and built product MVPs end-to-end (design to shipped)</li>
+          <li>Established design systems and component libraries for multi-product organizations</li>
+          <li>Collaborated with product, engineering, and marketing teams on go-to-market strategies</li>
+          <li>Advocated for accessibility and inclusive design practices</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Featured Projects</h2>
+    
+    <div class="case-study">
+      <div class="case-study-title">Equitable Account Summary Redesign</div>
+      <div class="case-study-desc">Redesigned complex financial dashboard with improved visual hierarchy, structured account details, and modernized card-based layouts. Result: 40% increase in user confidence, 25% improvement in task completion.</div>
+    </div>
+
+    <div class="case-study">
+      <div class="case-study-title">Pastel Beauty Brand</div>
+      <div class="case-study-desc">Designed and engineered Scandinavian-inspired portfolio for wedding makeup artist with HoneyBook booking integration and mobile-optimized experience.</div>
+    </div>
+
+    <div class="case-study">
+      <div class="case-study-title">Map My Swing – Golf Analytics</div>
+      <div class="case-study-desc">Designed premium golf swing analysis platform with real-time video recording, frame-by-frame playback, swing metrics, and AI-ready architecture.</div>
+    </div>
+
+    <div class="case-study">
+      <div class="case-study-title">Enough – Retirement Calculator</div>
+      <div class="case-study-desc">Built focused retirement planning calculator with real-time projections, privacy-first architecture (client-side only), and zero data collection.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-category">Design</div>
+        <ul class="skill-list">
+          <li>UX/UI Strategy</li>
+          <li>Design Systems</li>
+          <li>User Research</li>
+          <li>WCAG Accessibility</li>
+          <li>Prototyping</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skill-category">Frontend</div>
+        <ul class="skill-list">
+          <li>React & Next.js</li>
+          <li>Angular</li>
+          <li>TypeScript</li>
+          <li>Tailwind CSS</li>
+          <li>Material Design</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skill-category">Backend & Tools</div>
+        <ul class="skill-list">
+          <li>Node.js & Express</li>
+          <li>PostgreSQL</li>
+          <li>Vercel & Render</li>
+          <li>Docker</li>
+          <li>Git</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Expertise</h2>
+    <p class="summary">
+      Design Systems | Accessibility (WCAG 2.1 AA) | Financial Platforms | Real-time Products | Creator Economy | Full-stack Product Development | Remote-first Collaboration
+    </p>
+  </div>
+
+  <div class="contact" style="border-top: 1px solid #e0e0e0; border-bottom: none; padding-top: 16px;">
+    <strong>Portfolio:</strong> www.joeoleary.me | <strong>GitHub:</strong> github.com/professorfalken1942-hash | <strong>LinkedIn:</strong> /in/joseph-o-leary-976a945
+  </div>
+</body>
+</html>
