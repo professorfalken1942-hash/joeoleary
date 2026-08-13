@@ -9,115 +9,117 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       font-family: 'Inter', 'Helvetica Neue', sans-serif;
-      line-height: 1.6;
+      line-height: 1.4;
       color: #384b42;
       background: #fff;
-      padding: 40px;
+      padding: 20px;
       max-width: 900px;
       margin: 0 auto;
+      font-size: 13px;
     }
     h1 { 
-      font-size: 32px; 
+      font-size: 24px; 
       font-weight: 300;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       color: #384b42;
     }
     .subtitle {
-      font-size: 14px;
+      font-size: 11px;
       color: #9bb0a5;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .contact {
-      font-size: 12px;
+      font-size: 11px;
       color: #9bb0a5;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
       border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 16px;
+      padding-bottom: 10px;
     }
     .section {
-      margin-bottom: 28px;
+      margin-bottom: 14px;
     }
     h2 {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #384b42;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       border-bottom: 2px solid #5ec298;
-      padding-bottom: 8px;
+      padding-bottom: 4px;
     }
     .job {
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
     .job-title {
       font-weight: 500;
       color: #384b42;
+      font-size: 13px;
     }
     .job-meta {
-      font-size: 12px;
+      font-size: 11px;
       color: #9bb0a5;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .job-desc {
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 12px;
+      line-height: 1.4;
       color: #384b42;
-      margin-top: 4px;
+      margin-top: 2px;
     }
     .job-desc ul {
       list-style: none;
-      margin-top: 4px;
+      margin-top: 2px;
     }
     .job-desc li {
-      font-size: 13px;
-      margin-left: 16px;
-      margin-bottom: 2px;
+      font-size: 12px;
+      margin-left: 14px;
+      margin-bottom: 1px;
     }
     .job-desc li:before {
       content: "•";
-      margin-right: 8px;
+      margin-right: 6px;
       color: #5ec298;
     }
     .case-study {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     .case-study-title {
       font-weight: 500;
       color: #384b42;
     }
     .case-study-desc {
-      font-size: 13px;
+      font-size: 12px;
       color: #666;
-      margin-top: 2px;
+      margin-top: 1px;
     }
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 10px;
     }
     .skill-category {
       font-weight: 500;
       color: #384b42;
-      margin-bottom: 6px;
-      font-size: 12px;
+      margin-bottom: 4px;
+      font-size: 11px;
     }
     .skill-list {
       list-style: none;
-      font-size: 13px;
+      font-size: 11px;
       color: #666;
     }
     .skill-list li {
-      margin-bottom: 3px;
+      margin-bottom: 1px;
     }
     .summary {
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 12px;
+      line-height: 1.5;
       color: #384b42;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .download-btn {
       position: fixed;
@@ -154,11 +156,12 @@
     function downloadPDF() {
       const element = document.body;
       const opt = {
-        margin: 10,
+        margin: [8, 8, 8, 8],
         filename: 'joseph-oleary-resume.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
-        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
       };
       html2pdf().set(opt).from(element).save();
     }
