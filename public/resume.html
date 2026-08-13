@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joseph O'Leary - Resume</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
@@ -118,13 +119,53 @@
       color: #384b42;
       margin-bottom: 12px;
     }
+    .download-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #5ec298;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 1000;
+    }
+    .download-btn:hover {
+      background: #4cbaf7;
+    }
     @media print {
       body { padding: 0; }
       .contact { border-bottom: none; }
+      .download-btn { display: none; }
+    }
+    @media (max-width: 768px) {
+      .download-btn {
+        position: static;
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
   </style>
+  <script>
+    function downloadPDF() {
+      const element = document.body;
+      const opt = {
+        margin: 10,
+        filename: 'joseph-oleary-resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
 </head>
 <body>
+  <button class="download-btn" onclick="downloadPDF()">⬇ Download PDF</button>
   <h1>Joseph O'Leary</h1>
   <div class="subtitle">UX Design Strategist & Engineer</div>
   <div class="contact">
