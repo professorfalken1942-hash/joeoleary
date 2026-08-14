@@ -38,7 +38,7 @@ const skills = [
   "Design Systems", "WCAG 2.1 AA", "Accessibility",
   "UX Strategy", "Prototyping", "User Research",
   "Wireframing", "Interaction Design", "Mentoring",
-  "Figma", "React", "Git",
+  "Figma", "Adobe", "React", "Git",
 ];
 
 export default function AboutPage() {
