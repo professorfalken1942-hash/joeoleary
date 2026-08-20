@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About — Joe O'Leary",
-  description: "10+ years senior UX/UI designer and engineer. WCAG 2.1 AA accessibility specialist. Currently at Equitable, open to Principal UX roles.",
+  description: "15+ years senior UX/UI designer and engineer. WCAG 2.1 AA accessibility specialist. Currently at Equitable, open to Principal UX roles.",
 };
 
 const experience = [
@@ -95,7 +95,7 @@ export default function AboutPage() {
             color: "var(--black)",
             marginBottom: "1.5rem",
           }}>
-            I'm a designer and engineer with 10+ years of senior experience building scalable digital products. I work across design systems, UX strategy, and front-end engineering—bridging design and code to create thoughtful, accessible experiences that scale.
+            I'm a designer and engineer with 15+ years of senior experience building scalable digital products. I work across design systems, UX strategy, and front-end engineering—bridging design and code to create thoughtful, accessible experiences that scale.
           </p>
           <p style={{
             fontFamily: "var(--font-sans)",
