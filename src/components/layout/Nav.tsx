@@ -39,14 +39,14 @@ export default function Nav() {
         borderBottom: "1px solid var(--border)",
       }}>
         <Link href="/" onClick={() => setOpen(false)} style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: "0.875rem",
-          fontWeight: 500,
+          fontFamily: "var(--font-ultra)",
+          fontSize: "1.25rem",
+          fontWeight: 400,
           letterSpacing: "-0.01em",
           color: "var(--black)",
           textDecoration: "none",
         }}>
-          <strong>Joe</strong> O'Leary
+          <strong style={{ color: "var(--accent-tertiary)" }}>Jo</strong>e
         </Link>
 
         <nav className="nav-desktop">
