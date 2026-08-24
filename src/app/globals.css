@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Ultra&display=swap');
 
 @import "tailwindcss";
 
 :root {
+  --font-ultra: 'Ultra', sans-serif;
   --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --primary-teal: #5ec298;
   --bright-blue: #4cbaf7;
@@ -77,6 +78,33 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+h1 {
+  font-family: var(--font-ultra);
+  font-size: 180px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 144px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 96px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 64px;
+  }
 }
 
 .portfolio-section {
