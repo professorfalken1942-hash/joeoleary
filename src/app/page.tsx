@@ -24,15 +24,9 @@ export default function Home() {
             UX Designer & Engineer
           </p>
           <h1 style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "clamp(2.5rem, 6vw, 5rem)",
-            fontWeight: 300,
-            lineHeight: 1.05,
-            letterSpacing: "-0.02em",
-            color: "var(--black)",
             marginBottom: "2rem",
           }}>
-            <strong>Joe</strong> O'Leary
+            <strong style={{ color: "var(--accent-tertiary)" }}>Joe</strong> O'Leary
           </h1>
           <p style={{
             fontFamily: "var(--font-sans)",
