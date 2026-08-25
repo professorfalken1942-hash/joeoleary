@@ -36,7 +36,7 @@ We've built four live properties:
 
 1. **joeoleary.me** — Portfolio. 3 case studies, password-protected, updated weekly. This is the engine for getting hired.
 
-2. **oapostrophe.com** — The studio brand. Services, pricing, and a full case study. This is the sales funnel.
+
 
 3. **pastel-navy.vercel.app** — Wedding makeup artist portfolio with HoneyBook integration. Her primary lead source now.
 
