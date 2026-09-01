@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { Suspense, useState, FormEvent, ChangeEvent } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 type FormData = {
   firstName: string;
@@ -9,7 +10,9 @@ type FormData = {
   message: string;
 };
 
-export default function ContactPage() {
+function ContactContent() {
+  const searchParams = useSearchParams();
+  const isPortfolioAccess = searchParams.get('re') === 'portfolio-access';
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -78,13 +81,18 @@ export default function ContactPage() {
         </p>
         <h1 style={{
           fontFamily: "var(--font-sans)",
-          fontSize: "clamp(2rem, 5vw, 4rem)",
+          fontSize: "3.5rem",
           fontWeight: 300,
           letterSpacing: "-0.02em",
           lineHeight: 1.05,
         }}>
-          Get in Touch
+          {isPortfolioAccess ? 'Request Access' : 'Get in Touch'}
         </h1>
+        {isPortfolioAccess ? (
+          <p style={{ maxWidth: "640px", marginTop: "1.5rem", color: "var(--mid)", lineHeight: 1.75, fontWeight: 300 }}>
+            Tell me who you are and what role or conversation this supports. I&apos;ll follow up with access details when appropriate.
+          </p>
+        ) : null}
       </section>
 
       <section style={{
@@ -97,10 +105,12 @@ export default function ContactPage() {
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             <div className="contact-name-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
               <div>
-                <label style={labelStyle}>First Name</label>
+                <label htmlFor="firstName" style={labelStyle}>First Name</label>
                 <input 
+                  id="firstName"
                   type="text" 
                   name="firstName"
+                  autoComplete="given-name"
                   value={formData.firstName}
                   onChange={handleChange}
                   style={inputStyle} 
@@ -109,10 +119,12 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label style={labelStyle}>Last Name</label>
+                <label htmlFor="lastName" style={labelStyle}>Last Name</label>
                 <input 
+                  id="lastName"
                   type="text" 
                   name="lastName"
+                  autoComplete="family-name"
                   value={formData.lastName}
                   onChange={handleChange}
                   style={inputStyle} 
@@ -122,10 +134,12 @@ export default function ContactPage() {
               </div>
             </div>
             <div>
-              <label style={labelStyle}>Email</label>
+              <label htmlFor="email" style={labelStyle}>Email</label>
               <input 
+                id="email"
                 type="email" 
                 name="email"
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
                 style={inputStyle} 
@@ -134,8 +148,9 @@ export default function ContactPage() {
               />
             </div>
             <div>
-              <label style={labelStyle}>Message</label>
+              <label htmlFor="message" style={labelStyle}>Message</label>
               <textarea 
+                id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
@@ -172,7 +187,7 @@ export default function ContactPage() {
                 border: `1px solid ${status === 'success' ? '#86efac' : '#fecaca'}`,
                 color: status === 'success' ? "#166534" : "#991b1b",
                 fontSize: "0.9rem",
-              }}>
+              }} role="status" aria-live="polite">
                 {statusMessage}
               </div>
             )}
@@ -205,6 +220,14 @@ export default function ContactPage() {
   );
 }
 
+export default function ContactPage() {
+  return (
+    <Suspense fallback={null}>
+      <ContactContent />
+    </Suspense>
+  );
+}
+
 const labelStyle: React.CSSProperties = {
   display: "block",
   fontFamily: "var(--font-sans)",
@@ -225,5 +248,4 @@ const inputStyle: React.CSSProperties = {
   border: "none",
   borderBottom: "1px solid var(--border)",
   padding: "0.5rem 0",
-  outline: "none",
 };

@@ -2,149 +2,191 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Work — Joseph O'Leary",
-  description: "UX and design case studies by Joseph O'Leary.",
+  title: "Work",
+  description: "Selected UX, design systems, accessibility, and independent product work by Joseph O'Leary.",
+  alternates: {
+    canonical: "/projects",
+  },
 };
 
-const projects = [
-  { 
-    id: "01", 
-    title: "Equitable — Account Summary Redesign", 
-    category: "UX/UI Design", 
-    year: "2026", 
-    desc: "Redesigned a complex financial dashboard for Equitable Financial. Improved visual hierarchy, added structured account details, and modernized the interface with card-based layouts and refined typography.",
+const enterpriseProjects = [
+  {
+    id: "01",
+    title: "Account Summary and Client Account Experiences",
+    category: "Enterprise Product UX",
+    year: "2019-Present",
+    context: "Authenticated financial-product experiences for clients, advisors, and internal teams.",
+    role: "Senior UX/UI designer and front-end collaborator.",
+    constraint: "Screens, product logic, and implementation details are protected.",
+    contribution: "Improved information hierarchy, account-detail patterns, support visibility, closed-account handling, and accessibility.",
+    outcome: "[Add verified outcome]",
     href: "/case-studies/equitable",
+    protected: true,
   },
-  { 
-    id: "02", 
-    title: "Pastel — Beauty Brand Portfolio", 
-    category: "Web Design", 
-    year: "2026", 
-    desc: "Clean, Scandinavian-inspired portfolio for a makeup artist. Integrated booking system with HoneyBook, pink accent color, and micro-interactions.",
-    href: "/case-studies/pastel",
+  {
+    id: "02",
+    title: "Authorized-User Invitation and Identity Verification",
+    category: "Enterprise Workflow UX",
+    year: "2019-Present",
+    context: "Invitation and verification flows where trust and clarity matter.",
+    role: "UX strategy, interaction design, and implementation support.",
+    constraint: "Requires reviewed screens and confirmed scope before publishing.",
+    contribution: "Made expectations, next steps, and error states easier to understand.",
+    outcome: "[Confirm project scope]",
+    href: "/contact?re=portfolio-access",
+    protected: true,
   },
-  { 
-    id: "03", 
-    title: "Enough — Retirement Calculator", 
-    category: "Product Design & Engineering", 
-    year: "2026", 
-    desc: "A focused retirement planning calculator that answers one critical question: How much do I need? Real-time projections using the 4% rule, privacy-first (client-side only), and zero data collection.",
-    href: "/case-studies/enough",
+  {
+    id: "03",
+    title: "Digital Delivery Enrollment",
+    category: "Enterprise Product UX",
+    year: "2019-Present",
+    context: "Digital-adoption work connected to client communications and paper reduction.",
+    role: "UX strategy, interaction design, accessibility, and product-engineering collaboration.",
+    constraint: "Operational details are confidential and need content review.",
+    contribution: "Clarified decision points and helped the experience move cleanly into production.",
+    outcome: "[Add verified outcome]",
+    href: "/contact?re=portfolio-access",
+    protected: true,
   },
   {
     id: "04",
-    title: "Swing Coach — Golf Swing Analyzer",
-    category: "Product Design & Engineering",
-    year: "2026",
-    desc: "A browser-native golf swing analysis product with MediaPipe pose detection, persistent session history, and mobile-first recording. Built spec-first from concept to production in under a week.",
-    href: "/case-studies/map-my-swing",
+    title: "Design Systems and Reusable Interaction Patterns",
+    category: "Design Systems",
+    year: "2019-Present",
+    context: "Reusable patterns for complex financial-product interfaces.",
+    role: "Pattern definition, accessibility review, and front-end collaboration.",
+    constraint: "Internal standards and product details are not public.",
+    contribution: "Turned recurring interface decisions into reusable patterns.",
+    outcome: "[Add verified outcome]",
+    href: "/contact?re=portfolio-access",
+    protected: true,
   },
 ];
+
+const independentProjects = [
+  {
+    id: "05",
+    title: "Enough",
+    category: "Independent Product",
+    year: "2026",
+    context: "A privacy-first retirement calculator built around one plain-language question.",
+    role: "Product designer and front-end engineer.",
+    constraint: "Independent product, not client or employer work.",
+    contribution: "Designed the calculator flow, product copy, interface, and client-side implementation.",
+    outcome: "Designed, built, and launched.",
+    href: "/case-studies/enough",
+  },
+  {
+    id: "06",
+    title: "UIpen",
+    category: "Independent Product",
+    year: "2026",
+    context: "A design-debt review tool for teams trying to keep product interfaces clear and consistent.",
+    role: "Product designer and UX engineer.",
+    constraint: "Independent product, not client or employer work.",
+    contribution: "Designed the scan-and-review flow, interface system, and production implementation.",
+    outcome: "Designed, built, and launched.",
+    href: "https://design-debt.vercel.app",
+    external: true,
+  },
+];
+
+type Project = {
+  id: string;
+  title: string;
+  category: string;
+  year: string;
+  context: string;
+  role: string;
+  constraint: string;
+  contribution: string;
+  outcome: string;
+  href: string;
+  protected?: boolean;
+  external?: boolean;
+};
+
+function ProjectSummary({ project }: { project: Project }) {
+  return (
+    <article className="project-summary">
+      <span className="meta-label" aria-hidden="true">{project.id}</span>
+      <div>
+        <p className="eyebrow">{project.category}</p>
+        <h2>{project.title}</h2>
+        <p>{project.context}</p>
+        <dl>
+          <div>
+            <dt>Role</dt>
+            <dd>{project.role}</dd>
+          </div>
+          <div>
+            <dt>Contribution</dt>
+            <dd>{project.contribution}</dd>
+          </div>
+        </dl>
+      </div>
+      <div>
+        <p style={{ marginBottom: "1rem" }}>{project.year}</p>
+        {project.external ? (
+          <a className="button button-secondary" href={project.href} target="_blank" rel="noopener noreferrer">
+            Visit live site <span className="sr-only">(opens in a new tab)</span>
+          </a>
+        ) : (
+          <Link className="button button-secondary" href={project.href}>
+            {project.protected ? "Request details" : "Read case study"}
+          </Link>
+        )}
+      </div>
+    </article>
+  );
+}
 
 export default function WorkPage() {
   return (
     <>
-      <section style={{
-        paddingTop: "calc(56px + 4rem)",
-        paddingBottom: "4rem",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        borderBottom: "1px solid var(--border)",
-      }}>
-        <p style={{
-          fontSize: "0.75rem",
-          color: "var(--mid)",
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          marginBottom: "1rem",
-        }}>
-          Selected Work
-        </p>
-        <h1 style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: "clamp(2rem, 5vw, 4rem)",
-          fontWeight: 300,
-          letterSpacing: "-0.02em",
-          lineHeight: 1.05,
-        }}>
-          Work
-        </h1>
+      <section className="page-header">
+        <div className="content-wrap">
+          <p className="eyebrow">Selected Work</p>
+          <h1 className="page-heading">Work</h1>
+          <p style={{ maxWidth: "680px", marginTop: "1.5rem", color: "var(--mid)", lineHeight: 1.75, fontWeight: 300 }}>
+            Some work is shown as short summaries because the full product details are private. Reach out if you would like to see more.
+          </p>
+        </div>
       </section>
 
-      <section>
-        <style>{`
-          @media (max-width: 768px) {
-            .work-item {
-              display: flex !important;
-              flex-direction: column !important;
-              grid-template-columns: unset !important;
-            }
-            .work-item span {
-              order: 1;
-            }
-            .work-item > div:first-of-type {
-              order: 2;
-            }
-            .work-item > div:last-of-type {
-              order: 3;
-            }
-          }
-        `}</style>
-        {projects.map((project) => (
-          <div key={project.id} className="work-item" style={{
-            display: "grid",
-            gridTemplateColumns: "3rem 1fr 12rem",
-            gap: "2rem",
-            padding: "3rem 2rem",
-            borderBottom: "1px solid var(--border)",
-            alignItems: "start",
-          }}>
-            <span style={{ fontSize: "0.75rem", color: "var(--mid)", paddingTop: "0.2rem" }}>
-              {project.id}
-            </span>
-            <div>
-              <h2 style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "1.3rem",
-                fontWeight: 400,
-                letterSpacing: "-0.01em",
-                marginBottom: "0.5rem",
-              }}>
-                {project.title}
-              </h2>
-              <p style={{
-                fontSize: "0.8rem",
-                color: "var(--mid)",
-                marginBottom: "1rem",
-                fontWeight: 300,
-                lineHeight: 1.7,
-              }}>
-                {project.desc}
-              </p>
-              <span style={{
-                display: "inline-block",
-                fontSize: "0.7rem",
-                color: "var(--mid)",
-                border: "1px solid var(--border)",
-                padding: "0.3rem 0.7rem",
-              }}>
-                {project.category}
-              </span>
-            </div>
-            <div style={{ textAlign: "right" }}>
-              <p style={{ fontSize: "0.75rem", color: "var(--mid)", marginBottom: "1rem" }}>{project.year}</p>
-              <Link href={project.href} style={{
-                fontSize: "0.75rem",
-                fontWeight: 500,
-                color: "var(--accent-tertiary)",
-                textDecoration: "none",
-                borderBottom: "1px solid var(--accent-tertiary)",
-                paddingBottom: "1px",
-              }}>
-                View Case Study →
-              </Link>
-            </div>
+      <section className="access-panel">
+        <div className="content-wrap cta-row">
+          <Link className="button button-primary" href="/contact?re=portfolio-access">
+            Request Access
+          </Link>
+          <Link className="button button-secondary" href="/case-studies/equitable">
+            Enter Password
+          </Link>
+        </div>
+      </section>
+
+      <section aria-labelledby="enterprise-heading">
+        <div className="page-section" style={{ paddingBottom: 0 }}>
+          <div className="content-wrap section-heading">
+            <p className="eyebrow">Enterprise Product Work</p>
+            <h2 id="enterprise-heading">Selected financial-product and design-systems work.</h2>
           </div>
+        </div>
+        {enterpriseProjects.map((project) => (
+          <ProjectSummary key={project.id} project={project} />
+        ))}
+      </section>
+
+      <section aria-labelledby="independent-heading">
+        <div className="page-section" style={{ paddingBottom: 0 }}>
+          <div className="content-wrap section-heading">
+            <p className="eyebrow">Independent Products</p>
+            <h2 id="independent-heading">Independent products I designed and built.</h2>
+          </div>
+        </div>
+        {independentProjects.map((project) => (
+          <ProjectSummary key={project.id} project={project} />
         ))}
       </section>
     </>

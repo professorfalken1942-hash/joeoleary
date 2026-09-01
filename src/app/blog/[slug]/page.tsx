@@ -229,7 +229,15 @@ The spec is dense. But in practice, 80% of issues come from five things: missing
 
 Get those right and you're most of the way there.`;
 
-const posts: Record<string, any> = {
+type Post = {
+  title: string;
+  date: string;
+  category: string;
+  readTime: string;
+  content: string;
+};
+
+const posts: Record<string, Post> = {
   "openclaw-digital-studio": {
     title: "Building a One-Person Digital Studio with OpenClaw",
     date: "April 14, 2026",
@@ -244,18 +252,6 @@ const posts: Record<string, any> = {
     readTime: "8 min read",
     content: WCAG_CONTENT,
   },
-  "design-systems-scale": {
-    title: "Building Design Systems That Scale",
-    date: "April 5, 2026",
-    category: "Design Systems",
-    readTime: "12 min read",
-  },
-  "ux-financial-products": {
-    title: "UX Principles for Financial Products",
-    date: "March 28, 2026",
-    category: "UX Strategy",
-    readTime: "10 min read",
-  },
 };
 
 export async function generateStaticParams() {
@@ -268,7 +264,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = posts[slug];
   return {
-    title: `${post?.title || "Post"} — Joseph O'Leary`,
+    title: post?.title || "Post",
+    description: post ? `${post.category} note by Joseph O'Leary.` : "Writing by Joseph O'Leary.",
   };
 }
 
@@ -290,7 +287,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <section style={{ paddingTop: "calc(56px + 4rem)", paddingBottom: "4rem", paddingLeft: "2rem", paddingRight: "2rem", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: "800px" }}>
           <p style={{ fontSize: "0.75rem", color: "var(--mid)", textTransform: "uppercase", marginBottom: "1rem" }}>{post.category}</p>
-          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(2rem, 5vw, 4rem)", fontWeight: 300, lineHeight: 1.05, marginBottom: "2rem" }}>{post.title}</h1>
+          <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "3.5rem", fontWeight: 300, lineHeight: 1.05, marginBottom: "2rem" }}>{post.title}</h1>
           <div style={{ display: "flex", gap: "2rem" }}>
             <p style={{ fontSize: "0.75rem", color: "var(--mid)" }}>{post.date}</p>
             <p style={{ fontSize: "0.75rem", color: "var(--mid)" }}>{post.readTime}</p>
@@ -308,7 +305,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   .split("\n")
                   .map((line: string) => {
                     if (line.startsWith("##")) {
-                      return `<h2 style="font-size: 1.4rem; font-family: var(--font-serif); font-weight: 400; margin: 2rem 0 1rem; color: var(--text)">${line.replace("## ", "")}</h2>`;
+                      return `<h2 style="font-size: 1.4rem; font-family: var(--font-sans); font-weight: 500; margin: 2rem 0 1rem; color: var(--text)">${line.replace("## ", "")}</h2>`;
                     }
                     if (line.startsWith("- ")) {
                       return `<li style="margin-left: 1.5rem; margin-bottom: 0.5rem">${line.replace("- ", "")}</li>`;

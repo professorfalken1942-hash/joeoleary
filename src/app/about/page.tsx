@@ -2,251 +2,153 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About — Joe O'Leary",
-  description: "15+ years senior UX/UI designer and engineer. WCAG 2.1 AA accessibility specialist. Currently at Equitable, open to Principal UX roles.",
+  title: "About",
+  description: "About Joseph O'Leary, a senior UX designer and engineer working across product strategy, accessibility, design systems, and front-end implementation.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const experience = [
   {
     role: "UX Professional, Sr. Manager",
     company: "Equitable",
-    period: "Jan 2019 – Present",
+    period: "Jan 2019 - Present",
     duration: "7 yrs 3 mos",
     location: "Syracuse, NY",
-    desc: "Led UX/UI design and front-end development for client, agent and broker applications, improving accessibility and performance to meet WCAG 2.1 AA standards. Optimized page performance, enhancing client satisfaction. Advanced eDelivery initiatives to promote digital adoption and reduce paper reliance. Mentored junior designers and collaborated cross-functionally with development, product, and business teams.",
+    desc: "Leads UX strategy, shapes major product work, builds reusable patterns, mentors designers, and partners with product and engineering on client, agent, and broker applications.",
   },
   {
     role: "Senior UX/UI Designer",
     company: "AXA US",
-    period: "Jan 2014 – Jan 2019",
+    period: "Jan 2014 - Jan 2019",
     duration: "5 yrs 1 mo",
     location: "Syracuse, NY",
-    desc: "Designed and developed user-centered experiences for marketing sites and enterprise digital products.",
+    desc: "Designed and developed marketing sites and enterprise digital products.",
   },
   {
     role: "Senior Web Designer / Consultant",
     company: "Diversant, LLC",
-    period: "Sep 2013 – Dec 2013",
+    period: "Sep 2013 - Dec 2013",
     duration: "4 mos",
-    location: "Greater Syracuse–Auburn Area",
+    location: "Greater Syracuse-Auburn Area",
     desc: "",
   },
 ];
 
-const skills = [
-  "UX Design", "UX Engineering", "Front-End Development",
-  "Design Systems", "WCAG 2.1 AA", "Accessibility",
-  "UX Strategy", "Prototyping", "User Research",
-  "Wireframing", "Interaction Design", "Mentoring",
-  "Figma", "Adobe", "React", "Git",
+const skillGroups = [
+  {
+    title: "Product and UX Strategy",
+    skills: ["Problem framing", "Product discovery support", "Journey and flow definition", "Information hierarchy"],
+  },
+  {
+    title: "Interaction and Interface Design",
+    skills: ["Complex workflows", "Financial-product UX", "Wireframes and prototypes", "Responsive product UI"],
+  },
+  {
+    title: "Design Systems",
+    skills: ["Reusable patterns", "Component behavior", "Design tokens", "Documentation"],
+  },
+  {
+    title: "Accessibility",
+    skills: ["WCAG 2.1 AA", "Keyboard interaction", "Form semantics", "Contrast and reflow review"],
+  },
+  {
+    title: "UX Engineering",
+    skills: ["React and Next.js", "TypeScript", "Front-end architecture", "Design-to-code translation"],
+  },
+  {
+    title: "Leadership and Collaboration",
+    skills: ["Mentoring", "Cross-functional facilitation", "Design critique", "Product-engineering partnership"],
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section style={{
-        paddingTop: "calc(56px + 4rem)",
-        paddingBottom: "4rem",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        borderBottom: "1px solid var(--border)",
-      }}>
-        <p style={{
-          fontSize: "0.75rem",
-          color: "var(--mid)",
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          marginBottom: "1rem",
-        }}>
-          About
-        </p>
-        <h1 style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: "clamp(2rem, 5vw, 4rem)",
-          fontWeight: 300,
-          letterSpacing: "-0.02em",
-          lineHeight: 1.05,
-        }}>
-          Joe O'Leary
-        </h1>
+      <section className="page-header">
+        <div className="content-wrap">
+          <p className="eyebrow">About</p>
+          <h1 className="page-heading">Joe O&apos;Leary</h1>
+        </div>
       </section>
 
-      <section style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        borderBottom: "1px solid var(--border)",
-      }} className="col-2">
-        {/* Bio */}
+      <section className="col-2" style={{ borderBottom: "1px solid var(--border)" }}>
         <div style={{ padding: "4rem 2rem", borderRight: "1px solid var(--border)" }}>
-          <p style={{
-            fontSize: "0.75rem",
-            color: "var(--mid)",
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            marginBottom: "2rem",
-          }}>
-            Bio
-          </p>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "1rem",
-            fontWeight: 300,
-            lineHeight: 1.8,
-            color: "var(--black)",
-            marginBottom: "1.5rem",
-          }}>
-            I'm a designer and engineer with 15+ years of senior experience building scalable digital products. I work across design systems, UX strategy, and front-end engineering—bridging design and code to create thoughtful, accessible experiences that scale.
-          </p>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "1rem",
-            fontWeight: 300,
-            lineHeight: 1.8,
-            color: "var(--mid)",
-            marginBottom: "1.5rem",
-          }}>
-            Currently a Sr. Manager UX Professional at Equitable, I lead UX strategy, mentor teams, and build accessible, scalable design solutions for enterprise-scale financial products.
-          </p>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "1rem",
-            fontWeight: 300,
-            lineHeight: 1.8,
-            color: "var(--mid)",
-          }}>
-            I'm open to Principal UX roles where I can drive design leadership and build great products.
-          </p>
+          <p className="eyebrow">Bio</p>
+          <div className="text-stack">
+            <p>
+              I&apos;m a senior UX designer and engineer working across product strategy, interaction design, design systems, accessibility, and front-end implementation. Over the past 12+ years, I&apos;ve helped shape financial experiences used by clients, advisors, and internal teams.
+            </p>
+            <p>
+              At Equitable, I lead UX strategy, shape major product work, build reusable patterns, mentor designers, and work closely with product and engineering.
+            </p>
+            <p>
+              I&apos;m interested in Principal, Staff, and Lead roles where I can improve both individual products and the systems teams use to build them.
+            </p>
+          </div>
         </div>
 
-        {/* Experience */}
         <div style={{ padding: "4rem 2rem" }}>
-          <p style={{
-            fontSize: "0.75rem",
-            color: "var(--mid)",
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            marginBottom: "2rem",
-          }}>
-            Experience
-          </p>
-          {experience.map((item, i) => (
-            <div key={i} style={{
-              paddingBottom: "1.75rem",
-              marginBottom: "1.75rem",
-              borderBottom: i < experience.length - 1 ? "1px solid var(--border)" : undefined,
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.25rem" }}>
-                <span style={{ fontSize: "0.95rem", fontWeight: 500, letterSpacing: "-0.01em" }}>{item.role}</span>
-                <span style={{ fontSize: "0.72rem", color: "var(--mid)", whiteSpace: "nowrap", marginLeft: "1rem" }}>{item.duration}</span>
+          <p className="eyebrow">Experience</p>
+          {experience.map((item) => (
+            <article key={`${item.company}-${item.period}`} className="experience-item">
+              <div className="experience-top">
+                <h3>{item.role}</h3>
+                <span className="experience-meta">{item.duration}</span>
               </div>
-              <span style={{ fontSize: "0.82rem", color: "var(--mid)" }}>{item.company}</span>
-              {item.location && <span style={{ fontSize: "0.75rem", color: "var(--border)", margin: "0 0.5rem" }}>·</span>}
-              {item.location && <span style={{ fontSize: "0.75rem", color: "var(--mid)" }}>{item.location}</span>}
-              <p style={{ fontSize: "0.72rem", color: "var(--mid)", marginTop: "0.25rem" }}>{item.period}</p>
-              {item.desc && <p style={{ fontSize: "0.82rem", color: "var(--mid)", fontWeight: 300, lineHeight: 1.7, marginTop: "0.75rem" }}>{item.desc}</p>}
-            </div>
+              <p className="experience-meta">
+                {item.company}
+                {item.location ? ` · ${item.location}` : ""}
+              </p>
+              <p className="experience-meta">{item.period}</p>
+              {item.desc ? <p style={{ marginTop: "0.75rem" }}>{item.desc}</p> : null}
+            </article>
           ))}
         </div>
       </section>
 
-      {/* Resume Download */}
-      <section style={{ padding: "4rem 2rem", borderBottom: "1px solid var(--border)" }}>
-        <p style={{
-          fontSize: "0.75rem",
-          color: "var(--mid)",
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          marginBottom: "1rem",
-        }}>
-          Resume
-        </p>
-        <p style={{ fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.7, color: "var(--mid)", marginBottom: "1.5rem" }}>
-          Download my full resume as PDF.
-        </p>
-        <a href="/resume.html" target="_blank" rel="noopener noreferrer" style={{
-          fontFamily: "var(--font-sans)",
-          fontSize: "0.8rem",
-          fontWeight: 500,
-          color: "var(--accent)",
-          textDecoration: "underline",
-          cursor: "pointer",
-        }}>
-          Download Resume (PDF) ↓
-        </a>
-      </section>
-
-      {/* Skills */}
-      <section style={{ padding: "4rem 2rem", borderBottom: "1px solid var(--border)" }}>
-        <p style={{
-          fontSize: "0.75rem",
-          color: "var(--mid)",
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          marginBottom: "2rem",
-        }}>
-          Skills & Tools
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-          {skills.map((skill) => (
-            <span key={skill} style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.8rem",
-              fontWeight: 400,
-              color: "var(--black)",
-              border: "1px solid var(--border)",
-              padding: "0.4rem 0.9rem",
-            }}>
-              {skill}
-            </span>
-          ))}
+      <section className="page-section">
+        <div className="content-wrap">
+          <div className="section-heading">
+            <p className="eyebrow">Capabilities</p>
+            <h2>Strategy, systems, and shipped interfaces.</h2>
+          </div>
+          <div className="skills-grid">
+            {skillGroups.map((group) => (
+              <section key={group.title} className="skill-group" aria-labelledby={`skill-${group.title.replaceAll(" ", "-").toLowerCase()}`}>
+                <h3 id={`skill-${group.title.replaceAll(" ", "-").toLowerCase()}`}>{group.title}</h3>
+                <ul>
+                  {group.skills.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{
-        padding: "4rem 2rem",
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "2rem",
-        borderBottom: "1px solid var(--border)",
-      }} className="col-2">
-        <div>
-          <p style={{ fontSize: "0.75rem", color: "var(--mid)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "1rem" }}>
-            Hiring
-          </p>
-          <p style={{ fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.7, color: "var(--mid)", marginBottom: "1.5rem" }}>
-            Looking for a Principal UX or senior design leader? Let's talk.
-          </p>
-          <Link href="/contact?re=hiring" style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "0.8rem",
-            fontWeight: 500,
-            color: "var(--white)",
-            backgroundColor: "var(--black)",
-            padding: "0.75rem 1.5rem",
-            textDecoration: "none",
-          }}>
-            Hire Joe
-          </Link>
-        </div>
-        <div style={{ borderLeft: "1px solid var(--border)", paddingLeft: "2rem" }}>
-          <p style={{ fontSize: "0.75rem", color: "var(--mid)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "1rem" }}>
-            Freelance
-          </p>
-          <p style={{ fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.7, color: "var(--mid)", marginBottom: "1.5rem" }}>
-            Need UX strategy, design systems, or accessibility consulting?
-          </p>
-          <Link href="/contact?re=freelance" style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "0.8rem",
-            fontWeight: 400,
-            color: "var(--black)",
-            border: "1px solid var(--border)",
-            padding: "0.75rem 1.5rem",
-            textDecoration: "none",
-          }}>
-            Work with Joe
-          </Link>
+      <section className="page-section">
+        <div className="content-wrap col-2" style={{ gap: "2rem" }}>
+          <div>
+            <p className="eyebrow">Resume</p>
+            <p style={{ color: "var(--mid)", lineHeight: 1.7, fontWeight: 300, marginBottom: "1.25rem" }}>
+              My resume is available as an HTML page with a PDF export option.
+            </p>
+            <a className="button button-secondary" href="/resume.html" target="_blank" rel="noopener noreferrer">
+              View Resume <span className="sr-only">(opens in a new tab)</span>
+            </a>
+          </div>
+          <div>
+            <p className="eyebrow">Hiring</p>
+            <p style={{ color: "var(--mid)", lineHeight: 1.7, fontWeight: 300, marginBottom: "1.25rem" }}>
+              I&apos;m focused on Principal, Staff, Lead, and comparable senior UX/product-design roles.
+            </p>
+            <Link className="button button-primary" href="/contact?re=hiring">
+              Contact Joe
+            </Link>
+          </div>
         </div>
       </section>
     </>

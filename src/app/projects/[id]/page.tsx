@@ -9,7 +9,19 @@ const canonicalRoutes: Record<string, string> = {
   "04": "/case-studies/map-my-swing",
 };
 
-const caseStudies: Record<string, any> = {
+type LegacyCaseStudy = {
+  link?: string;
+  title: string;
+  category: string;
+  year: string;
+  role: string;
+  challenge: string;
+  solution: string;
+  details: string[];
+  outcome: string;
+};
+
+const caseStudies: Record<string, LegacyCaseStudy> = {
   "01": {
     link: "https://equitable.com",
     title: "Equitable — Account Summary Redesign",
@@ -147,7 +159,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ id: 
           </p>
           <h1 style={{
             fontFamily: "var(--font-sans)",
-            fontSize: "clamp(2rem, 5vw, 4rem)",
+            fontSize: "3.5rem",
             fontWeight: 300,
             letterSpacing: "-0.02em",
             lineHeight: 1.05,

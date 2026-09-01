@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog — Joseph O'Leary",
-  description: "Thoughts on UX design, accessibility, and digital product strategy.",
+  title: "Writing",
+  description: "Notes on accessibility, design systems, product decisions, and the space between design and engineering.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 const posts = [
   {
     slug: "openclaw-digital-studio",
     title: "Building a One-Person Digital Studio with OpenClaw",
-    excerpt: "How we architected a modern web development studio using Next.js, AI automation, and personal infrastructure. From strategy to deployment.",
+    excerpt: "How I think about infrastructure, automation, and the parts of studio work that should stay human.",
     date: "April 14, 2026",
     category: "Studio & Process",
     readTime: "15 min read",
@@ -18,141 +21,54 @@ const posts = [
   {
     slug: "wcag-accessibility-checklist",
     title: "WCAG 2.1 AA Accessibility Checklist",
-    excerpt: "A practical guide to implementing WCAG 2.1 AA compliance in your digital products. Cover the essentials and avoid common pitfalls.",
+    excerpt: "A practical checklist for product teams designing and building toward WCAG 2.1 AA.",
     date: "April 12, 2026",
     category: "Accessibility",
     readTime: "8 min read",
   },
-
 ];
 
 export default function BlogPage() {
   return (
     <>
-      {/* Header */}
-      <section
-        style={{
-          paddingTop: "calc(56px + 4rem)",
-          paddingBottom: "4rem",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
-          borderBottom: "1px solid var(--border)",
-        }}
-      >
-        <div style={{ maxWidth: "900px" }}>
-          <p
-            style={{
-              fontSize: "0.75rem",
-              color: "var(--mid)",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              marginBottom: "1rem",
-            }}
-          >
-            Blog
-          </p>
-          <h1
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "clamp(2rem, 5vw, 4rem)",
-              fontWeight: 300,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.05,
-              marginBottom: "2rem",
-            }}
-          >
-            Thoughts on Design & UX
-          </h1>
-          <p
-            style={{
-              fontSize: "1rem",
-              lineHeight: 1.8,
-              color: "var(--text-muted)",
-              maxWidth: "600px",
-            }}
-          >
-            Essays on accessibility, design systems, product strategy, and the craft of digital design. Updated regularly.
+      <section className="page-header">
+        <div className="content-wrap">
+          <p className="eyebrow">Writing</p>
+          <h1 className="page-heading">Notes on design and engineering.</h1>
+          <p style={{ maxWidth: "640px", marginTop: "1.5rem", color: "var(--mid)", lineHeight: 1.75, fontWeight: 300 }}>
+            Notes on accessibility, design systems, product decisions, and the space between design and engineering.
           </p>
         </div>
       </section>
 
-      {/* Posts Grid */}
-      <section style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
-        <div style={{ maxWidth: "900px" }}>
+      <section style={{ padding: "0 2rem 3rem" }}>
+        <div className="content-wrap">
           {posts.map((post, i) => (
             <article
               key={post.slug}
               style={{
                 padding: "3rem 0",
-                borderBottom: i < posts.length - 1 ? "1px solid var(--border)" : "none",
+                borderBottom: i < posts.length - 1 ? "1px solid var(--border)" : undefined,
               }}
             >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "1rem" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: "2rem", alignItems: "start" }}>
                 <div>
-                  <p
-                    style={{
-                      fontSize: "0.7rem",
-                      color: "var(--mid)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.08em",
-                      marginBottom: "0.5rem",
-                    }}
-                  >
-                    {post.category}
-                  </p>
-                  <h2
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: "1.8rem",
-                      fontWeight: 400,
-                      lineHeight: 1.2,
-                      marginBottom: "0.5rem",
-                      color: "var(--text)",
-                    }}
-                  >
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      style={{ color: "inherit", textDecoration: "none" }}
-                    >
+                  <p className="eyebrow">{post.category}</p>
+                  <h2 style={{ fontSize: "1.8rem", fontWeight: 400, lineHeight: 1.2, marginBottom: "0.75rem" }}>
+                    <Link href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
                       {post.title}
                     </Link>
                   </h2>
                 </div>
-                <p
-                  style={{
-                    fontSize: "0.75rem",
-                    color: "var(--mid)",
-                    textAlign: "right",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {post.date}
+                <p style={{ fontSize: "0.78rem", color: "var(--mid)", whiteSpace: "nowrap" }}>
+                  <time>{post.date}</time> · {post.readTime}
                 </p>
               </div>
-
-              <p
-                style={{
-                  fontSize: "1rem",
-                  lineHeight: 1.7,
-                  color: "var(--text-muted)",
-                  marginBottom: "1.5rem",
-                }}
-              >
+              <p style={{ maxWidth: "720px", fontSize: "0.98rem", lineHeight: 1.7, color: "var(--mid)", fontWeight: 300, marginBottom: "1.25rem" }}>
                 {post.excerpt}
               </p>
-
-              <Link
-                href={`/blog/${post.slug}`}
-                style={{
-                  fontSize: "0.85rem",
-                  fontWeight: 500,
-                  color: "var(--text)",
-                  textDecoration: "none",
-                  borderBottom: "1px solid var(--text)",
-                  paddingBottom: "1px",
-                }}
-              >
-                Read article → {post.readTime}
+              <Link href={`/blog/${post.slug}`} style={{ color: "var(--accent-tertiary)", fontSize: "0.86rem", fontWeight: 500 }}>
+                Read {post.title}
               </Link>
             </article>
           ))}

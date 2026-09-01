@@ -1,307 +1,184 @@
 import Link from "next/link";
 
+const evidence = [
+  "12+ years in UX",
+  "Financial-services product experience",
+  "WCAG 2.1 AA accessibility",
+  "Design systems and front-end craft",
+];
+
+const enterpriseWork = [
+  {
+    title: "Client Account Experiences",
+    context: "Authenticated financial-product experiences for clients, advisors, and internal teams.",
+    role: "Senior UX/UI design and front-end partner.",
+    constraint: "Confidential product details and screens require portfolio access.",
+    contribution: "Improved hierarchy, account details, support touchpoints, and accessibility across complex account views.",
+    outcome: "[Add verified outcome]",
+  },
+  {
+    title: "Digital Delivery Enrollment",
+    context: "Enrollment flows tied to digital adoption and paper reduction.",
+    role: "UX strategy, interaction design, and implementation support.",
+    constraint: "Enterprise financial workflows with sensitive operational context.",
+    contribution: "Clarified decision points, reduced ambiguity, and helped the experience move cleanly into production.",
+    outcome: "[Confirm project scope]",
+  },
+  {
+    title: "Design Systems and Reusable Patterns",
+    context: "Reusable patterns for financial-service product teams.",
+    role: "Pattern definition, accessibility guidance, and front-end translation.",
+    constraint: "Internal standards and implementation details are not public.",
+    contribution: "Turned repeated interface decisions into patterns teams could reuse.",
+    outcome: "[Add verified outcome]",
+  },
+];
+
+type IndependentWork = {
+  title: string;
+  type: string;
+  href?: string;
+  externalHref: string;
+  problem: string;
+  decision: string;
+  role: string;
+  outcome: string;
+  stack: string;
+};
+
+const independentWork: IndependentWork[] = [
+  {
+    title: "Enough",
+    type: "Independent product",
+    href: "/case-studies/enough",
+    externalHref: "https://whatsyourenough.info",
+    problem: "Retirement tools often bury the first question people are trying to answer: how much is enough?",
+    decision: "Built a focused calculator with visible math, private inputs, and no account funnel.",
+    role: "Product design, front-end engineering, content, and launch.",
+    outcome: "Designed, built, and launched.",
+    stack: "Next.js, React, TypeScript, Tailwind CSS",
+  },
+  {
+    title: "UIpen",
+    type: "Independent product",
+    externalHref: "https://design-debt.vercel.app",
+    problem: "Product teams need a faster way to spot design debt before it slows down everyday product work.",
+    decision: "Kept the product centered on scan, review, and act instead of turning it into another dashboard.",
+    role: "Product design, UX engineering, front-end implementation, and launch.",
+    outcome: "Designed, built, and launched.",
+    stack: "Angular, TypeScript, Node.js, Prisma, Vercel",
+  },
+];
+
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="home-hero" style={{
-        paddingTop: "calc(56px + 6rem)",
-        paddingBottom: "6rem",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        borderBottom: "1px solid var(--border)",
-      }}>
-        <div style={{ maxWidth: "900px" }}>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "0.75rem",
-            fontWeight: 400,
-            color: "var(--accent-tertiary)",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            marginBottom: "1.5rem",
-          }}>
-            UX Designer & Engineer
-          </p>
-          <h1 style={{
-            marginBottom: "2rem",
-          }}>
-            <strong style={{ color: "var(--accent-tertiary)" }}>Joe</strong> O'Leary
-          </h1>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "1.1rem",
-            fontWeight: 300,
-            lineHeight: 1.7,
-            color: "var(--mid)",
-            maxWidth: "560px",
-            marginBottom: "3rem",
-          }}>
-            Creating engaging, accessible digital experiences. 15+ years of senior UX/UI design and strategy.
-          </p>
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/projects" style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.8rem",
-              fontWeight: 500,
-              color: "var(--white)",
-              backgroundColor: "var(--accent-tertiary)",
-              padding: "0.75rem 1.5rem",
-              textDecoration: "none",
-            }}>
-              View Projects
-            </Link>
-            <Link href="/contact" style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.8rem",
-              fontWeight: 400,
-              color: "var(--black)",
-              border: "1px solid var(--accent)",
-              padding: "0.75rem 1.5rem",
-              textDecoration: "none",
-            }}>
-              Get in Touch
-            </Link>
+      <section className="home-hero page-section">
+        <div className="content-wrap hero-grid">
+          <div>
+            <p className="eyebrow">UX Strategy · Product Design · Engineering</p>
+            <h1 className="hero-title">
+              Product design leadership, from strategy to shipped experience.
+            </h1>
           </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="work" className="portfolio-section" style={{
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        paddingTop: "6rem",
-        paddingBottom: "6rem",
-        borderTop: "1px solid var(--border)",
-        borderBottom: "1px solid var(--border)",
-      }}>
-        <div style={{ maxWidth: "900px" }}>
-          <p style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "0.75rem",
-            fontWeight: 400,
-            color: "var(--mid)",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            marginBottom: "1.5rem",
-          }}>
-            Featured Work
-          </p>
-          <h2 style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-            fontWeight: 300,
-            lineHeight: 1.2,
-            letterSpacing: "-0.01em",
-            marginBottom: "3rem",
-          }}>
-            Recent Projects
-          </h2>
-
-          {/* Enough Project Card */}
-          <div style={{
-            marginBottom: "3rem",
-            paddingBottom: "3rem",
-            borderBottom: "1px solid var(--border)",
-          }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
-              <div>
-                <a className="accent-link" href="https://whatsyourenough.info" target="_blank" rel="noopener noreferrer" style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "1.25rem",
-                  fontWeight: 400,
-                  letterSpacing: "-0.01em",
-                  textDecoration: "none",
-                }}>
-                  Enough
-                </a>
-                <p style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "0.85rem",
-                  color: "var(--mid)",
-                  marginTop: "0.25rem",
-                }}>
-                  Retirement Calculator
-                </p>
-              </div>
-              <span style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "0.75rem",
-                color: "var(--mid)",
-              }}>
-                2026
-              </span>
-            </div>
-            <p style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.95rem",
-              fontWeight: 300,
-              lineHeight: 1.7,
-              color: "var(--black)",
-              maxWidth: "700px",
-              marginBottom: "2rem",
-            }}>
-              A focused retirement planning tool that answers one question: <strong>How much do I need?</strong> Users input current savings, annual expenses, and expected returns. The calculator projects retirement date using the 4% rule in real-time. Privacy-first design (client-side only, no data collection).
+          <div className="hero-copy">
+            <p>
+              I&apos;m Joe O&apos;Leary, a senior UX designer and engineer in Syracuse, NY. I work across product strategy, design systems, accessibility, and front-end implementation, mostly for complex financial experiences.
             </p>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "1.5rem",
-            }}>
-              {[
-                { label: "Challenge", value: "Simplify complex financial calculations for non-experts" },
-                { label: "Solution", value: "Interactive calculator with instant feedback and projections" },
-                { label: "Tech", value: "Next.js, React, TypeScript, Tailwind CSS" },
-                { label: "Outcome", value: "Live at whatsyourenough.info with zero tracking" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p className="accent-chip" style={{
-                    display: "inline-block",
-                    fontFamily: "var(--font-sans)",
-                    fontSize: "0.7rem",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginBottom: "0.5rem",
-                    fontWeight: 500,
-                    border: "1px solid var(--border)",
-                    padding: "0.2rem 0.5rem",
-                  }}>
-                    {item.label}
-                  </p>
-                  <p style={{
-                    fontFamily: "var(--font-sans)",
-                    fontSize: "0.9rem",
-                    fontWeight: 300,
-                    lineHeight: 1.6,
-                  }}>
-                    {item.value}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Pastel Project Card */}
-          <div style={{
-            marginBottom: "3rem",
-            paddingBottom: "3rem",
-            borderBottom: "1px solid var(--border)",
-          }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
-              <div>
-                <a className="accent-link" href="https://www.pastelmakeupandstyle.com" target="_blank" rel="noopener noreferrer" style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "1.25rem",
-                  fontWeight: 400,
-                  letterSpacing: "-0.01em",
-                  textDecoration: "none",
-                }}>
-                  Pastel
-                </a>
-                <p style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "0.85rem",
-                  color: "var(--mid)",
-                  marginTop: "0.25rem",
-                }}>
-                  Wedding Makeup Artist Portfolio
-                </p>
-              </div>
-              <span style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "0.75rem",
-                color: "var(--mid)",
-              }}>
-                2025–2026
-              </span>
-            </div>
-            <p style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.95rem",
-              fontWeight: 300,
-              lineHeight: 1.7,
-              color: "var(--black)",
-              maxWidth: "700px",
-              marginBottom: "2rem",
-            }}>
-              A luxury wedding makeup artist's full-stack digital presence. Designed and built the brand site, gallery showcase, integrated HoneyBook booking widget, and set up transactional email (SendGrid). Optimized for bride discovery and instant booking conversions. Custom domain with SEO schema markup.
-            </p>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "1.5rem",
-            }}>
-              {[
-                { label: "Challenge", value: "Build trust and drive bookings for boutique service" },
-                { label: "Solution", value: "Portfolio-first design with integrated booking system" },
-                { label: "Tech", value: "Next.js, React, TypeScript, Tailwind, Vercel" },
-                { label: "Outcome", value: "Live at www.pastelmakeupandstyle.com with booking integration" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p className="accent-chip" style={{
-                    display: "inline-block",
-                    fontFamily: "var(--font-sans)",
-                    fontSize: "0.7rem",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    marginBottom: "0.5rem",
-                    fontWeight: 500,
-                    border: "1px solid var(--border)",
-                    padding: "0.2rem 0.5rem",
-                  }}>
-                    {item.label}
-                  </p>
-                  <p style={{
-                    fontFamily: "var(--font-sans)",
-                    fontSize: "0.9rem",
-                    fontWeight: 300,
-                    lineHeight: 1.6,
-                  }}>
-                    {item.value}
-                  </p>
-                </div>
-              ))}
+            <div className="cta-row" aria-label="Primary actions">
+              <Link className="button button-primary" href="#selected-work">
+                View Selected Work
+              </Link>
+              <Link className="button button-secondary" href="/about">
+                About Joe
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats strip */}
-      <section className="stats-strip" style={{
-        marginTop: "6rem",
-        borderTop: "1px solid var(--border)",
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
-      }}>
-        {[
-          { label: "Approach", value: "Design Strategist & Builder" },
-          { label: "Focus", value: "Strategy + Execution" },
-          { label: "Role", value: "Design Leadership & Product" },
-        ].map((item, i) => (
-          <div key={item.label} style={{
-            padding: "2rem",
-            borderRight: i < 2 ? "1px solid var(--border)" : undefined,
-          }}>
-            <p style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.7rem",
-              color: "var(--mid)",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              marginBottom: "0.5rem",
-            }}>
-              {item.label}
-            </p>
-            <p style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.95rem",
-              fontWeight: 400,
-              letterSpacing: "-0.01em",
-            }}>
-              {item.value}
-            </p>
+      <section className="evidence-strip" aria-label="Professional evidence">
+        <div className="content-wrap evidence-grid">
+          {evidence.map((item) => (
+            <p key={item}>{item}</p>
+          ))}
+        </div>
+      </section>
+
+      <section id="selected-work" className="page-section selected-work">
+        <div className="content-wrap">
+          <div className="section-heading">
+            <p className="eyebrow">Selected Work</p>
+            <h2>Selected product work, from financial platforms to independent tools.</h2>
           </div>
-        ))}
+
+          <div className="work-block">
+            <div className="work-block-heading">
+              <p className="eyebrow">Enterprise Product Work</p>
+              <p>
+                A few examples from financial-product work. Full case studies are available by request.
+              </p>
+            </div>
+            <div className="enterprise-list">
+              {enterpriseWork.map((project) => (
+                <article key={project.title} className="enterprise-preview">
+                  <h3>{project.title}</h3>
+                  <dl>
+                    <div>
+                      <dt>Context</dt>
+                      <dd>{project.context}</dd>
+                    </div>
+                    <div>
+                      <dt>Role</dt>
+                      <dd>{project.role}</dd>
+                    </div>
+                    <div>
+                      <dt>Contribution</dt>
+                      <dd>{project.contribution}</dd>
+                    </div>
+                  </dl>
+                </article>
+              ))}
+            </div>
+            <div className="cta-row">
+              <Link className="button button-primary" href="/projects">
+                View Work
+              </Link>
+              <Link className="button button-secondary" href="/contact?re=portfolio-access">
+                Request Access
+              </Link>
+            </div>
+          </div>
+
+          <div className="work-block independent-block">
+            <div className="work-block-heading">
+              <p className="eyebrow">Independent Products</p>
+              <p>
+                My latest independent projects.
+              </p>
+            </div>
+            <div className="independent-list">
+              {independentWork.map((project) => (
+                <article key={project.title} className="independent-preview">
+                  <div>
+                    <p className="project-type">{project.type}</p>
+                    <h3>{project.title}</h3>
+                  </div>
+                  <p><strong>Problem:</strong> {project.problem}</p>
+                  <p><strong>Design decision:</strong> {project.decision}</p>
+                  <p><strong>Role:</strong> {project.role}</p>
+                  <p className="muted-copy">Stack: {project.stack}</p>
+                  <div className="link-row">
+                    {project.href ? <Link href={project.href}>Read case study</Link> : null}
+                    <a href={project.externalHref} target="_blank" rel="noopener noreferrer">
+                      Visit live site <span className="sr-only">(opens in a new tab)</span>
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );

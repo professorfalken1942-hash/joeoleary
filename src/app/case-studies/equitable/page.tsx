@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import PasswordProtect from "@/components/PasswordProtect";
 
 export default function EquitableCaseStudy() {
   return (
+    <PasswordProtect>
     <div className="case-study-shell min-h-screen bg-white">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
@@ -148,7 +150,7 @@ export default function EquitableCaseStudy() {
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
             <h2 className="text-2xl font-serif font-light mb-6">Outcome</h2>
             <p className="text-lg leading-relaxed text-gray-700 mb-8">
-              The redesigned interface delivers measurable improvements:
+              The redesigned direction focuses on clearer, more trustworthy account review patterns:
             </p>
 
             <div className="grid grid-cols-2 gap-8 mb-8">
@@ -192,5 +194,6 @@ export default function EquitableCaseStudy() {
         </motion.div>
       </section>
     </div>
+    </PasswordProtect>
   );
 }
