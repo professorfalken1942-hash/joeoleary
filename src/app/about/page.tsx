@@ -66,14 +66,7 @@ const skillGroups = [
 export default function AboutPage() {
   return (
     <>
-      <section className="page-header">
-        <div className="content-wrap">
-          <p className="eyebrow">About</p>
-          <h1 className="page-heading">Joe O&apos;Leary</h1>
-        </div>
-      </section>
-
-      <section className="col-2" style={{ borderBottom: "1px solid var(--border)" }}>
+      <section className="col-2" style={{ borderBottom: "1px solid var(--border)", paddingTop: "calc(56px + 4rem)" }}>
         <div style={{ padding: "4rem 2rem", borderRight: "1px solid var(--border)" }}>
           <p className="eyebrow">Bio</p>
           <div className="text-stack">
