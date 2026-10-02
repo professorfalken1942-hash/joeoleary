@@ -44,8 +44,6 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -509,7 +507,7 @@ img {
   font-family: var(--font-sans);
 }
 
-.case-study-shell :where(h1, h2, h3, p, a, li) {
+.case-study-shell :where(p, a, li) {
   font-family: var(--font-sans);
 }
 
@@ -519,7 +517,28 @@ img {
 
 .case-study-shell em {
   color: var(--accent-tertiary);
-  font-style: normal;
+  font-style: italic;
+}
+
+.case-study-shell .case-study-cta {
+  color: var(--white);
+  background-color: var(--dark-slate);
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.case-study-shell .case-study-cta:hover {
+  color: var(--white);
+  background-color: var(--deep-blue);
+  transform: translateY(-2px);
+}
+
+.case-study-shell .case-study-cta span {
+  transition: transform 180ms ease;
+}
+
+.case-study-shell .case-study-cta:hover span {
+  transform: translate(2px, -2px);
 }
 
 .case-study-shell :where(.border-black, .border-l-2.border-black) {

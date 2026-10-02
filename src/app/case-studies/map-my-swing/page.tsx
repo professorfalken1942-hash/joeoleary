@@ -6,18 +6,6 @@ import Link from "next/link";
 export default function MapMySwingCaseStudy() {
   return (
     <div className="case-study-shell min-h-screen bg-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
-        <nav className="max-w-6xl mx-auto px-8 py-6 flex items-center justify-between">
-          <Link href="/" className="text-sm font-medium">
-            Joseph O'Leary
-          </Link>
-          <Link href="/projects" className="text-sm text-gray-600 hover:text-black transition">
-            Back to work
-          </Link>
-        </nav>
-      </header>
-
       {/* Hero */}
       <section className="pt-32 pb-16 px-8 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

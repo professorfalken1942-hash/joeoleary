@@ -1,23 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function PastelCaseStudy() {
   return (
     <div className="case-study-shell min-h-screen bg-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
-        <nav className="max-w-6xl mx-auto px-8 py-6 flex items-center justify-between">
-          <Link href="/" className="text-sm font-medium">
-            Joseph O'Leary
-          </Link>
-          <Link href="/projects" className="text-sm text-gray-600 hover:text-black transition">
-            Back to work
-          </Link>
-        </nav>
-      </header>
-
       {/* Hero */}
       <section className="pt-32 pb-16 px-8 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -142,8 +129,8 @@ export default function PastelCaseStudy() {
       <section className="py-16 px-8 max-w-4xl mx-auto text-center border-t border-gray-200 mt-8">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
           <p className="text-gray-600 mb-6">Interested in working together?</p>
-          <a href="/contact" className="inline-block px-8 py-3 bg-black text-white text-sm font-medium hover:bg-gray-800 transition">
-            Get in touch
+          <a href="/contact" className="case-study-cta inline-flex items-center gap-3 px-8 py-4 text-xs uppercase tracking-[0.16em] font-medium">
+            Get in touch <span aria-hidden="true">↗</span>
           </a>
         </motion.div>
       </section>
