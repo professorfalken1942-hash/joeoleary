@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/case-studies/equitable"],
+      disallow: ["/case-studies/equitable", "/case-studies/equitable-retirement-calculator"],
     },
     sitemap: "https://joeoleary.me/sitemap.xml",
   };

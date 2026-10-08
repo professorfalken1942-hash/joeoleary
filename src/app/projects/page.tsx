@@ -25,6 +25,19 @@ const enterpriseProjects = [
   },
   {
     id: "02",
+    title: "Retirement Planning Calculator",
+    category: "Enterprise Product UX",
+    year: "2026",
+    context: "A public retirement calculator on equitable.com that replaced a madlib-style form with poor usage and a high bounce rate.",
+    role: "Designer and front-end developer.",
+    constraint: "Process details are shared on request; the calculator itself is live.",
+    contribution: "Designed and built a four-step guided flow, inline IRS-limit guardrails, and an interactive results planner.",
+    outcome: "Designed, built, and launched on equitable.com.",
+    href: "/case-studies/equitable-retirement-calculator",
+    protected: true,
+  },
+  {
+    id: "03",
     title: "Authorized-User Invitation and Identity Verification",
     category: "Enterprise Workflow UX",
     year: "2019-Present",
@@ -37,7 +50,7 @@ const enterpriseProjects = [
     protected: true,
   },
   {
-    id: "03",
+    id: "04",
     title: "Digital Delivery Enrollment",
     category: "Enterprise Product UX",
     year: "2019-Present",
@@ -50,7 +63,7 @@ const enterpriseProjects = [
     protected: true,
   },
   {
-    id: "04",
+    id: "05",
     title: "Design Systems and Reusable Interaction Patterns",
     category: "Design Systems",
     year: "2019-Present",
@@ -66,7 +79,7 @@ const enterpriseProjects = [
 
 const independentProjects = [
   {
-    id: "05",
+    id: "06",
     title: "Enough",
     category: "Independent Product",
     year: "2026",
@@ -78,7 +91,7 @@ const independentProjects = [
     href: "/case-studies/enough",
   },
   {
-    id: "06",
+    id: "07",
     title: "UIpen",
     category: "Independent Product",
     year: "2026",
