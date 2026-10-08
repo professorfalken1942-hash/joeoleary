@@ -40,7 +40,7 @@ We've built four live properties:
 
 3. **pastel-navy.vercel.app** — Wedding makeup artist portfolio with HoneyBook integration. Her primary lead source now.
 
-4. **lumolearning-app.vercel.app** — Educational game platform for kids. 6 games, progress tracking, dashboard.
+4. **LumoLearning** — Educational game platform for kids. 6 games, progress tracking, dashboard. (Dev: 20% — not yet public)
 
 Each site is independent but shares infrastructure, design systems, and CI/CD.
 

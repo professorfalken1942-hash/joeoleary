@@ -51,7 +51,7 @@ export default function EnoughCaseStudy() {
             A focused retirement calculator for one practical question: what is enough?
           </p>
           <div className="cta-row" style={{ marginTop: "2rem" }}>
-            <a className="button button-primary" href="https://whatsyourenough.info/calculator" target="_blank" rel="noopener noreferrer">
+            <a className="button button-primary" href="https://whatsyourenough.info/" target="_blank" rel="noopener noreferrer">
               View Live Product <span className="sr-only">(opens in a new tab)</span>
             </a>
             <Link className="button button-secondary" href="/projects">
@@ -137,7 +137,7 @@ export default function EnoughCaseStudy() {
             Enough is live as a usable product, not a static concept. Future work could add scenario comparison, saved assumptions, and export options. The first version focuses on making the retirement number understandable quickly.
           </p>
           <div className="cta-row">
-            <a className="button button-primary" href="https://whatsyourenough.info/calculator" target="_blank" rel="noopener noreferrer">
+            <a className="button button-primary" href="https://whatsyourenough.info/" target="_blank" rel="noopener noreferrer">
               Open Enough <span className="sr-only">(opens in a new tab)</span>
             </a>
             <Link className="button button-secondary" href="/projects">
