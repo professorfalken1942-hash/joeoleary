@@ -103,6 +103,18 @@ const independentProjects = [
     href: "https://design-debt.vercel.app",
     external: true,
   },
+  {
+    id: "08",
+    title: "Trootone",
+    category: "Independent Product",
+    year: "2026",
+    context: "A browser-based guitar tuner that opens instantly and stays out of the way.",
+    role: "Product designer and developer.",
+    constraint: "Independent product, not client or employer work.",
+    contribution: "Designed the one-tap tuning flow and analog-style meter, and built in-browser pitch detection with the Web Audio API.",
+    outcome: "Designed, built, and launched.",
+    href: "/case-studies/trootone",
+  },
 ];
 
 type Project = {

@@ -68,6 +68,17 @@ const independentWork: IndependentWork[] = [
     outcome: "Designed, built, and launched.",
     stack: "Angular, TypeScript, Node.js, Prisma, Vercel",
   },
+  {
+    title: "Trootone",
+    type: "Independent product",
+    href: "/case-studies/trootone",
+    externalHref: "https://trootone.vercel.app",
+    problem: "Tuner apps put ads, settings and jittery readouts between a guitarist and an in-tune string.",
+    decision: "One button to start, auto string detection, a steady analog-style needle, and a chime when a string is in tune.",
+    role: "Product design, signal processing, front-end engineering, and launch.",
+    outcome: "Designed, built, and launched.",
+    stack: "Next.js, React, TypeScript, Tailwind CSS, Web Audio API",
+  },
 ];
 
 export default function Home() {
