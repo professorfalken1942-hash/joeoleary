@@ -108,7 +108,7 @@ const independentProjects = [
     title: "Trootone",
     category: "Independent Product",
     year: "2026",
-    context: "A browser-based guitar tuner that opens instantly and stays out of the way.",
+    context: "A free and functional guitar tuner that runs in the browser.",
     role: "Product designer and developer.",
     constraint: "Independent product, not client or employer work.",
     contribution: "Designed the one-tap tuning flow and analog-style meter, and built in-browser pitch detection with the Web Audio API.",
