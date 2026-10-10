@@ -48,7 +48,7 @@ export default function TrootoneCaseStudy() {
             <div className="md:col-span-10">
               <h1 className="text-5xl md:text-7xl font-serif font-light mb-8 leading-[1.02] max-w-5xl">
                 Trootone
-                <span className="block mt-3 text-3xl md:text-5xl"><em>A guitar tuner that stays out of the way</em></span>
+                <span className="block mt-3 text-3xl md:text-5xl"><em>A free and functional guitar tuner</em></span>
               </h1>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 mt-14 pt-8 border-t border-gray-200">
                 <div>
