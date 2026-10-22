@@ -6,17 +6,17 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Joseph O'Leary — Senior UX Designer & Engineer",
+    default: "Joseph O'Leary — Product Designer & UX Engineer",
     template: "%s — Joseph O'Leary",
   },
-  description: "Senior UX designer and engineer working on financial products, design systems, accessibility, and front-end implementation.",
+  description: "Product designer with 20+ years in design and more than a decade in enterprise financial services. UX strategy, systems thinking, accessibility, and hands-on front-end engineering.",
   metadataBase: new URL("https://joeoleary.me"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Joseph O'Leary — Senior UX Designer & Engineer",
-    description: "Financial-product UX, design systems, accessibility, and front-end implementation by Joseph O'Leary.",
+    title: "Joseph O'Leary — Product Designer & UX Engineer",
+    description: "I make complex things feel simple. Enterprise financial-services UX, design systems, accessibility, and products I design and build myself.",
     url: "https://joeoleary.me",
     siteName: "Joseph O'Leary",
     type: "website",

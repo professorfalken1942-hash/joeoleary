@@ -1,83 +1,57 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const evidence = [
-  "12+ years in UX",
-  "Financial-services product experience",
-  "WCAG 2.1 AA accessibility",
-  "Design systems and front-end craft",
+  "20+ years in design",
+  "12 years in financial services at AXA and Equitable",
+  "WCAG 2.1 AA accessibility practice",
+  "A designer who ships production code",
 ];
 
-const enterpriseWork = [
-  {
-    title: "Client Account Experiences",
-    context: "Authenticated financial-product experiences for clients, advisors, and internal teams.",
-    role: "Senior UX/UI design and front-end partner.",
-    constraint: "Confidential product details and screens require portfolio access.",
-    contribution: "Improved hierarchy, account details, support touchpoints, and accessibility across complex account views.",
-    outcome: "[Add verified outcome]",
-  },
-  {
-    title: "Digital Delivery Enrollment",
-    context: "Enrollment flows tied to digital adoption and paper reduction.",
-    role: "UX strategy, interaction design, and implementation support.",
-    constraint: "Enterprise financial workflows with sensitive operational context.",
-    contribution: "Clarified decision points, reduced ambiguity, and helped the experience move cleanly into production.",
-    outcome: "[Confirm project scope]",
-  },
-  {
-    title: "Design Systems and Reusable Patterns",
-    context: "Reusable patterns for financial-service product teams.",
-    role: "Pattern definition, accessibility guidance, and front-end translation.",
-    constraint: "Internal standards and implementation details are not public.",
-    contribution: "Turned repeated interface decisions into patterns teams could reuse.",
-    outcome: "[Add verified outcome]",
-  },
+const trootoneFeatures = [
+  { title: "One tap to start", body: "No sign-up, no download, no settings to work through." },
+  { title: "Automatic string detection", body: "Play any string. Nothing to tap between strings." },
+  { title: "Analog-style needle", body: "Spring physics settle the reading instead of flickering." },
+  { title: "Plain-language direction", body: "\u201cTune up \u00b7 14\u00a2 flat,\u201d then a chime when it\u2019s in tune." },
+  { title: "Five tunings", body: "Standard, Half Step Down, Drop D, Open G, and DADGAD." },
+  { title: "Private and offline", body: "Audio never leaves the phone. Installs to the home screen." },
 ];
 
-type IndependentWork = {
-  title: string;
-  type: string;
-  href?: string;
-  externalHref: string;
-  problem: string;
-  decision: string;
-  role: string;
-  outcome: string;
-  stack: string;
-};
+const trootoneShots = [
+  { src: "/case-studies/trootone/splash.jpg", alt: "Trootone splash screen: the glowing neon Trootone wordmark above a small tuning needle" },
+  { src: "/case-studies/trootone/intune.jpg", alt: "Trootone with the A string in tune: the needle is centered and green" },
+];
 
-const independentWork: IndependentWork[] = [
+type TrackLink = { label: string; href: string; external?: boolean };
+
+const tracks: { number: string; label: string; summary: string; links: TrackLink[] }[] = [
   {
-    title: "Enough",
-    type: "Independent product",
-    href: "/case-studies/enough",
-    externalHref: "https://whatsyourenough.info",
-    problem: "Retirement tools often bury the first question people are trying to answer: how much is enough?",
-    decision: "Built a focused calculator with visible math, private inputs, and no account funnel.",
-    role: "Product design, front-end engineering, content, and launch.",
-    outcome: "Designed, built, and launched.",
-    stack: "Next.js, React, TypeScript, Tailwind CSS",
+    number: "01",
+    label: "Solving complexity",
+    summary: "A decade of authenticated financial-services experiences at AXA and Equitable. Most of it is confidential, so I share it responsibly.",
+    links: [
+      { label: "Enterprise work", href: "/projects#enterprise" },
+      { label: "Request a walkthrough", href: "/contact?re=portfolio-access" },
+    ],
   },
   {
-    title: "UIpen",
-    type: "Independent product",
-    externalHref: "https://design-debt.vercel.app",
-    problem: "Product teams need a faster way to spot design debt before it slows down everyday product work.",
-    decision: "Kept the product centered on scan, review, and act instead of turning it into another dashboard.",
-    role: "Product design, UX engineering, front-end implementation, and launch.",
-    outcome: "Designed, built, and launched.",
-    stack: "Angular, TypeScript, Node.js, Prisma, Vercel",
+    number: "02",
+    label: "Connecting design and engineering",
+    summary: "I designed and built the front end of Equitable's public retirement calculator, replacing a form people abandoned.",
+    links: [
+      { label: "Try the live calculator", href: "https://equitable.com/individuals/retirement-savings-plans/retirement-planning-calculator", external: true },
+      { label: "Case study (password)", href: "/case-studies/equitable-retirement-calculator" },
+    ],
   },
   {
-    title: "Trootone",
-    type: "Independent product",
-    href: "/case-studies/trootone",
-    externalHref: "https://trootone.vercel.app",
-    problem: "Tuner apps put ads, settings and jittery readouts between a guitarist and an in-tune string.",
-    decision: "One button to start, auto string detection, a steady analog-style needle, and a chime when a string is in tune.",
-    role: "Product design, signal processing, front-end engineering, and launch.",
-    outcome: "Designed, built, and launched.",
-    stack: "Next.js, React, TypeScript, Tailwind CSS, Web Audio API",
+    number: "03",
+    label: "Building what I believe in",
+    summary: "Products I noticed a need for, then designed, built, and shipped on my own.",
+    links: [
+      { label: "Enough", href: "/case-studies/enough" },
+      { label: "UIpen", href: "/case-studies/uipen" },
+      { label: "Trootone", href: "/case-studies/trootone" },
+    ],
   },
 ];
 
@@ -85,16 +59,14 @@ export default function Home() {
   return (
     <>
       <section className="home-hero page-section">
-        <div className="content-wrap hero-grid">
-          <div>
-            <p className="eyebrow">UX Strategy · Product Design · Engineering</p>
-            <h1 className="hero-title">
-              Product design leadership, from strategy to shipped experience.
-            </h1>
-          </div>
+        <div className="content-wrap">
+          <p className="eyebrow">Joe O&apos;Leary · Product Designer</p>
+          <h1 className="hero-title">
+            I understand problems, question complexity, and build better ways forward.
+          </h1>
           <div className="hero-copy">
             <p>
-              I&apos;m Joe O&apos;Leary, a senior UX designer and engineer in Syracuse, NY. I work across product strategy, design systems, accessibility, and front-end implementation, mostly for complex financial experiences.
+              I don&apos;t just design interfaces. I combine UX strategy, systems thinking, and hands-on engineering to turn complicated problems into experiences that make sense.
             </p>
             <div className="cta-row" aria-label="Primary actions">
               <Link className="button button-primary" href="#selected-work">
@@ -108,7 +80,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="evidence-strip" aria-label="Professional evidence">
+      <section className="evidence-strip" aria-label="Experience at a glance">
         <div className="content-wrap evidence-grid">
           {evidence.map((item) => (
             <p key={item}>{item}</p>
@@ -116,81 +88,68 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="selected-work" className="page-section selected-work">
-        <div className="content-wrap">
-          <div className="section-heading">
-            <p className="eyebrow">Selected Work</p>
-            <h2>Selected product work, from financial platforms to independent tools.</h2>
-          </div>
-
-          <div className="work-block">
-            <div className="work-block-heading">
-              <p className="eyebrow">Enterprise Product Work</p>
-              <p>
-                A few examples from financial-product work. Full case studies are available by request.
-              </p>
-            </div>
-            <div className="enterprise-list">
-              {enterpriseWork.map((project) => (
-                <article key={project.title} className="enterprise-preview">
-                  <h3>{project.title}</h3>
-                  <dl>
-                    <div>
-                      <dt>Context</dt>
-                      <dd>{project.context}</dd>
-                    </div>
-                    <div>
-                      <dt>Role</dt>
-                      <dd>{project.role}</dd>
-                    </div>
-                    <div>
-                      <dt>Contribution</dt>
-                      <dd>{project.contribution}</dd>
-                    </div>
-                  </dl>
-                </article>
+      <section className="page-section featured" aria-labelledby="featured-heading">
+        <div className="content-wrap featured-grid">
+          <div>
+            <p className="eyebrow">Featured Project</p>
+            <h2 id="featured-heading" className="featured-title">Trootone</h2>
+            <p className="featured-lede">
+              A free guitar tuner that runs in your phone&apos;s browser. I designed and built all of it, from the interaction model to the pitch detection, to get ads, settings, and jittery readouts out of the way.
+            </p>
+            <ul className="feature-list">
+              {trootoneFeatures.map((feature) => (
+                <li key={feature.title}>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.body}</p>
+                </li>
               ))}
-            </div>
+            </ul>
             <div className="cta-row">
-              <Link className="button button-primary" href="/projects">
-                View Work
+              <Link className="button button-primary" href="/case-studies/trootone">
+                Read the Case Study
               </Link>
-              <Link className="button button-secondary" href="/contact?re=portfolio-access">
-                Request Access
-              </Link>
+              <a className="button button-secondary" href="https://trootone.vercel.app" target="_blank" rel="noopener noreferrer">
+                Try Trootone <span className="sr-only">(opens in a new tab)</span>
+              </a>
             </div>
           </div>
-
-          <div className="work-block independent-block">
-            <div className="work-block-heading">
-              <p className="eyebrow">Independent Products</p>
-              <p>
-                My latest independent projects.
-              </p>
-            </div>
-            <div className="independent-list">
-              {independentWork.map((project) => (
-                <article key={project.title} className="independent-preview">
-                  <div>
-                    <p className="project-type">{project.type}</p>
-                    <h3>{project.title}</h3>
-                  </div>
-                  <p><strong>Problem:</strong> {project.problem}</p>
-                  <p><strong>Design decision:</strong> {project.decision}</p>
-                  <p><strong>Role:</strong> {project.role}</p>
-                  <p className="muted-copy">Stack: {project.stack}</p>
-                  <div className="link-row">
-                    {project.href ? <Link href={project.href}>Read case study</Link> : null}
-                    <a href={project.externalHref} target="_blank" rel="noopener noreferrer">
-                      Visit live site <span className="sr-only">(opens in a new tab)</span>
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
+          <div className="featured-shots">
+            {trootoneShots.map((shot) => (
+              <div key={shot.src} className="featured-phone">
+                <Image src={shot.src} alt={shot.alt} fill sizes="(max-width: 620px) 45vw, 240px" className="object-cover object-top" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      <section id="selected-work" className="page-section" aria-labelledby="selected-work-heading">
+        <div className="content-wrap">
+          <h2 id="selected-work-heading" className="eyebrow">Selected Work</h2>
+          <div className="track-grid">
+            {tracks.map((track) => (
+              <article key={track.number} className="track">
+                <p className="eyebrow"><span className="track-number">{track.number}</span> {track.label}</p>
+                <p className="track-summary">{track.summary}</p>
+                <ul className="track-links">
+                  {track.links.map((link) => (
+                    <li key={link.label}>
+                      {link.external ? (
+                        <a href={link.href} target="_blank" rel="noopener noreferrer">
+                          {link.label} <span className="sr-only">(opens in a new tab)</span>
+                        </a>
+                      ) : (
+                        <Link href={link.href}>{link.label}</Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }

@@ -31,6 +31,25 @@ const decisions = [
   },
 ];
 
+const questioned = [
+  {
+    assumption: "A tuner has to be an app you download.",
+    decision: "It runs in the phone's browser, installs to the home screen and works offline. No app store between you and a tuned string.",
+  },
+  {
+    assumption: "More settings means more control.",
+    decision: "One button to start. Auto-detect picks the string, and five common tunings cover most players without a settings screen.",
+  },
+  {
+    assumption: "The fastest readout is the best readout.",
+    decision: "A needle that settles is easier to follow than one that flickers. I traded a little immediacy for a reading you can actually tune by.",
+  },
+  {
+    assumption: "The loudest frequency is the note.",
+    decision: "On low strings the loudest peak is often the wrong octave. The detector takes the first strong peak instead.",
+  },
+];
+
 const shots = [
   { src: "/case-studies/trootone/idle.jpg", label: "01 / Ready", alt: "Trootone before tuning: the Start Tuning button, a tuning selector, six string buttons and an idle meter" },
   { src: "/case-studies/trootone/flat.jpg", label: "02 / Flat", alt: "Trootone hearing the A string 14 cents flat: the needle sits left of center and the readout says Tune up" },
@@ -95,12 +114,35 @@ export default function TrootoneCaseStudy() {
         </div>
       </section>
 
-      {/* Approach */}
+      {/* Questioned */}
       <section className="py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-12 gap-8 md:gap-12">
             <div className="md:col-span-3">
-              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">02 / Design &amp; Build</p>
+              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">02 / Judgment</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-light">What I questioned</h2>
+            </div>
+            <div className="md:col-span-8 md:col-start-5">
+              <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+                {questioned.map((q) => (
+                  <div key={q.assumption} className="border-t border-gray-300 pt-5">
+                    <p className="text-xs text-gray-500 uppercase tracking-wide mb-3">Assumption</p>
+                    <h3 className="text-xl font-serif mb-3">{q.assumption}</h3>
+                    <p className="text-base leading-relaxed text-gray-700">{q.decision}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="py-20 md:py-28 px-6 md:px-12 bg-gray-50 border-y border-gray-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-12">
+            <div className="md:col-span-3">
+              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">03 / Design &amp; Build</p>
               <h2 className="text-3xl md:text-4xl font-serif font-light">The Approach</h2>
             </div>
             <div className="md:col-span-8 md:col-start-5">
@@ -122,11 +164,11 @@ export default function TrootoneCaseStudy() {
       </section>
 
       {/* The work */}
-      <section className="py-20 md:py-28 px-6 md:px-12 bg-gray-50 border-y border-gray-200">
+      <section className="py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div>
-              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">03 / The Work</p>
+              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">04 / The Work</p>
               <h2 className="text-4xl md:text-5xl font-serif font-light">From flat to in tune</h2>
             </div>
             <p className="text-sm text-gray-600 max-w-sm leading-relaxed">
@@ -147,11 +189,11 @@ export default function TrootoneCaseStudy() {
       </section>
 
       {/* Under the hood */}
-      <section className="py-20 md:py-28 px-6 md:px-12">
+      <section className="py-20 md:py-28 px-6 md:px-12 bg-gray-50 border-y border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-12 gap-8 md:gap-12">
             <div className="md:col-span-3">
-              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">04 / Implementation</p>
+              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">05 / Implementation</p>
               <h2 className="text-3xl md:text-4xl font-serif font-light">Under the hood</h2>
             </div>
             <div className="md:col-span-8 md:col-start-5 max-w-3xl">
@@ -170,16 +212,16 @@ export default function TrootoneCaseStudy() {
       </section>
 
       {/* Outcome */}
-      <section className="py-20 md:py-28 px-6 md:px-12 bg-gray-50 border-y border-gray-200">
+      <section className="py-20 md:py-28 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-12 gap-8 md:gap-12">
             <div className="md:col-span-3">
-              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">05 / Outcome</p>
+              <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">06 / Outcome</p>
               <h2 className="text-3xl md:text-4xl font-serif font-light">Designed, built and shipped</h2>
             </div>
             <div className="md:col-span-8 md:col-start-5">
               <p className="text-lg leading-relaxed text-gray-700 mb-10 max-w-3xl">
-                Trootone is live and used for real tuning, not a concept. I handled the whole product: the interaction design, the identity and neon wordmark, the signal processing, and the launch.
+                Trootone is live and runs in any modern phone browser. I handled the whole product: the interaction design, the identity and neon wordmark, the signal processing, and the launch.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 mb-12">
                 <div className="border-t border-gray-300 pt-5">

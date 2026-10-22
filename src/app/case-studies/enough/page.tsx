@@ -35,6 +35,21 @@ const decisions = [
   },
 ];
 
+const questioned = [
+  {
+    assumption: "A useful retirement answer requires a complete financial model.",
+    decision: "Start with a few understandable inputs and immediate math. A starting point people trust beats a model they abandon halfway through.",
+  },
+  {
+    assumption: "Financial tools need an account or an email address.",
+    decision: "Run the calculator client-side, with no sign-up, email capture, or stored financial profile.",
+  },
+  {
+    assumption: "People just want the number.",
+    decision: "Keep the assumptions next to the result, so people can see why the answer is what it is and how it changes.",
+  },
+];
+
 export default function EnoughCaseStudy() {
   return (
     <>
@@ -84,6 +99,7 @@ export default function EnoughCaseStudy() {
             <p>
               Retirement tools often ask people to build a complete financial model before they can get a useful starting point. Enough keeps the experience narrow: a few understandable inputs, immediate math, and a result that is easy to inspect.
             </p>
+            {/* EDITORIAL: Add one or two sentences on why you built Enough. Suggested angle, only if true: after years of designing retirement experiences inside a large financial company, you wanted to see how simple the first answer could be without a lead-capture funnel. */}
             <p>
               I handled the full loop: framing the problem, designing the interaction model, writing the product copy, building the calculator, and launching the product.
             </p>
@@ -97,7 +113,7 @@ export default function EnoughCaseStudy() {
             <p className="eyebrow">Key Decisions</p>
             <h2>Narrow, transparent, and usable without an account.</h2>
           </div>
-          <div className="enterprise-list">
+          <div className="enterprise-list challenge-list">
             {decisions.map((decision) => (
               <article key={decision.title} className="enterprise-preview">
                 <h3>{decision.title}</h3>
@@ -105,6 +121,28 @@ export default function EnoughCaseStudy() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="page-section">
+        <div className="content-wrap">
+          <div className="section-heading">
+            <p className="eyebrow">What I Questioned</p>
+            <h2>Narrow on purpose.</h2>
+          </div>
+          <div className="enterprise-list">
+            {questioned.map((item) => (
+              <article key={item.assumption} className="enterprise-preview">
+                <p className="meta-label">Assumption</p>
+                <h3>{item.assumption}</h3>
+                <p className="meta-label">What I did instead</p>
+                <p>{item.decision}</p>
+              </article>
+            ))}
+          </div>
+          <p className="confidential-note" style={{ marginTop: "2rem" }}>
+            <strong style={{ fontWeight: 500 }}>The tradeoff:</strong> a narrow first version leaves things out. I chose a number people can understand and inspect over a model that tries to cover every case and asks for everything up front.
+          </p>
         </div>
       </section>
 
@@ -134,7 +172,10 @@ export default function EnoughCaseStudy() {
             Designed, built, and launched.
           </h2>
           <p style={{ color: "var(--mid)", lineHeight: 1.75, fontWeight: 300, marginBottom: "2rem" }}>
-            Enough is live as a usable product, not a static concept. Future work could add scenario comparison, saved assumptions, and export options. The first version focuses on making the retirement number understandable quickly.
+            Enough is live as a usable product, not a static concept. The first version focuses on making the retirement number understandable quickly.
+          </p>
+          <p style={{ color: "var(--mid)", lineHeight: 1.75, fontWeight: 300, marginBottom: "2rem" }}>
+            <strong style={{ color: "var(--black)", fontWeight: 500 }}>Ideas, not yet shipped:</strong> scenario comparison, saved assumptions, and export options.
           </p>
           <div className="cta-row">
             <a className="button button-primary" href="https://whatsyourenough.info/" target="_blank" rel="noopener noreferrer">

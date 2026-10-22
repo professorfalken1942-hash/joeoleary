@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About Joseph O'Leary, a senior UX designer and engineer working across product strategy, accessibility, design systems, and front-end implementation.",
+  description: "About Joseph O'Leary: a product designer with a graphic design foundation, a decade in enterprise financial services, and a habit of building the software himself.",
   alternates: {
     canonical: "/about",
   },
@@ -16,7 +16,7 @@ const experience = [
     period: "Jan 2019 - Present",
     duration: "7 yrs 3 mos",
     location: "Syracuse, NY",
-    desc: "Leads UX strategy, shapes major product work, builds reusable patterns, mentors designers, and partners with product and engineering on client, agent, and broker applications.",
+    desc: "UX strategy, design, and front-end development for client, agent, and broker applications. Accessibility to WCAG 2.1 AA, eDelivery and digital adoption, reusable patterns, and mentoring junior designers.",
   },
   {
     role: "Senior UX/UI Designer",
@@ -32,7 +32,61 @@ const experience = [
     period: "Sep 2013 - Dec 2013",
     duration: "4 mos",
     location: "Greater Syracuse-Auburn Area",
-    desc: "",
+    desc: "Freelance UX and web design consulting.",
+  },
+  {
+    role: "Senior Designer, Front-End Web Developer, Production Manager",
+    company: "Total Advertising Inc",
+    period: "Apr 2004 - Aug 2013",
+    duration: "9 yrs 5 mos",
+    location: "Syracuse, NY",
+    desc: "Print and digital design, front-end development for client sites, and running design production.",
+  },
+];
+
+const story = [
+  {
+    title: "It started with graphic design.",
+    paragraphs: [
+      "I studied studio art at Nazareth University, with concentrations in graphic design and philosophy.",
+    ],
+  },
+  {
+    title: "Then print became the web.",
+    paragraphs: [
+      "I spent nine years at Total Advertising, designing for print and digital and running production. As more of the work moved online, I started building it too: front-end development for client sites in HTML, CSS, jQuery, and WordPress.",
+    ],
+  },
+  {
+    title: "Then a decade of financial services.",
+    paragraphs: [
+      "In 2014 I joined AXA, which became Equitable. I started on marketing sites and client portals and moved into authenticated applications for clients, financial professionals, and brokers.",
+      "This is where I learned that complexity rarely goes away. Regulation, legacy platforms, and competing priorities are real. The work is making them understandable to the person on the other side of the screen. Along the way I've worked on accessibility to WCAG 2.1 AA, eDelivery and digital adoption, and reusable patterns, mentored junior designers, and represented the company with DisabilityIN.",
+    ],
+  },
+  {
+    title: "Why I stayed close to the code.",
+    paragraphs: [
+      "Knowing how software is built changes the design conversation. I can see a constraint before it becomes a surprise, prototype in real code, and hand engineers something that already works. On the Equitable retirement calculator, I designed the experience and built the front end.",
+    ],
+  },
+  {
+    title: "Why I build my own products.",
+    paragraphs: [
+      "Enough, UIpen, and Trootone each started with something that bothered me: a retirement question buried under forms, design debt nobody could point at, a tuner app cluttered with ads. Building them myself is how I test whether an idea actually holds up.",
+    ],
+  },
+  {
+    title: "What I believe.",
+    paragraphs: [
+      "Simpler experiences usually take deeper thinking, not less. The best interface is often the one people barely notice, because the product quietly did what they needed.",
+    ],
+  },
+  {
+    title: "What I want next.",
+    paragraphs: [
+      "I want to stay hands-on, close to the problems and close to the code, while having real influence over what gets built and why. That means Staff, Principal, or Lead product design work, not a move into people management.",
+    ],
   },
 ];
 
@@ -58,8 +112,8 @@ const skillGroups = [
     skills: ["React and Next.js", "TypeScript", "Front-end architecture", "Design-to-code translation"],
   },
   {
-    title: "Leadership and Collaboration",
-    skills: ["Mentoring", "Cross-functional facilitation", "Design critique", "Product-engineering partnership"],
+    title: "Influence and Collaboration",
+    skills: ["Making tradeoffs visible", "Cross-functional facilitation", "Design critique and mentoring", "Product-engineering partnership"],
   },
 ];
 
@@ -68,22 +122,22 @@ export default function AboutPage() {
     <>
       <section className="col-2" style={{ borderBottom: "1px solid var(--border)", paddingTop: "calc(56px + 4rem)" }}>
         <div style={{ padding: "4rem 2rem", borderRight: "1px solid var(--border)" }}>
-          <p className="eyebrow">Bio</p>
+          <p className="eyebrow">About</p>
+          <h1 className="page-heading" style={{ fontSize: "3rem", marginBottom: "2rem" }}>
+            A designer who also builds.
+          </h1>
           <div className="text-stack">
             <p>
-              I&apos;m a senior UX designer and engineer working across product strategy, interaction design, design systems, accessibility, and front-end implementation. Over the past 12+ years, I&apos;ve helped shape financial experiences used by clients, advisors, and internal teams.
+              I&apos;m Joe O&apos;Leary, a product designer in Syracuse, NY. I&apos;ve spent more than 20 years in design, and more than a decade of it in enterprise financial services at AXA and Equitable.
             </p>
             <p>
-              At Equitable, I lead UX strategy, shape major product work, build reusable patterns, mentor designers, and work closely with product and engineering.
-            </p>
-            <p>
-              I&apos;m interested in Principal, Staff, and Lead roles where I can improve both individual products and the systems teams use to build them.
+              I like the problems other people find tedious: dense account information, regulated workflows, forms that ask too much. I want to understand why they got complicated, question which parts actually need to be there, and then build something simpler that works.
             </p>
           </div>
         </div>
 
         <div style={{ padding: "4rem 2rem" }}>
-          <p className="eyebrow">Experience</p>
+          <h2 className="eyebrow">Experience</h2>
           {experience.map((item) => (
             <article key={`${item.company}-${item.period}`} className="experience-item">
               <div className="experience-top">
@@ -98,6 +152,28 @@ export default function AboutPage() {
               {item.desc ? <p style={{ marginTop: "0.75rem" }}>{item.desc}</p> : null}
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="page-section" aria-labelledby="story-heading">
+        <div className="content-wrap">
+          <div className="section-heading">
+            <p className="eyebrow">The Longer Version</p>
+            <h2 id="story-heading">How I got here.</h2>
+          </div>
+          {/* EDITORIAL: These chapters use only facts from your resume. Each would be stronger with one real, specific moment of your own, such as the first time you shipped code you designed, or a decision at Equitable you pushed back on (kept non-confidential). */}
+          <div className="story-list">
+            {story.map((chapter) => (
+              <article key={chapter.title} className="story-chapter">
+                <h3>{chapter.title}</h3>
+                <div className="text-stack">
+                  {chapter.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -136,7 +212,7 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow">Hiring</p>
             <p style={{ color: "var(--mid)", lineHeight: 1.7, fontWeight: 300, marginBottom: "1.25rem" }}>
-              I&apos;m focused on Principal, Staff, Lead, and comparable senior UX/product-design roles.
+              I&apos;m looking for senior individual-contributor product design roles where I can stay hands-on and shape product direction.
             </p>
             <Link className="button button-primary" href="/contact?re=hiring">
               Contact Joe
