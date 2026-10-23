@@ -34,14 +34,6 @@ const experience = [
     location: "Greater Syracuse-Auburn Area",
     desc: "Freelance UX and web design consulting.",
   },
-  {
-    role: "Senior Designer, Front-End Web Developer, Production Manager",
-    company: "Total Advertising Inc",
-    period: "Apr 2004 - Aug 2013",
-    duration: "9 yrs 5 mos",
-    location: "Syracuse, NY",
-    desc: "Print and digital design, front-end development for client sites, and running design production.",
-  },
 ];
 
 const story = [
@@ -49,12 +41,7 @@ const story = [
     title: "It started with graphic design.",
     paragraphs: [
       "I studied studio art at Nazareth University, with concentrations in graphic design and philosophy.",
-    ],
-  },
-  {
-    title: "Then print became the web.",
-    paragraphs: [
-      "I spent nine years at Total Advertising, designing for print and digital and running production. As more of the work moved online, I started building it too: front-end development for client sites in HTML, CSS, jQuery, and WordPress.",
+      "From there I spent years at a few agencies, designing for print and digital. Along the way I started building what I designed, writing the front-end code for client sites.",
     ],
   },
   {

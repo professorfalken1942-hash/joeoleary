@@ -22,6 +22,15 @@ const trootoneShots = [
   { src: "/case-studies/trootone/intune.jpg", alt: "Trootone with the A string in tune: the needle is centered and green" },
 ];
 
+const dashboardFeatures = [
+  { title: "Chores that age", body: "Each chore has an interval, and its bar drifts from green to red as it goes stale." },
+  { title: "Tap to finish, tap to undo", body: "One tap logs it. A mis-tap on the wall costs nothing." },
+  { title: "Family calendar", body: "Fills itself from a shared Google Calendar feed." },
+  { title: "Groceries and lists", body: "Check items off, then clear the cart in one tap." },
+  { title: "Weather and a news brief", body: "Open-Meteo and RSS feeds. No paid APIs." },
+  { title: "Built for the wall", body: "One household passcode keeps a tablet signed in for a year. Works on phones too." },
+];
+
 type TrackLink = { label: string; href: string; external?: boolean };
 
 const tracks: { number: string; label: string; summary: string; links: TrackLink[] }[] = [
@@ -119,6 +128,40 @@ export default function Home() {
                 <Image src={shot.src} alt={shot.alt} fill sizes="(max-width: 620px) 45vw, 240px" className="object-cover object-top" />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section featured featured-alt" aria-labelledby="dashboard-heading">
+        <div className="content-wrap featured-grid featured-reverse">
+          <div className="dashboard-shots">
+            <div className="dashboard-tablet">
+              <Image src="/case-studies/home-dashboard/tablet-home.jpg" alt="Home dashboard on a wall tablet: clock, chores that need doing with colored freshness bars, weather forecast, grocery count, and upcoming events (demo data)" fill sizes="(max-width: 900px) 100vw, 560px" className="object-cover object-top" />
+            </div>
+            <div className="dashboard-phone">
+              <Image src="/case-studies/home-dashboard/phone-home.jpg" alt="The same dashboard on a phone, with chores stacked and a bottom tab bar (demo data)" fill sizes="160px" className="object-cover object-top" />
+            </div>
+          </div>
+          <div>
+            <p className="eyebrow">Featured Project</p>
+            <h2 id="dashboard-heading" className="featured-title">Home Dashboard</h2>
+            <p className="featured-lede">
+              A touchscreen display for the wall at home: chores, the family calendar, groceries, weather, and a short news brief, readable at a glance. I designed and built it with Next.js and Postgres.
+            </p>
+            <ul className="feature-list">
+              {dashboardFeatures.map((feature) => (
+                <li key={feature.title}>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.body}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="cta-row">
+              <Link className="button button-secondary" href="/contact">
+                Ask for a Walkthrough
+              </Link>
+              <p className="muted-copy">It runs our household, so it&apos;s passcode-protected. Screenshots use demo data.</p>
+            </div>
           </div>
         </div>
       </section>
