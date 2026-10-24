@@ -120,6 +120,18 @@ const independentProjects: Project[] = [
     href: "/case-studies/trootone",
     liveHref: "https://trootone.vercel.app",
   },
+  {
+    id: "09",
+    title: "Altamere Agent Gateway",
+    category: "Independent Concept · Working prototype",
+    year: "2026",
+    context: "How a personal AI agent could service an insurance account without a password, for a fictional insurer.",
+    role: "Product designer and developer.",
+    constraint: "Independent concept with fictional data, not client or employer work.",
+    contribution: "Mapped five requests by risk, then built the mandate model, rules engine, owner approval app, and an MCP connection for AI agents.",
+    outcome: "Designed and built as a working prototype.",
+    href: "/case-studies/altamere",
+  },
 ];
 
 type Project = {

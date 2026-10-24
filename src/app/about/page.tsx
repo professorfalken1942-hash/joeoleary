@@ -69,12 +69,6 @@ const story = [
       "Simpler experiences usually take deeper thinking, not less. The best interface is often the one people barely notice, because the product quietly did what they needed.",
     ],
   },
-  {
-    title: "What I want next.",
-    paragraphs: [
-      "I want to stay hands-on, close to the problems and close to the code, while having real influence over what gets built and why. That means Staff, Principal, or Lead product design work, not a move into people management.",
-    ],
-  },
 ];
 
 const skillGroups = [

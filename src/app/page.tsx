@@ -60,6 +60,7 @@ const tracks: { number: string; label: string; summary: string; links: TrackLink
       { label: "Enough", href: "/case-studies/enough" },
       { label: "UIpen", href: "/case-studies/uipen" },
       { label: "Trootone", href: "/case-studies/trootone" },
+      { label: "Altamere Agent Gateway", href: "/case-studies/altamere" },
     ],
   },
 ];

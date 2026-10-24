@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/case-studies/map-my-swing",
     "/case-studies/trootone",
     "/case-studies/uipen",
+    "/case-studies/altamere",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
