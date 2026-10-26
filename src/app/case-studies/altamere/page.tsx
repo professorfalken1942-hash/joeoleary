@@ -139,7 +139,7 @@ export default function AltamereCaseStudy() {
               <p className="text-xs text-gray-500 uppercase tracking-[0.22em] mb-4">03 / Experience map</p>
               <h2 className="text-3xl md:text-4xl font-serif font-light">Five requests, one journey</h2>
             </div>
-            <div className="md:col-span-8 md:col-start-5 max-w-3xl">
+            <div className="md:col-span-8 md:col-start-5 max-w-3xl min-w-0">
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
                 I started with a map rather than screens. Every request moves through the same seven stages: intent, identify, authorize, clarify and disclose, confirm, execute, and notify. What changes is how much friction each stage adds, and that depends on risk.
               </p>
