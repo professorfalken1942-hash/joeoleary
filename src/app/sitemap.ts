@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/case-studies/trootone",
     "/case-studies/uipen",
     "/case-studies/altamere",
+    "/blog/when-your-ai-agent-calls-your-insurer",
     "/blog/openclaw-digital-studio",
     "/blog/wcag-accessibility-checklist",
   ].map((route) => ({

@@ -230,6 +230,84 @@ The spec is dense. But in practice, 80% of issues come from five things: missing
 
 Get those right and you're most of the way there.`;
 
+const AGENT_CONTENT = `Ask an AI assistant to update your address with your insurance company, and today it has exactly one way to do it: pretend to be you.
+
+It signs in with your password, finds the profile screen, and types in the new address. To the insurer, that looks like you signing in and changing your address. It also looks exactly like someone who stole your password doing the same thing, which is the uncomfortable part.
+
+Personal AI agents are getting good enough that people will hand them these chores. I spent a few weeks thinking through what a better arrangement would look like for a financial company, and then built a working prototype to find out where the design gets hard.
+
+## The problem with pretending
+
+When an agent drives a website on your behalf, everyone loses something.
+
+- **The company can't tell you from the agent.** It can't apply different rules, and it can't spot an agent that's been compromised.
+- **You can't limit what the agent does.** Once it's signed in as you, it can do anything you can.
+- **The fine print gets skipped.** Surrender charges, tax warnings and lapse risks scroll past a script that only wants the Submit button.
+- **A stolen session looks identical.** The signals fraud teams rely on start to look normal.
+
+## Three ways an agent could reach a company
+
+1. **The agent drives the website.** It works today, it breaks whenever the site changes, and it's the "before" picture.
+2. **A delegated API.** You grant a scoped permission, the way open banking works, and the agent calls fixed endpoints. Safer, but every new request type needs new engineering.
+3. **Agent to agent.** The company publishes an agent of its own that describes what it can do. Your agent asks in plain language and carries your permission. The company's side applies its own rules, disclosures and checks.
+
+The third model is the interesting one for design, because it reduces to one sentence: **you delegate, the agent asks, and the company decides.**
+
+## Five requests, ranked by risk
+
+I worked through five things a customer might ask an agent to do with a life insurance and annuity company: pay a premium, change an address, start required distributions from an IRA, take a policy loan, and make a withdrawal.
+
+Every one of them moves through the same seven stages: intent, identify, authorize, clarify and disclose, confirm, execute, and notify. What changes is how much friction each stage adds.
+
+- **Premium payment: low risk.** Money is coming in from a bank account the company already verified. The agent can just do it, within a monthly cap you set.
+- **Loan request: elevated.** Money goes out, but to your own bank, and it can be repaid. You still sign the loan agreement yourself.
+- **Address change: high.** More on this one below.
+- **Disbursement: high.** Recurring money out with tax consequences. You choose the tax withholding.
+- **Withdrawal: high.** Hard to reverse, with possible surrender charges, taxes and a smaller guaranteed benefit. You see the real net amount before anything moves.
+
+## The surprising one: changing your address
+
+I expected withdrawals to be the hardest case. The address change turned out to be the most interesting.
+
+It looks like housekeeping. But changing the mailing address is a common first step in an account takeover: mail stops reaching the real owner, and then the money moves. So in the model, an address change always needs the owner's approval on their own device, a notice goes to the old address, and money out is paused for 10 days.
+
+That one rule catches the pattern that matters most. In the prototype, an agent that changes the address and then immediately asks for a withdrawal gets the withdrawal held for review, and is told plainly that nothing it does will speed that up.
+
+## The principles I landed on
+
+- **Delegate, don't impersonate.** The agent acts as itself, carrying a mandate you granted, never your password.
+- **Confirm on the owner's device.** Risky steps are approved with a passkey or Face ID in the company's app. Typing "yes" to the agent isn't consent.
+- **The company speaks for itself.** Disclosures travel word for word. The agent can explain them, but it can't paraphrase them away.
+- **Simple requests can hide risk.** Friction should match the actual risk, not how complicated the request looks.
+- **Always tell the owner.** Every action is reported through the company's own channels, whoever started it.
+- **Easy to see, easy to stop.** One screen shows everything your agent did, and one tap revokes its access.
+
+## Building it to find out
+
+Maps and principles are cheap. I wanted to know what breaks, so I built a working prototype for a fictional insurer called Altamere Life. It has a rules engine, a phone app where the owner approves requests, and a connection that lets an AI agent like Claude act on the owner's behalf using a mandate token instead of a password.
+
+Three things only became obvious once it was running.
+
+**The agent is a user too.** When a request is held or waiting for approval, the gateway tells the agent what's happening and what it can and can't do next. Writing those messages turned out to be UX writing for a non-human reader. Get it wrong and the agent keeps retrying, or tells the customer something misleading.
+
+**Approval has to be checked twice.** Things change between the moment an agent asks and the moment a person taps Approve. If the address changed in between, a withdrawal that looked fine a minute ago shouldn't go through. The rules run again at the moment of approval.
+
+**Disclosures are a design problem, not a legal attachment.** When the agent is the one talking, the company's exact words have to reach the person intact, at the moment they're deciding. That means they're part of the conversation design, not a link at the bottom of a form.
+
+## What's still open
+
+The prototype simulates the hard infrastructure: real passkeys, verifying which agent is actually calling, and signed, tamper-proof mandates. Payments are starting to get standards for agents. Servicing requests like these, at insurers, banks and brokerages, mostly haven't been addressed yet.
+
+## Why this matters to designers
+
+For most of my career, the interface has been a screen. In an agent-to-agent world, a lot of the experience happens in a conversation between two pieces of software, and the design work moves to the moments where a person has to step in: what they see, when they see it, and what they're being asked to decide.
+
+The best interface may be no interface at all, right up until the moment it matters most. Those moments deserve the most design attention.
+
+You can see the experience map, screenshots and how it was built in the [Altamere Agent Gateway case study](/case-studies/altamere).
+
+*Altamere Life and everything in the prototype are fictional.*`;
+
 type Post = {
   title: string;
   excerpt: string;
@@ -240,6 +318,14 @@ type Post = {
 };
 
 const posts: Record<string, Post> = {
+  "when-your-ai-agent-calls-your-insurer": {
+    excerpt: "What should happen when your AI agent asks your insurance company to change your address or move money? A design model for agent-to-agent requests, and what I learned building it.",
+    title: "When Your AI Agent Calls Your Insurer",
+    date: "October 26, 2026",
+    category: "Product Thinking",
+    readTime: "6 min read",
+    content: AGENT_CONTENT,
+  },
   "openclaw-digital-studio": {
     excerpt: "How I think about infrastructure, automation, and the parts of studio work that should stay human.",
     title: "Building a One-Person Digital Studio with OpenClaw",
@@ -257,6 +343,49 @@ const posts: Record<string, Post> = {
     content: WCAG_CONTENT,
   },
 };
+
+/** Line-based Markdown subset: ## headings, - and 1. lists, **bold**, [links](url), paragraphs. */
+function renderPost(content: string) {
+  const inline = (text: string) =>
+    text
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.+?)\*/g, "<em>$1</em>")
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_m, label: string, href: string) =>
+        href.startsWith("/")
+          ? `<a href="${href}" style="color: var(--accent-tertiary)">${label}</a>`
+          : `<a href="${href}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-tertiary)">${label}<span class="sr-only"> (opens in a new tab)</span></a>`
+      );
+  const html: string[] = [];
+  let list: "ul" | "ol" | null = null;
+  const closeList = () => {
+    if (list) html.push(`</${list}>`);
+    list = null;
+  };
+  for (const raw of content.trim().split("\n")) {
+    const line = raw.trim();
+    const bullet = line.match(/^- (.*)/);
+    const numbered = line.match(/^\d+\. (.*)/);
+    if (bullet || numbered) {
+      const kind = bullet ? "ul" : "ol";
+      if (list !== kind) {
+        closeList();
+        html.push(`<${kind} style="margin: 0 0 1.25rem 1.5rem; list-style: ${kind === "ul" ? "disc" : "decimal"}">`);
+        list = kind;
+      }
+      html.push(`<li style="margin-bottom: 0.5rem">${inline((bullet ?? numbered)![1])}</li>`);
+      continue;
+    }
+    closeList();
+    if (line === "") continue;
+    if (line.startsWith("## ")) {
+      html.push(`<h2 style="font-size: 1.4rem; font-family: var(--font-sans); font-weight: 500; margin: 2.25rem 0 1rem; color: var(--text)">${inline(line.slice(3))}</h2>`);
+    } else {
+      html.push(`<p style="margin-bottom: 1.1rem">${inline(line)}</p>`);
+    }
+  }
+  closeList();
+  return html.join("");
+}
 
 export async function generateStaticParams() {
   return Object.keys(posts).map((slug) => ({
@@ -307,24 +436,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <div style={{ maxWidth: "800px", fontSize: "1rem", lineHeight: 1.8, color: "var(--text)" }}>
           {post.content ? (
             <div
-              dangerouslySetInnerHTML={{
-                __html: post.content
-                  .trim()
-                  .split("\n")
-                  .map((line: string) => {
-                    if (line.startsWith("##")) {
-                      return `<h2 style="font-size: 1.4rem; font-family: var(--font-sans); font-weight: 500; margin: 2rem 0 1rem; color: var(--text)">${line.replace("## ", "")}</h2>`;
-                    }
-                    if (line.startsWith("- ")) {
-                      return `<li style="margin-left: 1.5rem; margin-bottom: 0.5rem">${line.replace("- ", "")}</li>`;
-                    }
-                    if (line.trim() === "") {
-                      return "<br />";
-                    }
-                    return `<p style="margin-bottom: 1rem">${line}</p>`;
-                  })
-                  .join(""),
-              }}
+              dangerouslySetInnerHTML={{ __html: renderPost(post.content) }}
             />
           ) : (
             <p style={{ marginBottom: "2rem" }}>Full article coming soon.</p>

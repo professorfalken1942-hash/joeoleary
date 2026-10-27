@@ -10,6 +10,14 @@ export const metadata: Metadata = pageMetadata({
 
 const posts = [
   {
+    slug: "when-your-ai-agent-calls-your-insurer",
+    title: "When Your AI Agent Calls Your Insurer",
+    excerpt: "A design model for agent-to-agent requests in financial services, and what I learned building a working prototype.",
+    date: "October 26, 2026",
+    category: "Product Thinking",
+    readTime: "6 min read",
+  },
+  {
     slug: "openclaw-digital-studio",
     title: "Building a One-Person Digital Studio with OpenClaw",
     excerpt: "How I think about infrastructure, automation, and the parts of studio work that should stay human.",
