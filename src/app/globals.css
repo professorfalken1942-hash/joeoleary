@@ -6,8 +6,8 @@
   --font-ultra: 'Ultra', Georgia, serif;
   --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --primary-teal: #5ec298;
-  --bright-blue: #4cbaf7;
-  --deep-blue: #0075a8;
+  --primary-green: #16794c;
+  --light-green: #a8dcb4;
   --dark-slate: #384b42;
   --muted-gray-green: #687a71;
   --soft-teal: #f0faf6;
@@ -17,8 +17,8 @@
   --off-white: var(--soft-teal);
   --mid: var(--muted-gray-green);
   --accent: var(--primary-teal);
-  --accent-secondary: var(--bright-blue);
-  --accent-tertiary: var(--deep-blue);
+  --accent-secondary: var(--primary-green);
+  --accent-tertiary: var(--primary-green);
   --border: #d8e4de;
   --bg: var(--white);
   --text: var(--dark-slate);
@@ -30,7 +30,7 @@
 @theme inline {
   --color-white: var(--white);
   --color-black: var(--dark-slate);
-  --color-blue-600: var(--deep-blue);
+  --color-blue-600: var(--primary-green);
   --color-blue-800: var(--dark-slate);
   --color-gray-50: var(--off-white);
   --color-gray-100: #eef5f1;
@@ -174,7 +174,7 @@ img {
   overflow: hidden;
   padding-top: calc(56px + 4.5rem);
   background:
-    linear-gradient(135deg, rgba(94, 194, 152, 0.28), rgba(76, 186, 247, 0.15) 55%, rgba(255, 255, 255, 0.9)),
+    linear-gradient(135deg, rgba(94, 194, 152, 0.3), rgba(168, 220, 180, 0.18) 55%, rgba(255, 255, 255, 0.9)),
     #ffffff;
 }
 
@@ -183,7 +183,7 @@ img {
   position: absolute;
   inset: auto 0 0;
   height: 5px;
-  background: linear-gradient(90deg, var(--primary-teal), var(--bright-blue), var(--deep-blue));
+  background: linear-gradient(90deg, var(--light-green), var(--primary-teal), var(--primary-green));
 }
 
 .hero-grid {
@@ -541,7 +541,7 @@ img {
 
 .case-study-shell .case-study-cta:hover {
   color: var(--white);
-  background-color: var(--deep-blue);
+  background-color: var(--primary-green);
   transform: translateY(-2px);
 }
 
