@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 // Set once the prototype is deployed.
-const LIVE_URL: string | null = null;
+const LIVE_URL: string | null = "https://altamere-gateway.vercel.app";
 
 const questioned = [
   {
