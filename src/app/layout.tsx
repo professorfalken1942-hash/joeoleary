@@ -7,6 +7,7 @@ import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME, SITE_URL } from "@/lib/s
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  verification: { google: "VG1ZGUx0WnN8xzlHWwNGzgOau7fmlqnIz2VzXaEzvn4" },
   title: {
     default: DEFAULT_TITLE,
     template: "%s — Joseph O'Leary",
