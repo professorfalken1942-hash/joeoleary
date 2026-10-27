@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const OPENCLAW_CONTENT = `How do you run a premium digital studio as a single person without burning out?
 
@@ -309,6 +310,8 @@ You can see the experience map, screenshots and how it was built in the [Altamer
 *Altamere Life and everything in the prototype are fictional.*`;
 
 type Post = {
+  /** Drafts are hidden on the live site and readable in local development. */
+  draft?: boolean;
   title: string;
   excerpt: string;
   date: string;
@@ -319,6 +322,7 @@ type Post = {
 
 const posts: Record<string, Post> = {
   "when-your-ai-agent-calls-your-insurer": {
+    draft: true,
     excerpt: "What should happen when your AI agent asks your insurance company to change your address or move money? A design model for agent-to-agent requests, and what I learned building it.",
     title: "When Your AI Agent Calls Your Insurer",
     date: "October 26, 2026",
@@ -387,8 +391,10 @@ function renderPost(content: string) {
   return html.join("");
 }
 
+const isVisible = (post: Post | undefined): post is Post => !!post && (!post.draft || process.env.NODE_ENV !== "production");
+
 export async function generateStaticParams() {
-  return Object.keys(posts).map((slug) => ({
+  return Object.keys(posts).filter((slug) => !posts[slug].draft).map((slug) => ({
     slug,
   }));
 }
@@ -396,7 +402,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = posts[slug];
-  if (!post) return { title: "Post not found", robots: { index: false } };
+  if (!isVisible(post)) return { title: "Post not found", robots: { index: false } };
   return pageMetadata({
     title: post.title,
     description: post.excerpt,
@@ -409,6 +415,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = posts[slug];
+  if (post?.draft && process.env.NODE_ENV === "production") notFound();
 
   if (!post) {
     return (
@@ -423,7 +430,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <>
       <section style={{ paddingTop: "calc(56px + 4rem)", paddingBottom: "4rem", paddingLeft: "2rem", paddingRight: "2rem", borderBottom: "1px solid var(--border)" }}>
         <div style={{ maxWidth: "800px" }}>
-          <p style={{ fontSize: "0.75rem", color: "var(--mid)", textTransform: "uppercase", marginBottom: "1rem" }}>{post.category}</p>
+          <p style={{ fontSize: "0.75rem", color: "var(--mid)", textTransform: "uppercase", marginBottom: "1rem" }}>
+            {post.draft ? <strong style={{ color: "var(--danger)", marginRight: "0.75rem" }}>Draft</strong> : null}
+            {post.category}
+          </p>
           <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "3.5rem", fontWeight: 300, lineHeight: 1.05, marginBottom: "2rem" }}>{post.title}</h1>
           <div style={{ display: "flex", gap: "2rem" }}>
             <p style={{ fontSize: "0.75rem", color: "var(--mid)" }}>{post.date}</p>

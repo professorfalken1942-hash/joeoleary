@@ -11,6 +11,7 @@ export const metadata: Metadata = pageMetadata({
 const posts = [
   {
     slug: "when-your-ai-agent-calls-your-insurer",
+    draft: true,
     title: "When Your AI Agent Calls Your Insurer",
     excerpt: "A design model for agent-to-agent requests in financial services, and what I learned building a working prototype.",
     date: "October 26, 2026",
@@ -35,6 +36,9 @@ const posts = [
   },
 ];
 
+// Drafts show up locally for review and stay off the live site.
+const visiblePosts = posts.filter((post) => !("draft" in post && post.draft) || process.env.NODE_ENV !== "production");
+
 export default function BlogPage() {
   return (
     <>
@@ -50,7 +54,7 @@ export default function BlogPage() {
 
       <section style={{ padding: "0 2rem 3rem" }}>
         <div className="content-wrap">
-          {posts.map((post, i) => (
+          {visiblePosts.map((post, i) => (
             <article
               key={post.slug}
               style={{
