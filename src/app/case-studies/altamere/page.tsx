@@ -143,25 +143,23 @@ export default function AltamereCaseStudy() {
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
                 I started with a map rather than screens. Every request moves through the same seven stages: intent, identify, authorize, clarify and disclose, confirm, execute, and notify. What changes is how much friction each stage adds, and that depends on risk.
               </p>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[520px] text-sm text-left border-t border-gray-300">
-                  <thead>
-                    <tr className="text-xs text-gray-500 uppercase tracking-wide">
-                      <th scope="col" className="py-3 pr-4 font-medium">Request</th>
-                      <th scope="col" className="py-3 pr-4 font-medium">Risk</th>
-                      <th scope="col" className="py-3 font-medium">How it&rsquo;s handled</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tiers.map((t) => (
-                      <tr key={t.request} className="border-t border-gray-200 align-top">
-                        <th scope="row" className="py-3 pr-4 font-medium">{t.request}</th>
-                        <td className="py-3 pr-4 text-gray-700">{t.risk}</td>
-                        <td className="py-3 text-gray-700">{t.handling}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="border-t border-gray-300 text-sm">
+                <div className="hidden md:grid md:grid-cols-[10rem_6rem_minmax(0,1fr)] gap-4 py-3 text-xs text-gray-500 uppercase tracking-wide" aria-hidden="true">
+                  <span>Request</span>
+                  <span>Risk</span>
+                  <span>How it&rsquo;s handled</span>
+                </div>
+                <ul>
+                  {tiers.map((t) => (
+                    <li key={t.request} className="grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-[10rem_6rem_minmax(0,1fr)] gap-x-4 gap-y-1 py-3 border-t border-gray-200">
+                      <span className="font-medium">{t.request}</span>
+                      <span className="text-gray-700 text-right md:text-left">
+                        <span className="sr-only">Risk: </span>{t.risk}
+                      </span>
+                      <span className="col-span-2 md:col-span-1 text-gray-700">{t.handling}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
