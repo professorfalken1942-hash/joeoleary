@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Altamere Agent Gateway Case Study",
-  description: "A working prototype of how a personal AI agent could service an insurance account without a password, designed and built by Joseph O'Leary.",
-  alternates: {
-    canonical: "/case-studies/altamere",
-  },
-};
+  description: "A working prototype of how a personal AI agent could service an insurance account without a password: mandates, risk-tiered approvals, and an MCP connection. Designed and built by Joseph O'Leary.",
+  path: "/case-studies/altamere",
+  image: { url: "/case-studies/altamere/console-pending.jpg", width: 2560, height: 1800, alt: "The Altamere gateway log next to the owner's phone, with an address change waiting for approval" },
+});
 
 // Set once the prototype is deployed.
 const LIVE_URL: string | null = null;

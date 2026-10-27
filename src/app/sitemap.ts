@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const baseUrl = "https://joeoleary.me";
+import { SITE_URL as baseUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -15,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/case-studies/trootone",
     "/case-studies/uipen",
     "/case-studies/altamere",
+    "/blog/openclaw-digital-studio",
+    "/blog/wcag-accessibility-checklist",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

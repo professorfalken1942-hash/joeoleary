@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Enough Case Study",
-  description: "Enough is a focused retirement calculator designed and built by Joseph O'Leary.",
-  alternates: {
-    canonical: "/case-studies/enough",
-  },
-};
+  description: "Enough is a privacy-first retirement calculator built around one question: how much is enough? Designed and built by Joseph O'Leary.",
+  path: "/case-studies/enough",
+});
 
 const metadataItems = [
   { label: "Role", value: "Product design, UX engineering, front-end implementation" },

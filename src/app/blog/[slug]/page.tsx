@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 const OPENCLAW_CONTENT = `How do you run a premium digital studio as a single person without burning out?
@@ -231,6 +232,7 @@ Get those right and you're most of the way there.`;
 
 type Post = {
   title: string;
+  excerpt: string;
   date: string;
   category: string;
   readTime: string;
@@ -239,6 +241,7 @@ type Post = {
 
 const posts: Record<string, Post> = {
   "openclaw-digital-studio": {
+    excerpt: "How I think about infrastructure, automation, and the parts of studio work that should stay human.",
     title: "Building a One-Person Digital Studio with OpenClaw",
     date: "April 14, 2026",
     category: "Studio & Process",
@@ -246,6 +249,7 @@ const posts: Record<string, Post> = {
     content: OPENCLAW_CONTENT,
   },
   "wcag-accessibility-checklist": {
+    excerpt: "A practical checklist for product teams designing and building toward WCAG 2.1 AA.",
     title: "WCAG 2.1 AA Accessibility Checklist",
     date: "April 12, 2026",
     category: "Accessibility",
@@ -263,10 +267,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = posts[slug];
-  return {
-    title: post?.title || "Post",
-    description: post ? `${post.category} note by Joseph O'Leary.` : "Writing by Joseph O'Leary.",
-  };
+  if (!post) return { title: "Post not found", robots: { index: false } };
+  return pageMetadata({
+    title: post.title,
+    description: post.excerpt,
+    path: `/blog/${slug}`,
+    type: "article",
+    publishedTime: new Date(post.date).toISOString(),
+  });
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {

@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Work",
   description: "Enterprise financial-services UX, design and engineering work, and independent products designed and built by Joseph O'Leary.",
-  alternates: {
-    canonical: "/projects",
-  },
-};
+  path: "/projects",
+});
 
 const enterpriseProjects: Project[] = [
   {

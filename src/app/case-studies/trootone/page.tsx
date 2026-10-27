@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Trootone Case Study",
-  description: "Trootone is a browser-based guitar tuner designed and built by Joseph O'Leary.",
-  alternates: {
-    canonical: "/case-studies/trootone",
-  },
-};
+  description: "Trootone is a free guitar tuner that runs in your phone's browser, with automatic string detection and a steady analog-style needle. Designed and built by Joseph O'Leary.",
+  path: "/case-studies/trootone",
+});
 
 const LIVE_URL = "https://trootone.vercel.app";
 

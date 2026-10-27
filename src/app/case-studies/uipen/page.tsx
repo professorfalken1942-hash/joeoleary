@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "UIpen Case Study",
-  description: "UIpen scans public websites for visual and design-system inconsistency. Designed and built by Joseph O'Leary.",
-  alternates: {
-    canonical: "/case-studies/uipen",
-  },
-};
+  description: "UIpen scans public websites for visual and design-system inconsistency and proposes a cleaner token system. Designed and built by Joseph O'Leary.",
+  path: "/case-studies/uipen",
+});
 
 const LIVE_URL = "https://design-debt.vercel.app";
 

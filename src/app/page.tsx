@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { DEFAULT_DESCRIPTION, pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({ description: DEFAULT_DESCRIPTION, path: "/" });
 
 const evidence = [
   "20+ years in design",
