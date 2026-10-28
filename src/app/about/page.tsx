@@ -191,9 +191,6 @@ export default function AboutPage() {
           </div>
           <div>
             <p className="eyebrow">Hiring</p>
-            <p style={{ color: "var(--mid)", lineHeight: 1.7, fontWeight: 300, marginBottom: "1.25rem" }}>
-              I&apos;m looking for senior individual-contributor product design roles where I can stay hands-on and shape product direction.
-            </p>
             <Link className="button button-primary" href="/contact?re=hiring">
               Contact Joe
             </Link>
