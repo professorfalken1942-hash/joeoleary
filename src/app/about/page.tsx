@@ -53,7 +53,7 @@ const story = [
   {
     title: "Why I stayed close to the code.",
     paragraphs: [
-      "Knowing how software is built changes the design conversation. I can see a constraint before it becomes a surprise, prototype in real code, and hand engineers something that already works. On the Equitable retirement calculator, I designed the experience and built the front end.",
+      "Knowing how software is built changes the design conversation. I can see a constraint before it becomes a surprise, prototype in real code, and hand engineers something that already works.",
     ],
   },
   {
