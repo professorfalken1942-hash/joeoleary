@@ -231,9 +231,9 @@ The spec is dense. But in practice, 80% of issues come from five things: missing
 
 Get those right and you're most of the way there.`;
 
-const AGENT_CONTENT = `Ask an AI assistant to update your address with your insurance company, and today it has exactly one way to do it: pretend to be you.
+const AGENT_CONTENT = `Ask an AI assistant to update your address with your financial services company, and today it has exactly one way to do it: pretend to be you.
 
-It signs in with your password, finds the profile screen, and types in the new address. To the insurer, that looks like you signing in and changing your address. It also looks exactly like someone who stole your password doing the same thing, which is the uncomfortable part.
+It signs in with your password, finds the profile screen, and types in the new address. To the company, that looks like you signing in and changing your address. It also looks exactly like someone who stole your password doing the same thing, which is the uncomfortable part.
 
 Personal AI agents are getting good enough that people will hand them these chores. I spent a few weeks thinking through what a better arrangement would look like for a financial company, and then built a working prototype to find out where the design gets hard.
 
@@ -256,7 +256,7 @@ The third model is the interesting one for design, because it reduces to one sen
 
 ## Five requests, ranked by risk
 
-I worked through five things a customer might ask an agent to do with a life insurance and annuity company: pay a premium, change an address, start required distributions from an IRA, take a policy loan, and make a withdrawal.
+I worked through five things a customer might ask an agent to do with a financial services company that offers life insurance and annuities: pay a premium, change an address, start required distributions from an IRA, take a policy loan, and make a withdrawal.
 
 Every one of them moves through the same seven stages: intent, identify, authorize, clarify and disclose, confirm, execute, and notify. What changes is how much friction each stage adds.
 
@@ -285,7 +285,7 @@ That one rule catches the pattern that matters most. In the prototype, an agent 
 
 ## Building it to find out
 
-Maps and principles are cheap. I wanted to know what breaks, so I built a working prototype for a fictional insurer called Altamere Life. It has a rules engine, a phone app where the owner approves requests, and a connection that lets an AI agent like Claude act on the owner's behalf using a mandate token instead of a password.
+Maps and principles are cheap. I wanted to know what breaks, so I built a working prototype for a fictional financial services company called Altamere Financial. It has a rules engine, a phone app where the owner approves requests, and a connection that lets an AI agent like Claude act on the owner's behalf using a mandate token instead of a password.
 
 Three things only became obvious once it was running.
 
@@ -307,7 +307,7 @@ The best interface may be no interface at all, right up until the moment it matt
 
 You can see the experience map, screenshots and how it was built in the [Altamere Agent Gateway case study](/case-studies/altamere).
 
-*Altamere Life and everything in the prototype are fictional.*`;
+*Altamere Financial and everything in the prototype are fictional.*`;
 
 type Post = {
   /** Drafts are hidden on the live site and readable in local development. */
@@ -321,10 +321,10 @@ type Post = {
 };
 
 const posts: Record<string, Post> = {
-  "when-your-ai-agent-calls-your-insurer": {
+  "when-your-ai-agent-calls-your-financial-company": {
     draft: true,
-    excerpt: "What should happen when your AI agent asks your insurance company to change your address or move money? A design model for agent-to-agent requests, and what I learned building it.",
-    title: "When Your AI Agent Calls Your Insurer",
+    excerpt: "What should happen when your AI agent asks your financial services company to change your address or move money? A design model for agent-to-agent requests, and what I learned building it.",
+    title: "When Your AI Agent Calls Your Financial Company",
     date: "October 26, 2026",
     category: "Product Thinking",
     readTime: "6 min read",

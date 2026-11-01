@@ -12,6 +12,15 @@ const evidence = [
   "A designer who ships production code",
 ];
 
+const altamereFeatures = [
+  { title: "No passwords for agents", body: "Your agent acts as itself, with a mandate you granted. It never signs in as you." },
+  { title: "Risk-tiered requests", body: "A premium payment just completes. Moving money out waits for you." },
+  { title: "Approval on your phone", body: "Risky requests are confirmed on your own device. The agent can\u2019t approve itself." },
+  { title: "Disclosures word for word", body: "Fine print comes from the company, so the agent can explain it but can\u2019t paraphrase it away." },
+  { title: "Address-change safeguards", body: "A notice to the old address and a 10-day pause on money out." },
+  { title: "Works with real agents", body: "An MCP connection lets assistants like Claude make requests on your behalf." },
+];
+
 const trootoneFeatures = [
   { title: "One tap to start", body: "No sign-up, no download, no settings to work through." },
   { title: "Automatic string detection", body: "Play any string. Nothing to tap between strings." },
@@ -61,10 +70,10 @@ const tracks: { number: string; label: string; summary: string; links: TrackLink
     label: "Building what I believe in",
     summary: "Products I noticed a need for, then designed, built, and shipped on my own.",
     links: [
+      { label: "Altamere Agent Gateway", href: "/case-studies/altamere" },
       { label: "Enough", href: "/case-studies/enough" },
       { label: "UIpen", href: "/case-studies/uipen" },
       { label: "Trootone", href: "/case-studies/trootone" },
-      { label: "Altamere Agent Gateway", href: "/case-studies/altamere" },
     ],
   },
 ];
@@ -99,6 +108,42 @@ export default function Home() {
           {evidence.map((item) => (
             <p key={item}>{item}</p>
           ))}
+        </div>
+      </section>
+
+      <section className="page-section featured featured-alt" aria-labelledby="altamere-heading">
+        <div className="content-wrap featured-grid featured-reverse">
+          <div className="dashboard-shots">
+            <div className="dashboard-tablet agent-console">
+              <Image src="/case-studies/altamere/console-pending.jpg" alt="The Altamere gateway log next to the owner's phone, with an address change from their AI agent waiting for approval (fictional data)" fill sizes="(max-width: 900px) 100vw, 560px" className="object-cover object-top" />
+            </div>
+            <div className="dashboard-phone agent-phone">
+              <Image src="/case-studies/altamere/phone-withdrawal.jpg" alt="The owner's phone showing a $20,000 withdrawal requested by their agent, with charges, taxes, and an Approve with Face ID button (fictional data)" fill sizes="160px" className="object-cover object-top" />
+            </div>
+          </div>
+          <div>
+            <p className="eyebrow">Featured Project · AI Agents in Financial Services</p>
+            <h2 id="altamere-heading" className="featured-title">Altamere Agent Gateway</h2>
+            <p className="featured-lede">
+              Personal AI agents will soon handle our financial chores. Today their only option is to sign in as you. I designed and built a working prototype for a fictional financial services company that shows a better way: you delegate, the agent asks, and the company decides.
+            </p>
+            <ul className="feature-list">
+              {altamereFeatures.map((feature) => (
+                <li key={feature.title}>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.body}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="cta-row">
+              <Link className="button button-primary" href="/case-studies/altamere">
+                Read the Case Study
+              </Link>
+              <a className="button button-secondary" href="https://altamere-gateway.vercel.app" target="_blank" rel="noopener noreferrer">
+                Try the Prototype <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

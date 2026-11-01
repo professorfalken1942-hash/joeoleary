@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = pageMetadata({
   title: "Altamere Agent Gateway Case Study",
-  description: "A working prototype of how a personal AI agent could service an insurance account without a password: mandates, risk-tiered approvals, and an MCP connection. Designed and built by Joseph O'Leary.",
+  description: "A working prototype of how a personal AI agent could service a financial services account without a password: mandates, risk-tiered approvals, and an MCP connection. Designed and built by Joseph O'Leary.",
   path: "/case-studies/altamere",
   image: { url: "/case-studies/altamere/console-pending.jpg", width: 2560, height: 1800, alt: "The Altamere gateway log next to the owner's phone, with an address change waiting for approval" },
 });
@@ -51,7 +51,7 @@ export default function AltamereCaseStudy() {
             <div className="md:col-span-10">
               <h1 className="text-5xl md:text-7xl font-serif font-light mb-8 leading-[1.02] max-w-5xl">
                 Altamere Agent Gateway
-                <span className="block mt-3 text-3xl md:text-5xl"><em>When your AI agent calls your insurer</em></span>
+                <span className="block mt-3 text-3xl md:text-5xl"><em>When your AI agent calls your financial company</em></span>
               </h1>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 mt-14 pt-8 border-t border-gray-200">
                 <div>
@@ -78,7 +78,7 @@ export default function AltamereCaseStudy() {
                 </div>
               </div>
               <p className="text-sm text-gray-600 mt-8 max-w-2xl">
-                Altamere Life, its customer, and every account, rate and disclosure shown here are fictional.
+                Altamere Financial, its customer, and every account, rate and disclosure shown here are fictional.
               </p>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function AltamereCaseStudy() {
                 Personal AI agents are starting to act for people. But if you ask one to update your address or move money at a financial company today, its only option is to sign in as you and click through the website.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-gray-700">
-                That&rsquo;s bad for everyone. The company can&rsquo;t tell you from the agent, you can&rsquo;t limit what it does, and a stolen session looks exactly the same. I wanted to design a better arrangement for a fictional life insurance and annuity company, across five real requests: a premium payment, an address change, a disbursement, a loan and a withdrawal.
+                That&rsquo;s bad for everyone. The company can&rsquo;t tell you from the agent, you can&rsquo;t limit what it does, and a stolen session looks exactly the same. I wanted to design a better arrangement for a fictional financial services company, across five real requests: a premium payment, an address change, a disbursement, a loan and a withdrawal.
               </p>
             </div>
           </div>

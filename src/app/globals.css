@@ -906,3 +906,19 @@ img {
     gap: 0.25rem;
   }
 }
+
+.agent-console {
+  aspect-ratio: 2560 / 1800;
+  border-width: 1px;
+  border-color: var(--border);
+  background: #f6f7f9;
+}
+
+.agent-phone {
+  width: 26%;
+  aspect-ratio: 780 / 1570;
+  border-width: 1px;
+  border-color: var(--border);
+  border-radius: 22px;
+  background: #101820;
+}

@@ -10,9 +10,9 @@ export const metadata: Metadata = pageMetadata({
 
 const posts = [
   {
-    slug: "when-your-ai-agent-calls-your-insurer",
+    slug: "when-your-ai-agent-calls-your-financial-company",
     draft: true,
-    title: "When Your AI Agent Calls Your Insurer",
+    title: "When Your AI Agent Calls Your Financial Company",
     excerpt: "A design model for agent-to-agent requests in financial services, and what I learned building a working prototype.",
     date: "October 26, 2026",
     category: "Product Thinking",

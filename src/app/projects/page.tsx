@@ -83,6 +83,19 @@ const engineeringProjects: Project[] = [
 const independentProjects: Project[] = [
   {
     id: "06",
+    title: "Altamere Agent Gateway",
+    category: "Independent Concept · Working prototype",
+    year: "2026",
+    context: "How a personal AI agent could service a financial services account without a password, for a fictional company.",
+    role: "Product designer and developer.",
+    constraint: "Independent concept with fictional data, not client or employer work.",
+    contribution: "Mapped five requests by risk, then built the mandate model, rules engine, owner approval app, and an MCP connection for AI agents.",
+    outcome: "Designed and built as a working prototype.",
+    href: "/case-studies/altamere",
+    liveHref: "https://altamere-gateway.vercel.app",
+  },
+  {
+    id: "07",
     title: "Enough",
     category: "Independent Product · Live",
     year: "2026",
@@ -94,7 +107,7 @@ const independentProjects: Project[] = [
     href: "/case-studies/enough",
   },
   {
-    id: "07",
+    id: "08",
     title: "UIpen",
     category: "Independent Product · Live MVP",
     year: "2026",
@@ -107,7 +120,7 @@ const independentProjects: Project[] = [
     liveHref: "https://design-debt.vercel.app",
   },
   {
-    id: "08",
+    id: "09",
     title: "Trootone",
     category: "Independent Product · Live",
     year: "2026",
@@ -118,18 +131,6 @@ const independentProjects: Project[] = [
     outcome: "Designed, built, and launched.",
     href: "/case-studies/trootone",
     liveHref: "https://trootone.vercel.app",
-  },
-  {
-    id: "09",
-    title: "Altamere Agent Gateway",
-    category: "Independent Concept · Working prototype",
-    year: "2026",
-    context: "How a personal AI agent could service an insurance account without a password, for a fictional insurer.",
-    role: "Product designer and developer.",
-    constraint: "Independent concept with fictional data, not client or employer work.",
-    contribution: "Mapped five requests by risk, then built the mandate model, rules engine, owner approval app, and an MCP connection for AI agents.",
-    outcome: "Designed and built as a working prototype.",
-    href: "/case-studies/altamere",
   },
 ];
 
