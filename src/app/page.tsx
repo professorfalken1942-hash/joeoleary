@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import DemoVideo from "@/components/DemoVideo";
 import { DEFAULT_DESCRIPTION, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({ description: DEFAULT_DESCRIPTION, path: "/" });
@@ -112,21 +113,23 @@ export default function Home() {
       </section>
 
       <section className="page-section featured featured-alt" aria-labelledby="altamere-heading">
-        <div className="content-wrap featured-grid featured-reverse">
-          <div className="dashboard-shots">
-            <div className="dashboard-tablet agent-console">
-              <Image src="/case-studies/altamere/console-pending.jpg" alt="The Altamere gateway log next to the owner's phone, with an address change from their AI agent waiting for approval (fictional data)" fill sizes="(max-width: 900px) 100vw, 560px" className="object-cover object-top" />
+        <div className="content-wrap">
+          <div className="altamere-intro">
+            <div>
+              <p className="eyebrow">Featured Project · AI Agents in Financial Services</p>
+              <h2 id="altamere-heading" className="featured-title">Altamere Agent Gateway</h2>
+              <p className="featured-lede">
+                Personal AI agents will soon handle our financial chores. Today their only option is to sign in as you. I designed and built a working prototype for a fictional financial services company that shows a better way: you delegate, the agent asks, and the company decides.
+              </p>
+              <div className="cta-row">
+                <Link className="button button-primary" href="/case-studies/altamere">
+                  Read the Case Study
+                </Link>
+                <a className="button button-secondary" href="https://altamere-gateway.vercel.app" target="_blank" rel="noopener noreferrer">
+                  Try the Prototype <span className="sr-only">(opens in a new tab)</span>
+                </a>
+              </div>
             </div>
-            <div className="dashboard-phone agent-phone">
-              <Image src="/case-studies/altamere/phone-withdrawal.jpg" alt="The owner's phone showing a $20,000 withdrawal requested by their agent, with charges, taxes, and an Approve with Face ID button (fictional data)" fill sizes="160px" className="object-cover object-top" />
-            </div>
-          </div>
-          <div>
-            <p className="eyebrow">Featured Project · AI Agents in Financial Services</p>
-            <h2 id="altamere-heading" className="featured-title">Altamere Agent Gateway</h2>
-            <p className="featured-lede">
-              Personal AI agents will soon handle our financial chores. Today their only option is to sign in as you. I designed and built a working prototype for a fictional financial services company that shows a better way: you delegate, the agent asks, and the company decides.
-            </p>
             <ul className="feature-list">
               {altamereFeatures.map((feature) => (
                 <li key={feature.title}>
@@ -135,15 +138,16 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div className="cta-row">
-              <Link className="button button-primary" href="/case-studies/altamere">
-                Read the Case Study
-              </Link>
-              <a className="button button-secondary" href="https://altamere-gateway.vercel.app" target="_blank" rel="noopener noreferrer">
-                Try the Prototype <span className="sr-only">(opens in a new tab)</span>
-              </a>
-            </div>
           </div>
+          <figure className="demo-figure">
+            <DemoVideo
+              className="demo-video"
+              src="/case-studies/altamere/altamere-demo.mp4"
+              poster="/case-studies/altamere/demo-poster.jpg"
+              label="Demo of the Altamere prototype: an AI agent pays a premium on its own, an address change waits for the owner to approve on their phone, and a $20,000 withdrawal right after the move is held"
+            />
+            <figcaption>A short run through the live prototype. The agent&apos;s messages are scripted; the gateway&apos;s decisions and the phone are real.</figcaption>
+          </figure>
         </div>
       </section>
 

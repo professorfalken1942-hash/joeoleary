@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
+import DemoVideo from "@/components/DemoVideo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Altamere Agent Gateway Case Study",
@@ -184,6 +185,16 @@ export default function AltamereCaseStudy() {
               The agent&rsquo;s calls and the gateway&rsquo;s decisions on the left. The owner&rsquo;s phone on the right.
             </p>
           </div>
+
+          <figure className="mb-16 md:mb-20">
+            <DemoVideo
+              className="block w-full aspect-video border border-gray-200 bg-gray-900"
+              src="/case-studies/altamere/altamere-demo.mp4"
+              poster="/case-studies/altamere/demo-poster.jpg"
+              label="Demo of the Altamere prototype: an AI agent pays a premium on its own, an address change waits for the owner to approve on their phone, and a $20,000 withdrawal right after the move is held"
+            />
+            <figcaption className="text-xs uppercase tracking-[0.18em] text-gray-600 mt-4">The whole journey in under a minute. Agent messages are scripted; the gateway and phone are the live prototype.</figcaption>
+          </figure>
 
           <figure className="mb-16 md:mb-20">
             <div className="relative aspect-[1280/900] overflow-hidden border border-gray-200 bg-gray-50">
