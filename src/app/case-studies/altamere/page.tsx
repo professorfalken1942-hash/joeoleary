@@ -240,7 +240,7 @@ export default function AltamereCaseStudy() {
                 The rules engine is a pure function. It reads the account and the mandate and returns one of four outcomes: complete it, send it to the owner, hold it for review, or refuse it, always with a reason. Approvals are checked again at the moment the owner taps, because things can change after the agent asks.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">
-                Agents connect through the Model Context Protocol. Claude, or any MCP client, gets nine tools for reading accounts, getting quotes and making requests, authorized by a mandate token. Every visitor gets their own sandbox and token, so a recruiter can connect an agent and try it without touching anyone else&rsquo;s demo.
+                Agents connect through the Model Context Protocol. Claude, or any MCP client, gets nine tools for reading accounts, getting quotes and making requests, authorized by a mandate token. Every visitor gets their own sandbox and token, so anyone can connect an agent and try it without touching anyone else&rsquo;s demo.
               </p>
               <p className="text-base leading-relaxed text-gray-600">
                 Next.js, React, TypeScript, Postgres and the MCP TypeScript SDK, with tests covering each rule, including the takeover pattern and sandbox isolation.
