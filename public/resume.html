@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joseph O'Leary - Resume</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
@@ -138,10 +137,25 @@
     .download-btn:hover {
       background: #384b42;
     }
+    @page { size: letter; margin: 0.35in 0.5in; }
     @media print {
-      body { padding: 0; }
+      body { padding: 0; line-height: 1.3; }
+      .contact { margin-bottom: 10px; padding-bottom: 6px; }
+      .section { margin-bottom: 8px; }
+      h2 { margin-bottom: 5px; padding-bottom: 3px; }
+      .job { margin-bottom: 7px; }
+      .skills-grid { margin-bottom: 4px; gap: 16px; }
+      .skill-list li { display: inline; }
+      .skill-list li:not(:last-child)::after { content: ", "; }
+      .summary { margin-bottom: 4px; }
+      .summary, .job-desc, .job-desc li, .job-desc p { font-size: 11.5px !important; }
+      .job-desc p { margin-bottom: 0 !important; }
+      .job-title { font-size: 12.5px; }
+      .job-desc ul { margin-top: 1px; }
+      .job-desc li { margin-bottom: 0; }
+      .contact.footer { padding-top: 6px !important; margin-bottom: 0; }
       .contact { border-bottom: none; }
-      .download-btn { display: none; }
+      .download-btn { display: none !important; }
     }
     @media (max-width: 768px) {
       .download-btn {
@@ -152,23 +166,9 @@
       }
     }
   </style>
-  <script>
-    function downloadPDF() {
-      const element = document.body;
-      const opt = {
-        margin: [8, 8, 8, 8],
-        filename: 'joseph-oleary-resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-      html2pdf().set(opt).from(element).save();
-    }
-  </script>
 </head>
 <body>
-  <button class="download-btn" onclick="downloadPDF()">⬇ Download PDF</button>
+  <button class="download-btn" onclick="window.print()">⬇ Download PDF</button>
   <h1>Joseph O'Leary</h1>
   <div class="subtitle">UX Design Strategist & Engineer</div>
   <div class="contact">
@@ -224,7 +224,7 @@
 
     <div class="job">
       <div class="job-title">Production Manager - Senior Designer, Front End Web Developer</div>
-      <div class="job-meta">Total Advertising Inc | Syracuse, NY</div>
+      <div class="job-meta">Total Advertising Inc | 2009 – 2013 · Syracuse, NY</div>
       <div class="job-desc">
         <ul>
           <li>Provided front-end development to all client sites using XHTML/HTML5, CSS3, jQuery with cross-browser compatibility</li>
@@ -304,7 +304,7 @@
     </p>
   </div>
 
-  <div class="contact" style="border-top: 1px solid #e0e0e0; border-bottom: none; padding-top: 16px;">
+  <div class="contact footer" style="border-top: 1px solid #e0e0e0; border-bottom: none; padding-top: 16px;">
     <strong>Portfolio:</strong> www.joeoleary.me | <strong>GitHub:</strong> github.com/professorfalken1942-hash | <strong>LinkedIn:</strong> /in/joseph-o-leary-976a945
   </div>
 </body>
