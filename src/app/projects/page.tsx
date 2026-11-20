@@ -11,6 +11,20 @@ export const metadata: Metadata = pageMetadata({
 const enterpriseProjects: Project[] = [
   {
     id: "01",
+    title: "Retirement Planning Calculator",
+    category: "Enterprise Product UX · Live",
+    year: "2026",
+    context: "A public retirement calculator on equitable.com that replaced a madlib-style form with poor usage and a high bounce rate.",
+    role: "Designer and front-end developer.",
+    constraint: "Process details are shared on request; the calculator itself is live.",
+    contribution: "Designed and built a four-step guided flow, inline IRS-limit guardrails, and an interactive results planner.",
+    outcome: "Designed, built, and launched on equitable.com.",
+    href: "/case-studies/equitable-retirement-calculator",
+    liveHref: "https://equitable.com/individuals/retirement-savings-plans/retirement-planning-calculator",
+    protected: true,
+  },
+  {
+    id: "02",
     title: "Account Summary and Client Account Experiences",
     category: "Enterprise Product UX",
     year: "2019-Present",
@@ -23,7 +37,7 @@ const enterpriseProjects: Project[] = [
     protected: true,
   },
   {
-    id: "02",
+    id: "03",
     title: "Authorized-User Invitation and Identity Verification",
     category: "Enterprise Workflow UX",
     year: "2019-Present",
@@ -36,7 +50,7 @@ const enterpriseProjects: Project[] = [
     protected: true,
   },
   {
-    id: "03",
+    id: "04",
     title: "Digital Delivery Enrollment",
     category: "Enterprise Product UX",
     year: "2019-Present",
@@ -51,20 +65,6 @@ const enterpriseProjects: Project[] = [
 ];
 
 const engineeringProjects: Project[] = [
-  {
-    id: "04",
-    title: "Retirement Planning Calculator",
-    category: "Enterprise Product UX · Live",
-    year: "2026",
-    context: "A public retirement calculator on equitable.com that replaced a madlib-style form with poor usage and a high bounce rate.",
-    role: "Designer and front-end developer.",
-    constraint: "Process details are shared on request; the calculator itself is live.",
-    contribution: "Designed and built a four-step guided flow, inline IRS-limit guardrails, and an interactive results planner.",
-    outcome: "Designed, built, and launched on equitable.com.",
-    href: "/case-studies/equitable-retirement-calculator",
-    liveHref: "https://equitable.com/individuals/retirement-savings-plans/retirement-planning-calculator",
-    protected: true,
-  },
   {
     id: "05",
     title: "Design Systems and Reusable Interaction Patterns",
