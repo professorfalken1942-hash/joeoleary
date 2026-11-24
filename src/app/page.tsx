@@ -45,6 +45,15 @@ const dashboardFeatures = [
   { title: "Built for the wall", body: "One household passcode keeps a tablet signed in for a year. Works on phones too." },
 ];
 
+const snowDayFeatures = [
+  { title: "From spade to plow rig", body: "Eight tools, and each one changes how you clear: scoop, push, throw, then plow." },
+  { title: "Bigger jobs as you grow", body: "Single driveways up to church and strip-mall lots, paid by size and snow depth." },
+  { title: "A street that\u2019s alive", body: "Traffic, pedestrians, and a loose dog. Hit a car and the snow leaves with it. Kids throw it back." },
+  { title: "Beat the clock for a tip", body: "Every customer has a time to beat, so routing your passes matters." },
+  { title: "Drawn and voiced in code", body: "Every sprite is canvas or SVG and every sound is synthesized. No image or audio files." },
+  { title: "Plays anywhere", body: "Keyboard on a laptop, an on-screen stick on phones. Progress saves in the browser." },
+];
+
 type TrackLink = { label: string; href: string; external?: boolean };
 
 const tracks: { number: string; label: string; summary: string; links: TrackLink[] }[] = [
@@ -75,6 +84,7 @@ const tracks: { number: string; label: string; summary: string; links: TrackLink
       { label: "Enough", href: "/case-studies/enough" },
       { label: "UIpen", href: "/case-studies/uipen" },
       { label: "Trootone", href: "/case-studies/trootone" },
+      { label: "Snow Day", href: "https://snow-day-game.vercel.app", external: true },
     ],
   },
 ];
@@ -215,6 +225,39 @@ export default function Home() {
                 Ask for a Walkthrough
               </Link>
               <p className="muted-copy">It runs our household, so it&apos;s passcode-protected. Screenshots use demo data.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section featured" aria-labelledby="snow-day-heading">
+        <div className="content-wrap featured-grid featured-even">
+          <div>
+            <p className="eyebrow">Featured Project · Browser Game</p>
+            <h2 id="snow-day-heading" className="featured-title">Snow Day</h2>
+            <p className="featured-lede">
+              A top-down arcade game about shoveling the neighborhood for cash. You start with a bent garden spade and work up to a heavy-duty plow rig. I designed, illustrated, and built all of it in plain JavaScript, with no game engine.
+            </p>
+            <ul className="feature-list">
+              {snowDayFeatures.map((feature) => (
+                <li key={feature.title}>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.body}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="cta-row">
+              <a className="button button-primary" href="https://snow-day-game.vercel.app" target="_blank" rel="noopener noreferrer">
+                Play Snow Day <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            </div>
+          </div>
+          <div className="game-shots">
+            <div className="game-screen">
+              <Image src="/case-studies/snow-day/play.jpg" alt="Snow Day mid-job: the shoveler pushes snow off a half-cleared driveway while a car passes on the road and two neighbors walk the sidewalk" fill sizes="(max-width: 900px) 100vw, 560px" className="object-cover" />
+            </div>
+            <div className="game-inset">
+              <Image src="/case-studies/snow-day/title.jpg" alt="Snow Day title screen: a snow-capped Snow Day logo over a house, a snowman, and a kid tossing a shovelful onto a pile" fill sizes="240px" className="object-cover" />
             </div>
           </div>
         </div>

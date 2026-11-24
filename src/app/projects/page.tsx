@@ -132,6 +132,19 @@ const independentProjects: Project[] = [
     href: "/case-studies/trootone",
     liveHref: "https://trootone.vercel.app",
   },
+  {
+    id: "10",
+    title: "Snow Day",
+    category: "Independent Game · Live",
+    year: "2026",
+    context: "A top-down browser game about shoveling the neighborhood for cash, from a bent garden spade up to a heavy-duty plow rig.",
+    role: "Game designer, illustrator, and developer.",
+    constraint: "Independent product, not client or employer work.",
+    contribution: "Designed the upgrade economy and street life, drew every sprite in canvas and SVG, synthesized the sound, and built it in plain JavaScript with keyboard and touch controls.",
+    outcome: "Designed, built, and launched.",
+    href: "https://snow-day-game.vercel.app",
+    external: true,
+  },
 ];
 
 type Project = {

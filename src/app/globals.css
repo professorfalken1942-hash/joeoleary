@@ -651,6 +651,36 @@ img {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
+.featured-even {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.game-shots {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.game-screen,
+.game-inset {
+  position: relative;
+  aspect-ratio: 1280 / 800;
+  overflow: hidden;
+  border: 5px solid var(--dark-slate);
+  border-radius: 14px;
+  background: var(--dark-slate);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--dark-slate) 16%, transparent);
+}
+
+.game-inset {
+  position: absolute;
+  left: -0.75rem;
+  bottom: 0;
+  width: 44%;
+  border-width: 4px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--dark-slate) 24%, transparent);
+}
+
 .dashboard-shots {
   position: relative;
   padding-bottom: 2.5rem;
@@ -819,6 +849,10 @@ img {
 
   .dashboard-phone {
     right: 0;
+  }
+
+  .game-inset {
+    left: 0;
   }
 
   .page-heading {
