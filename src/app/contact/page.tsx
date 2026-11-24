@@ -197,7 +197,7 @@ function ContactContent() {
         {/* Info */}
         <div style={{ padding: "4rem 2rem", display: "flex", flexDirection: "column", gap: "2.5rem" }}>
           {[
-            { label: "Email", value: "jtolearydesign@gmail.com" },
+            { label: "Email", value: "joe@joeoleary.me" },
             { label: "LinkedIn", value: "linkedin.com/in/joseph-o-leary-976a945", href: "https://www.linkedin.com/in/joseph-o-leary-976a945/" },
             { label: "Based", value: "Syracuse, NY" },
           ].map((item) => (
